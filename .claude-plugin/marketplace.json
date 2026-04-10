@@ -10,8 +10,12 @@
     {
       "name": "solo-founder-playbook",
       "description": "5 AI-powered startup skills for solo founders — analyze ideas, get playbooks, growth strategies, browse patterns, and roast your plan with data from 101 founder interviews",
-      "source": ".",
-      "category": "productivity"
+      "source": {
+        "source": "url",
+        "url": "https://github.com/yayashuxue/solo-founder-playbook.git"
+      },
+      "category": "productivity",
+      "homepage": "https://github.com/yayashuxue/solo-founder-playbook"
     }
   ]
 }
