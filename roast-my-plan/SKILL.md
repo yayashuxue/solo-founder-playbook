@@ -10,8 +10,8 @@ The user will describe their startup plan. Roast it with data.
 ## Instructions
 
 1. **Read the knowledge base** first:
-   - Read `knowledge/patterns.json` for structured pattern data
-   - Read `knowledge/insights.md` for detailed pattern descriptions
+   - Read `${CLAUDE_SKILL_DIR}/knowledge/patterns.json` for structured pattern data
+   - Read `${CLAUDE_SKILL_DIR}/knowledge/insights.md` for detailed pattern descriptions
 
 2. **Check against failure patterns** (49.5% of videos discussed failures):
    - Building Without Customer Validation (11 videos) — are they building in a vacuum?

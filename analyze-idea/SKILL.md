@@ -10,8 +10,8 @@ The user will describe a startup idea. Your job is to evaluate it against real p
 ## Instructions
 
 1. **Read the knowledge base** first:
-   - Read `knowledge/patterns.json` for structured pattern data
-   - Read `knowledge/insights.md` for detailed pattern descriptions
+   - Read `${CLAUDE_SKILL_DIR}/knowledge/patterns.json` for structured pattern data
+   - Read `${CLAUDE_SKILL_DIR}/knowledge/insights.md` for detailed pattern descriptions
 
 2. **Classify the idea origin** — which pattern does this idea follow?
    - Solving Personal Problem (32/101 videos)

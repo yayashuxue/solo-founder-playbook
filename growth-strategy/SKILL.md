@@ -10,8 +10,8 @@ The user will describe their current business and you will recommend a growth st
 ## Instructions
 
 1. **Read the knowledge base** first:
-   - Read `knowledge/patterns.json` for structured pattern data
-   - Read `knowledge/insights.md` for detailed pattern descriptions
+   - Read `${CLAUDE_SKILL_DIR}/knowledge/patterns.json` for structured pattern data
+   - Read `${CLAUDE_SKILL_DIR}/knowledge/insights.md` for detailed pattern descriptions
 
 2. **Identify the business type** and match to data:
    - SaaS/App (37.6% of videos)

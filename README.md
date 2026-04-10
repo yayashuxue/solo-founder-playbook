@@ -6,18 +6,16 @@ A data-backed startup advisor in your terminal. Every recommendation comes from 
 
 ## Install
 
-One line — clones the skills into your Claude Code skills directory:
-
 ```bash
-git clone --single-branch --depth 1 https://github.com/yayashuxue/solo-founder-playbook.git ~/.claude/skills/solo-founder-playbook
+git clone --depth 1 https://github.com/yayashuxue/solo-founder-playbook.git /tmp/sfp && \
+  bash /tmp/sfp/install.sh && rm -rf /tmp/sfp
 ```
 
-Restart Claude Code and the 5 skills below become available as `/analyze-idea`, `/startup-playbook`, etc.
+The installer copies each of the 5 skills directly into `~/.claude/skills/<skill-name>/` (Claude Code only discovers personal skills as direct children of that folder). Each skill folder is self-contained and bundles its own copy of the knowledge base.
 
-To update later:
-```bash
-cd ~/.claude/skills/solo-founder-playbook && git pull
-```
+Restart Claude Code and the 5 skills become available as `/analyze-idea`, `/startup-playbook`, `/growth-strategy`, `/startup-patterns`, `/roast-my-plan`.
+
+To update later, re-run the same one-liner.
 
 ## Skills
 
@@ -57,16 +55,25 @@ Want to run the pipeline yourself or adapt it for a different channel? Check out
 ## Project Structure
 
 ```
-skills/
-  analyze-idea/SKILL.md      # Idea evaluator
-  startup-playbook/SKILL.md  # Goal-oriented playbook generator
-  growth-strategy/SKILL.md   # Growth advisor
-  startup-patterns/SKILL.md  # Pattern browser
-  roast-my-plan/SKILL.md     # Plan critic
-knowledge/
-  patterns.json              # Structured data (11 categories)
-  insights.md                # Full pattern descriptions + keywords
+analyze-idea/
+  SKILL.md
+  knowledge/{patterns.json,insights.md}
+startup-playbook/
+  SKILL.md
+  knowledge/{patterns.json,insights.md}
+growth-strategy/
+  SKILL.md
+  knowledge/{patterns.json,insights.md}
+startup-patterns/
+  SKILL.md
+  knowledge/{patterns.json,insights.md}
+roast-my-plan/
+  SKILL.md
+  knowledge/{patterns.json,insights.md}
+install.sh                   # Copies each skill into ~/.claude/skills/
 ```
+
+Each `SKILL.md` reads its data via `${CLAUDE_SKILL_DIR}/knowledge/...`, which Claude Code expands to the actual install path — so the bundled knowledge travels with the skill no matter where it lives.
 
 ## License
 

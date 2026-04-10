@@ -10,8 +10,8 @@ The user wants to explore patterns across startup categories. Help them browse, 
 ## Instructions
 
 1. **Read the knowledge base** first:
-   - Read `knowledge/patterns.json` for structured pattern data with exact counts
-   - Read `knowledge/insights.md` for detailed descriptions and keywords
+   - Read `${CLAUDE_SKILL_DIR}/knowledge/patterns.json` for structured pattern data with exact counts
+   - Read `${CLAUDE_SKILL_DIR}/knowledge/insights.md` for detailed descriptions and keywords
 
 2. **Available categories** (11 total):
    - Idea Generation (7 patterns, 42 keywords)
