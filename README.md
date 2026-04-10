@@ -6,17 +6,18 @@ A data-backed startup advisor in your terminal. Every recommendation comes from 
 
 ## Install
 
-One line — clones the skills into your Claude Code skills directory:
+Two steps — clone and run setup to register the skills:
 
 ```bash
 git clone --single-branch --depth 1 https://github.com/yayashuxue/solo-founder-playbook.git ~/.claude/skills/solo-founder-playbook
+~/.claude/skills/solo-founder-playbook/setup.sh
 ```
 
 Restart Claude Code and the 5 skills below become available as `/analyze-idea`, `/startup-playbook`, etc.
 
 To update later:
 ```bash
-cd ~/.claude/skills/solo-founder-playbook && git pull
+cd ~/.claude/skills/solo-founder-playbook && git pull && ./setup.sh
 ```
 
 ## Skills
