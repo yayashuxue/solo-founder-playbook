@@ -1,10 +1,17 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "solo-founder-playbook",
+  "description": "5 AI-powered startup skills based on data from 101 Starter Story video analyses",
+  "owner": {
+    "name": "yayashuxue",
+    "email": "yayashuxue@gmail.com"
+  },
   "plugins": [
     {
       "name": "solo-founder-playbook",
-      "version": "1.0.0",
-      "description": "5 AI-powered startup skills based on data from 101 Starter Story video analyses",
-      "path": "."
+      "description": "5 AI-powered startup skills for solo founders — analyze ideas, get playbooks, growth strategies, browse patterns, and roast your plan with data from 101 founder interviews",
+      "source": ".",
+      "category": "productivity"
     }
   ]
 }
