@@ -6,18 +6,17 @@ A data-backed startup advisor in your terminal. Every recommendation comes from 
 
 ## Install
 
-```bash
-# Add the marketplace
-/plugin marketplace add yayashuxue/solo-founder-playbook
+One line — clones the skills into your Claude Code skills directory:
 
-# Install the plugin
-/plugin install solo-founder-playbook
+```bash
+git clone --single-branch --depth 1 https://github.com/yayashuxue/solo-founder-playbook.git ~/.claude/skills/solo-founder-playbook
 ```
 
-Or test locally:
+Restart Claude Code and the 5 skills below become available as `/analyze-idea`, `/startup-playbook`, etc.
+
+To update later:
 ```bash
-git clone https://github.com/yayashuxue/solo-founder-playbook.git
-claude --plugin-dir ./solo-founder-playbook
+cd ~/.claude/skills/solo-founder-playbook && git pull
 ```
 
 ## Skills
@@ -58,7 +57,6 @@ Want to run the pipeline yourself or adapt it for a different channel? Check out
 ## Project Structure
 
 ```
-.claude-plugin/plugin.json   # Plugin manifest
 skills/
   analyze-idea/SKILL.md      # Idea evaluator
   startup-playbook/SKILL.md  # Goal-oriented playbook generator
