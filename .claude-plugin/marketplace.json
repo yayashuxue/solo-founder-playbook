@@ -1,0 +1,10 @@
+{
+  "plugins": [
+    {
+      "name": "solo-founder-playbook",
+      "version": "1.0.0",
+      "description": "5 AI-powered startup skills based on data from 101 Starter Story video analyses",
+      "path": "."
+    }
+  ]
+}

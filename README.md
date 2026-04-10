@@ -7,13 +7,17 @@ A data-backed startup advisor in your terminal. Every recommendation comes from 
 ## Install
 
 ```bash
-claude plugin install yayashuxue/solo-founder-playbook
+# Add the marketplace
+/plugin marketplace add yayashuxue/solo-founder-playbook
+
+# Install the plugin
+/plugin install solo-founder-playbook
 ```
 
-Or add the marketplace manually:
-
+Or test locally:
 ```bash
-claude plugin marketplace add yayashuxue/solo-founder-playbook
+git clone https://github.com/yayashuxue/solo-founder-playbook.git
+claude --plugin-dir ./solo-founder-playbook
 ```
 
 ## Skills
