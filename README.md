@@ -7,15 +7,14 @@ A data-backed startup advisor in your terminal. Every recommendation comes from 
 ## Install
 
 ```bash
-git clone --depth 1 https://github.com/yayashuxue/solo-founder-playbook.git /tmp/sfp && \
-  bash /tmp/sfp/install.sh && rm -rf /tmp/sfp
+git clone --single-branch --depth 1 https://github.com/yayashuxue/solo-founder-playbook.git ~/.claude/skills/solo-founder-playbook && bash ~/.claude/skills/solo-founder-playbook/install.sh
 ```
 
-The installer copies each of the 5 skills directly into `~/.claude/skills/<skill-name>/` (Claude Code only discovers personal skills as direct children of that folder). Each skill folder is self-contained and bundles its own copy of the knowledge base.
+Restart Claude Code and the 5 skills become available.
 
-Restart Claude Code and the 5 skills become available as `/analyze-idea`, `/startup-playbook`, `/growth-strategy`, `/startup-patterns`, `/roast-my-plan`.
+**Update:** `cd ~/.claude/skills/solo-founder-playbook && git pull`
 
-To update later, re-run the same one-liner.
+**Uninstall:** `rm ~/.claude/skills/{analyze-idea,growth-strategy,roast-my-plan,startup-patterns,startup-playbook} && rm -rf ~/.claude/skills/solo-founder-playbook`
 
 ## Skills
 
@@ -55,25 +54,21 @@ Want to run the pipeline yourself or adapt it for a different channel? Check out
 ## Project Structure
 
 ```
-analyze-idea/
-  SKILL.md
-  knowledge/{patterns.json,insights.md}
-startup-playbook/
-  SKILL.md
-  knowledge/{patterns.json,insights.md}
-growth-strategy/
-  SKILL.md
-  knowledge/{patterns.json,insights.md}
-startup-patterns/
-  SKILL.md
-  knowledge/{patterns.json,insights.md}
-roast-my-plan/
-  SKILL.md
-  knowledge/{patterns.json,insights.md}
-install.sh                   # Copies each skill into ~/.claude/skills/
+knowledge/                        # single source of truth (50KB)
+  patterns.json
+  insights.md
+analyze-idea/SKILL.md
+  knowledge -> ../knowledge       # symlink
+growth-strategy/SKILL.md
+  knowledge -> ../knowledge
+startup-playbook/SKILL.md
+  knowledge -> ../knowledge
+startup-patterns/SKILL.md
+  knowledge -> ../knowledge
+roast-my-plan/SKILL.md
+  knowledge -> ../knowledge
+install.sh                        # symlinks each skill into ~/.claude/skills/
 ```
-
-Each `SKILL.md` reads its data via `${CLAUDE_SKILL_DIR}/knowledge/...`, which Claude Code expands to the actual install path — so the bundled knowledge travels with the skill no matter where it lives.
 
 ## License
 
