@@ -1,5 +1,5 @@
 ---
-name: analyze-idea
+name: solo-analyze
 description: Evaluate a startup idea against real patterns from 101 founder interviews
 ---
 

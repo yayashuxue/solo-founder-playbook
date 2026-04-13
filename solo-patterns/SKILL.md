@@ -1,5 +1,5 @@
 ---
-name: startup-patterns
+name: solo-patterns
 description: Browse and search the startup pattern database (11 categories, 80+ patterns)
 ---
 

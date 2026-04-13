@@ -1,5 +1,5 @@
 ---
-name: growth-strategy
+name: solo-growth
 description: Get data-backed growth and marketing recommendations for your business
 ---
 

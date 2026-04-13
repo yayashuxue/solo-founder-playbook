@@ -1,5 +1,5 @@
 ---
-name: startup-playbook
+name: solo-playbook
 description: Get a data-backed step-by-step playbook for any startup goal
 ---
 

@@ -14,17 +14,19 @@ Restart Claude Code and the 5 skills become available.
 
 **Update:** `cd ~/.claude/skills/solo-founder-playbook && git pull`
 
-**Uninstall:** `rm ~/.claude/skills/{analyze-idea,growth-strategy,roast-my-plan,startup-patterns,startup-playbook} && rm -rf ~/.claude/skills/solo-founder-playbook`
+**Uninstall:** `rm ~/.claude/skills/solo-{analyze,growth,patterns,playbook,roast} && rm -rf ~/.claude/skills/solo-founder-playbook`
+
+Type `/solo` to see all 5 skills autocomplete.
 
 ## Skills
 
 | Skill | What it does | Example |
 |-------|-------------|---------|
-| `/analyze-idea` | Evaluate your idea against 101 founder patterns | `/analyze-idea a tool that helps devs find API docs faster` |
-| `/startup-playbook` | Step-by-step playbook for any goal | `/startup-playbook how do I get my first 100 users?` |
-| `/growth-strategy` | Growth & marketing recommendations | `/growth-strategy I run a $2k MRR SaaS for freelancers` |
-| `/startup-patterns` | Browse 80+ patterns across 11 categories | `/startup-patterns Marketing/Distribution` |
-| `/roast-my-plan` | Get your plan roasted — with data | `/roast-my-plan spend 6 months building before launch` |
+| `/solo-analyze` | Evaluate your idea against 101 founder patterns | `/solo-analyze a tool that helps devs find API docs faster` |
+| `/solo-playbook` | Step-by-step playbook for any goal | `/solo-playbook how do I get my first 100 users?` |
+| `/solo-growth` | Growth & marketing recommendations | `/solo-growth I run a $2k MRR SaaS for freelancers` |
+| `/solo-patterns` | Browse 80+ patterns across 11 categories | `/solo-patterns Marketing/Distribution` |
+| `/solo-roast` | Get your plan roasted — with data | `/solo-roast spend 6 months building before launch` |
 
 ## What's in the Data
 
@@ -57,15 +59,15 @@ Want to run the pipeline yourself or adapt it for a different channel? Check out
 knowledge/                        # single source of truth (50KB)
   patterns.json
   insights.md
-analyze-idea/SKILL.md
+solo-analyze/SKILL.md
   knowledge -> ../knowledge       # symlink
-growth-strategy/SKILL.md
+solo-growth/SKILL.md
   knowledge -> ../knowledge
-startup-playbook/SKILL.md
+solo-playbook/SKILL.md
   knowledge -> ../knowledge
-startup-patterns/SKILL.md
+solo-patterns/SKILL.md
   knowledge -> ../knowledge
-roast-my-plan/SKILL.md
+solo-roast/SKILL.md
   knowledge -> ../knowledge
 install.sh                        # symlinks each skill into ~/.claude/skills/
 ```

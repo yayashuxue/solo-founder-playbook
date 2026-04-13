@@ -1,5 +1,5 @@
 ---
-name: roast-my-plan
+name: solo-roast
 description: Get your startup plan roasted with data — Garry Tan style
 ---
 
