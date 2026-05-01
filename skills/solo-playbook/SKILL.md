@@ -10,8 +10,8 @@ The user will ask "how do I [goal]?" and you will generate a concrete, data-back
 ## Instructions
 
 1. **Read the knowledge base** first:
-   - Read `${CLAUDE_SKILL_DIR}/knowledge/patterns.json` for structured pattern data
-   - Read `${CLAUDE_SKILL_DIR}/knowledge/insights.md` for detailed pattern descriptions
+   - Read `./knowledge/patterns.json` for structured pattern data
+   - Read `./knowledge/insights.md` for detailed pattern descriptions
 
 2. **Map the user's goal to relevant categories**:
    - Idea Generation — finding/validating ideas
