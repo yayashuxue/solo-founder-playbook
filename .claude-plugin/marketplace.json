@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "solo-founder-playbook",
-  "description": "Data-backed startup advisor — 6 Claude Code skills built from 101 founder interviews. Idea evaluation, growth strategy, failure-mode diagnosis, plan roasting.",
+  "description": "Data-backed startup advisor — 7 Claude Code skills built from 101 founder interviews. Idea evaluation, growth strategy, distribution tactics, failure-mode diagnosis, plan roasting.",
   "owner": {
     "name": "yayashuxue",
     "email": "yayashuxue@gmail.com"
@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "solo-founder-playbook",
-      "description": "6 startup skills (analyze · failures · growth · patterns · playbook · roast) powered by patterns mined from 101 Starter Story founder interviews.",
+      "description": "7 startup skills (analyze · distribution · failures · growth · patterns · playbook · roast) powered by patterns mined from 101 Starter Story founder interviews.",
       "category": "productivity",
       "source": ".",
       "homepage": "https://solo-founder-playbook.vercel.app",
