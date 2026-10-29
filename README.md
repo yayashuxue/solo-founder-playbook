@@ -6,9 +6,21 @@ A data-backed startup advisor in your terminal (or in your browser). Every recom
 
 → **Try it in 30 seconds, no install:** [solo-founder-playbook.vercel.app/try](https://solo-founder-playbook.vercel.app/try)
 
+![Cards generated from one /solo-failures run: why startups die, failure is the median, cash death is a symptom](docs/hero.png)
+
+<sub>Three of the eight cards from a single `/solo-failures` run. [See all eight →](https://sfp.fyi/cards-en.html)</sub>
+
 ## Install
 
 ### Claude Code (recommended — plugin marketplace)
+
+One step (Claude Code 2.1.275 or later):
+
+```
+/plugin install solo-founder-playbook --marketplace yayashuxue/solo-founder-playbook
+```
+
+Or in two steps, on any version with plugin support:
 
 ```
 /plugin marketplace add yayashuxue/solo-founder-playbook
@@ -100,6 +112,8 @@ install-codex.sh                  # Codex installer
 ## Try in Browser First
 
 Don't want to install yet? [solo-founder-playbook.vercel.app/try](https://solo-founder-playbook.vercel.app/try) lets you pick a skill, paste your situation, and copy a self-contained prompt to use in any chat (Claude, ChatGPT, Gemini). Same data, zero install.
+
+If a skill saved you from a bad call, a ⭐ helps other founders find it.
 
 ## License
 
