@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<style>
+  *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    background:#0a0a0a;
+    font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+    color:#EAE6DD;
+  }
+  :root {
+    --red:#E83A2B;
+    --red-deep:#3A0E0E;
+    --ink:#0a0a0a;
+    --paper:#EAE6DD;
+    --muted:#7A7670;
+    --grid:rgba(255,255,255,0.03);
+  }
+  .card {
+    width:1080px; height:1440px;
+    position:relative;
+    background:var(--ink);
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size:60px 60px;
+    padding:90px 80px;
+    overflow:hidden;
+    display:flex; flex-direction:column;
+    margin:0 auto 24px;
+  }
+  .pill {
+    display:inline-flex; align-items:center;
+    padding:14px 28px;
+    border:1.5px solid var(--red);
+    border-radius:999px;
+    background:var(--red-deep);
+    color:var(--red);
+    font-family:'SF Mono','Menlo',monospace;
+    font-size:24px; letter-spacing:.05em;
+    align-self:flex-start;
+  }
+  .kicker {
+    margin-top:24px;
+    color:var(--muted);
+    font-family:'SF Mono','Menlo',monospace;
+    font-size:22px;
+    letter-spacing:.32em;
+  }
+  .hero {
+    margin-top:56px;
+    font-family:'Noto Serif SC','Songti SC',serif;
+    font-weight:900;
+    font-size:200px;
+    line-height:1.05;
+    color:var(--paper);
+    letter-spacing:-.02em;
+  }
+  .hero .red { color:var(--red); }
+
+  .sub {
+    margin-top:36px;
+    color:#9A958C;
+    font-size:34px;
+    letter-spacing:.04em;
+  }
+
+  .footer {
+    position:absolute; left:80px; right:80px; bottom:60px;
+    display:flex; justify-content:space-between; align-items:center;
+    font-family:'SF Mono','Menlo',monospace;
+    font-size:22px; letter-spacing:.32em;
+    color:var(--muted);
+  }
+  .footer .swipe { color:var(--red); }
+
+  .stats {
+    margin-top:auto;
+    display:flex; gap:28px;
+  }
+  .stat {
+    flex:1;
+    background:rgba(255,255,255,0.025);
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:12px;
+    padding:46px 40px;
+  }
+  .stat .label {
+    font-family:'SF Mono','Menlo',monospace;
+    font-size:20px; letter-spacing:.28em;
+    color:var(--muted);
+    text-transform:uppercase;
+  }
+  .stat .num {
+    margin-top:24px;
+    font-family:'Noto Serif SC','Georgia',serif;
+    font-weight:900;
+    font-size:148px;
+    line-height:1;
+    color:var(--red);
+  }
+  .stat .cap {
+    margin-top:18px;
+    color:#9A958C;
+    font-size:24px;
+    letter-spacing:.04em;
+  }
+
+  /* Failure-mode card layout */
+  .rank {
+    margin-top:60px;
+    display:flex; align-items:baseline; gap:22px;
+  }
+  .rank .n {
+    font-family:'Noto Serif SC',serif;
+    font-weight:900;
+    font-size:340px;
+    line-height:.85;
+    color:var(--red);
+    letter-spacing:-.04em;
+  }
+  .rank .of {
+    font-family:'SF Mono',monospace;
+    font-size:42px;
+    color:var(--muted);
+    letter-spacing:.1em;
+  }
+  .headline {
+    margin-top:36px;
+    font-family:'Noto Serif SC','Songti SC',serif;
+    font-weight:900;
+    font-size:108px;
+    line-height:1.12;
+    color:var(--paper);
+    letter-spacing:-.01em;
+  }
+  .headline .red { color:var(--red); }
+  .en {
+    margin-top:32px;
+    font-family:'Georgia',serif;
+    font-style:italic;
+    font-size:38px;
+    line-height:1.35;
+    color:#9A958C;
+    letter-spacing:.01em;
+    max-width:88%;
+  }
+  .body {
+    margin-top:auto; margin-bottom:120px;
+    font-size:34px;
+    line-height:1.55;
+    color:#C7C2B9;
+    max-width:92%;
+  }
+
+  /* CTA card variant */
+  .cta-headline {
+    margin-top:32px;
+    font-family:'Noto Serif SC','Songti SC',serif;
+    font-weight:900;
+    font-size:96px;
+    line-height:1.12;
+    color:var(--paper);
+  }
+  .cta-headline .red { color:var(--red); }
+  .cta-body {
+    margin-top:28px;
+    font-size:32px;
+    line-height:1.55;
+    color:#C7C2B9;
+    max-width:92%;
+  }
+  .save {
+    margin-top:48px; margin-bottom:160px;
+    align-self:flex-start;
+    border:2px solid var(--red);
+    color:var(--red);
+    background:transparent;
+    padding:28px 52px;
+    border-radius:999px;
+    font-family:'SF Mono',monospace;
+    font-size:28px;
+    letter-spacing:.18em;
+  }
+</style>
+</head>
+<body>
+
+<!-- Card 1: Cover -->
+<section class="card">
+  <span class="pill">solo-failures</span>
+  <div class="kicker">WHY STARTUPS DIE · 101 FOUNDERS</div>
+  <h1 class="hero">为什么<br>创业会<span class="red">死</span>?</h1>
+  <div class="sub">101 个创始人&nbsp;·&nbsp;7 个真相</div>
+  <div class="stats">
+    <div class="stat">
+      <div class="label">公开聊失败</div>
+      <div class="num">49.5%</div>
+      <div class="cap">的视频明确讨论失败</div>
+    </div>
+    <div class="stat">
+      <div class="label">CORE FAILURE MODES</div>
+      <div class="num">7</div>
+      <div class="cap">个核心死法&nbsp;·&nbsp;按频次</div>
+    </div>
+  </div>
+  <div class="footer"><span>STARTER STORY · 101</span><span class="swipe">→ SWIPE</span></div>
+</section>
+
+<!-- Card 2: 15/101 Multiple Failures -->
+<section class="card">
+  <span class="pill">FAILURE MODE 01</span>
+  <div class="rank"><span class="n">15</span><span class="of">/ 101</span></div>
+  <h2 class="headline">失败是<span class="red">中位数</span>，<br>不是例外</h2>
+  <p class="en">Failure is the median, not the exception.</p>
+  <p class="body">大多数创始人在突破之前会失败 5–20 次。把第一次创业当学费，不是最后一搏。</p>
+  <div class="footer"><span>STARTER STORY · 101</span><span class="swipe">→ SWIPE</span></div>
+</section>
+
+<!-- Card 3: 13/101 Cash Death -->
+<section class="card">
+  <span class="pill">FAILURE MODE 02</span>
+  <div class="rank"><span class="n">13</span><span class="of">/ 101</span></div>
+  <h2 class="headline"><span class="red">现金死亡</span><br>只是症状</h2>
+  <p class="en">Cash death is just a symptom.</p>
+  <p class="body">真正的死因：没验证 → 没 PMF → 没收入 → 没 runway。别试图借钱解决。</p>
+  <div class="footer"><span>STARTER STORY · 101</span><span class="swipe">→ SWIPE</span></div>
+</section>
+
+<!-- Card 4: 12/101 Burnout -->
+<section class="card">
+  <span class="pill">FAILURE MODE 03</span>
+  <div class="rank"><span class="n">12</span><span class="of">/ 101</span></div>
+  <h2 class="headline">创始人<br>比生意<span class="red">先垮</span></h2>
+  <p class="en">The founder breaks before the business.</p>
+  <p class="body">每天 16 小时单干，决策质量在 4–6 个月内崩塌。睡觉 + peer group = 免费保险。</p>
+  <div class="footer"><span>STARTER STORY · 101</span><span class="swipe">→ SWIPE</span></div>
+</section>
+
+<!-- Card 5: 11/101 No Validation -->
+<section class="card">
+  <span class="pill">FAILURE MODE 04</span>
+  <div class="rank"><span class="n">11</span><span class="of">/ 101</span></div>
+  <h2 class="headline">在<span class="red">真空</span>里<br>造火箭</h2>
+  <p class="en">Building rockets in a vacuum.</p>
+  <p class="body">8 个月 stealth ≠ 8 个月进展。这周拿到一个付费用户，否则停止写代码。</p>
+  <div class="footer"><span>STARTER STORY · 101</span><span class="swipe">→ SWIPE</span></div>
+</section>
+
+<!-- Card 6: 10/101 Refusing Pivot -->
+<section class="card">
+  <span class="pill">FAILURE MODE 05</span>
+  <div class="rank"><span class="n">10</span><span class="of">/ 101</span></div>
+  <h2 class="headline">你越爱它，<br>它越<span class="red">危险</span></h2>
+  <p class="en">The more you love it, the deadlier it gets.</p>
+  <p class="body">沉没成本 + 身份认同 = 拖太久才 pivot。在你需要它之前，先承诺一个 pivot trigger。</p>
+  <div class="footer"><span>STARTER STORY · 101</span><span class="swipe">→ SWIPE</span></div>
+</section>
+
+<!-- Card 7: 8/101 No Safety Net -->
+<section class="card">
+  <span class="pill">FAILURE MODE 06</span>
+  <div class="rank"><span class="n">8</span><span class="of">/ 101</span></div>
+  <h2 class="headline">辞职太早<br>= <span class="red">决策变形</span></h2>
+  <p class="en">Quit too early = warped decisions.</p>
+  <p class="body">财务压力会压缩你的时间窗。除非经常性收入覆盖 80% 开销或 12 个月 runway，否则别裸辞。</p>
+  <div class="footer"><span>STARTER STORY · 101</span><span class="swipe">→ SWIPE</span></div>
+</section>
+
+<!-- Card 8: 7/101 Shiny Object + CTA -->
+<section class="card">
+  <span class="pill">FAILURE MODE 07</span>
+  <div class="rank"><span class="n">7</span><span class="of">/ 101</span></div>
+  <h2 class="cta-headline">每 4 周换 1 个 idea<br>= <span class="red">复利清零</span></h2>
+  <p class="en">New idea every 4 weeks = compounding reset to zero.</p>
+  <p class="cta-body">分发会复利。选一个渠道 + 一个产品。最少坚持 90 天。告诉一个人。</p>
+  <button class="save">收藏起来 · SAVE</button>
+  <div class="footer"><span>STARTER STORY · 101</span><span class="swipe">→ END</span></div>
+</section>
+
+</body>
+</html>

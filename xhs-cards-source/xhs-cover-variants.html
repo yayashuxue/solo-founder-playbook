@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<style>
+  *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    background:#222;
+    font-family:-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  }
+  :root {
+    --paper:#FBFAF6;
+    --ink:#1c1c1e;
+    --muted:#8e8e93;
+    --hl-green:#A8E063;
+    --hl-yellow:#FFE08A;
+    --hl-pink:#FFB7B7;
+    --coral:#FF7A6B;
+    --mint:#9EE6CB;
+    --yellow:#FFD93D;
+    --lavender:#C5A3FF;
+  }
+  .card {
+    width:1080px; height:1440px;
+    padding:90px 100px 110px;
+    margin:0 auto 24px;
+    position:relative;
+    overflow:hidden;
+    display:flex; flex-direction:column;
+  }
+  .topbar {
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:32px;
+    margin-bottom:48px;
+    color:var(--muted);
+  }
+  .topbar .dots { font-size:42px; line-height:.4; padding-bottom:18px; letter-spacing:.15em; }
+  .topbar .right { color:#FFB300; font-weight:500; }
+  .footer {
+    position:absolute; left:100px; right:100px; bottom:60px;
+    display:flex; justify-content:space-between;
+    color:var(--muted);
+    font-size:28px;
+  }
+  .hl-g { background:linear-gradient(180deg, transparent 55%, var(--hl-green) 55%, var(--hl-green) 88%, transparent 88%); padding:0 8px; }
+  .hl-y { background:linear-gradient(180deg, transparent 55%, var(--hl-yellow) 55%, var(--hl-yellow) 88%, transparent 88%); padding:0 8px; }
+  .hl-p { background:linear-gradient(180deg, transparent 55%, var(--hl-pink) 55%, var(--hl-pink) 88%, transparent 88%); padding:0 8px; }
+  .hl-w { background:linear-gradient(180deg, transparent 60%, rgba(255,255,255,.85) 60%, rgba(255,255,255,.85) 90%, transparent 90%); padding:0 8px; color:var(--ink); }
+
+  .label {
+    align-self:flex-start;
+    padding:14px 30px;
+    border-radius:999px;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:28px;
+    font-weight:700;
+    letter-spacing:.08em;
+  }
+  .sub {
+    margin-top:48px;
+    color:var(--muted);
+    font-size:36px;
+    line-height:1.4;
+  }
+  .stat-line {
+    position:absolute;
+    left:100px; right:100px; bottom:140px;
+    display:flex;
+    align-items:baseline;
+    gap:20px;
+    color:var(--muted);
+    font-size:30px;
+  }
+
+  /* ====== A. Coral 暖橙 ====== */
+  .v-coral {
+    background:var(--coral);
+    color:var(--paper);
+  }
+  .v-coral .topbar { color:rgba(255,255,255,.7); }
+  .v-coral .topbar .right { color:rgba(255,255,255,.95); }
+  .v-coral .label { background:var(--paper); color:var(--coral); }
+  .v-coral .sub { color:rgba(255,255,255,.85); }
+  .v-coral .footer { color:rgba(255,255,255,.7); }
+  .v-coral .hero {
+    margin-top:80px;
+    font-weight:900;
+    font-size:200px;
+    line-height:1.05;
+    letter-spacing:-.02em;
+    color:var(--paper);
+  }
+  .v-coral .emoji { font-style:normal; }
+
+  /* ====== B. Mint 薄荷 ====== */
+  .v-mint {
+    background:var(--mint);
+    color:var(--ink);
+  }
+  .v-mint .topbar { color:rgba(0,0,0,.45); }
+  .v-mint .topbar .right { color:#1A8855; }
+  .v-mint .label { background:var(--ink); color:var(--mint); }
+  .v-mint .sub { color:#2C5F4A; }
+  .v-mint .footer { color:rgba(0,0,0,.4); }
+  .v-mint .hero {
+    margin-top:80px;
+    font-weight:900;
+    font-size:200px;
+    line-height:1.05;
+    letter-spacing:-.02em;
+    color:var(--ink);
+  }
+
+  /* ====== C. 黄底 玩梗反 hook ====== */
+  .v-yellow {
+    background:var(--yellow);
+    color:var(--ink);
+  }
+  .v-yellow .topbar { color:rgba(0,0,0,.45); }
+  .v-yellow .topbar .right { color:#B8722E; }
+  .v-yellow .label { background:var(--ink); color:var(--yellow); }
+  .v-yellow .sub { color:#5A4400; }
+  .v-yellow .footer { color:rgba(0,0,0,.4); }
+  .v-yellow .hero {
+    margin-top:60px;
+    font-weight:900;
+    font-size:188px;
+    line-height:1.08;
+    letter-spacing:-.02em;
+    color:var(--ink);
+  }
+
+  /* ====== D. 米色 paper minimal contrarian ====== */
+  .v-paper {
+    background:var(--paper);
+    color:var(--ink);
+  }
+  .v-paper .hero {
+    margin-top:60px;
+    font-weight:800;
+    font-size:148px;
+    line-height:1.18;
+    letter-spacing:-.005em;
+    color:var(--ink);
+  }
+  .v-paper .strike {
+    text-decoration:line-through;
+    text-decoration-color:rgba(0,0,0,.65);
+    text-decoration-thickness:6px;
+    color:rgba(0,0,0,.45);
+  }
+
+  /* ====== E. Lavender + 大数字 ====== */
+  .v-lav {
+    background:var(--lavender);
+    color:var(--ink);
+  }
+  .v-lav .topbar { color:rgba(0,0,0,.45); }
+  .v-lav .topbar .right { color:#5A2DAD; }
+  .v-lav .label { background:var(--ink); color:var(--lavender); }
+  .v-lav .footer { color:rgba(0,0,0,.4); }
+  .v-lav .megabox {
+    margin-top:40px;
+    display:flex; flex-direction:column;
+    gap:24px;
+  }
+  .v-lav .mega {
+    font-weight:900;
+    font-size:380px;
+    line-height:.85;
+    letter-spacing:-.04em;
+    color:var(--ink);
+  }
+  .v-lav .mega-cap {
+    font-size:48px;
+    font-weight:600;
+    color:var(--ink);
+    line-height:1.3;
+  }
+
+  /* ====== F. 双色 contrast「不是 X，是 Y」====== */
+  .v-split {
+    background:var(--paper);
+    color:var(--ink);
+  }
+  .v-split .top-half {
+    background:var(--ink);
+    color:var(--paper);
+    margin:-90px -100px 0;
+    padding:140px 100px 80px;
+  }
+  .v-split .top-half .strike {
+    text-decoration:line-through;
+    text-decoration-color:rgba(255,255,255,.5);
+    text-decoration-thickness:6px;
+    color:rgba(255,255,255,.45);
+  }
+  .v-split .top-half .h {
+    font-weight:900;
+    font-size:140px;
+    line-height:1.1;
+  }
+  .v-split .bottom-half {
+    padding-top:80px;
+  }
+  .v-split .bottom-half .h {
+    font-weight:900;
+    font-size:160px;
+    line-height:1.1;
+  }
+  .v-split .bottom-half .h .hl-y {
+    background:linear-gradient(180deg, transparent 55%, var(--hl-yellow) 55%, var(--hl-yellow) 88%, transparent 88%);
+    padding:0 12px;
+  }
+
+  /* ====== G. 大数字 7 单焦点 (mint) ====== */
+  .v-bignum {
+    background:var(--mint);
+    color:var(--ink);
+    align-items:flex-start;
+  }
+  .v-bignum .topbar { color:rgba(0,0,0,.45); }
+  .v-bignum .topbar .right { color:#1A8855; }
+  .v-bignum .label { background:var(--ink); color:var(--mint); }
+  .v-bignum .footer { color:rgba(0,0,0,.4); }
+  .v-bignum .num {
+    font-weight:900;
+    font-size:880px;
+    line-height:.78;
+    letter-spacing:-.06em;
+    color:var(--ink);
+    margin-top:-30px;
+    margin-left:-20px;
+    text-shadow:18px 18px 0 rgba(0,0,0,.08);
+  }
+  .v-bignum .grave {
+    position:absolute;
+    right:120px; top:380px;
+    font-size:240px;
+    transform:rotate(8deg);
+  }
+  .v-bignum .cap {
+    position:absolute;
+    left:100px; right:100px; bottom:200px;
+    font-size:64px;
+    font-weight:800;
+    line-height:1.2;
+    color:var(--ink);
+  }
+  .v-bignum .cap small {
+    display:block;
+    margin-top:16px;
+    font-size:34px;
+    font-weight:500;
+    color:rgba(0,0,0,.6);
+  }
+
+  /* ====== H. iMessage 风 ====== */
+  .v-imsg {
+    background:#EDEDED;
+    color:#000;
+  }
+  .v-imsg .topbar { color:#7a7a7a; }
+  .v-imsg .topbar .right { color:#007AFF; }
+  .v-imsg .imsg-title {
+    text-align:center;
+    margin-top:30px;
+    margin-bottom:60px;
+    font-size:36px;
+    color:#7a7a7a;
+  }
+  .v-imsg .imsg-title b { display:block; color:#000; font-size:48px; font-weight:600; margin-bottom:6px; }
+  .v-imsg .bubble {
+    max-width:78%;
+    padding:32px 40px;
+    border-radius:48px;
+    font-size:48px;
+    line-height:1.35;
+    margin-bottom:20px;
+    word-break:break-word;
+  }
+  .v-imsg .b-them {
+    background:#fff;
+    color:#000;
+    align-self:flex-start;
+    border-bottom-left-radius:14px;
+  }
+  .v-imsg .b-me {
+    background:#007AFF;
+    color:#fff;
+    align-self:flex-end;
+    border-bottom-right-radius:14px;
+  }
+  .v-imsg .stamp {
+    text-align:center;
+    color:#a0a0a0;
+    font-size:26px;
+    margin:30px 0 20px;
+  }
+
+  /* ====== I. 手写 sketch on paper ====== */
+  .v-sketch {
+    background:#FBFAF6;
+    color:var(--ink);
+    background-image:
+      linear-gradient(rgba(0,0,0,.06) 1px, transparent 1px);
+    background-size:100% 80px;
+  }
+  .v-sketch .topbar { color:var(--muted); }
+  .v-sketch .topbar .right { color:#FF7A6B; }
+  .v-sketch .label {
+    background:transparent;
+    border:3px dashed var(--ink);
+    color:var(--ink);
+  }
+  .v-sketch .hero {
+    margin-top:60px;
+    font-weight:900;
+    font-size:160px;
+    line-height:1.15;
+    color:var(--ink);
+    letter-spacing:-.01em;
+  }
+  .v-sketch .circle-word {
+    display:inline-block;
+    position:relative;
+    padding:0 14px;
+  }
+  .v-sketch .circle-word::after {
+    content:"";
+    position:absolute;
+    inset:-12px -8px -16px -8px;
+    border:5px solid #FF7A6B;
+    border-radius:46% 54% 50% 50% / 50% 60% 40% 50%;
+    transform:rotate(-3deg);
+    pointer-events:none;
+  }
+  .v-sketch .arrow {
+    position:absolute;
+    right:90px; top:520px;
+    width:280px;
+  }
+  .v-sketch .note {
+    position:absolute;
+    right:80px; top:790px;
+    font-family:'Comic Sans MS','Marker Felt',cursive;
+    font-size:42px;
+    color:#FF7A6B;
+    font-weight:700;
+    transform:rotate(-6deg);
+    line-height:1.2;
+    text-align:left;
+  }
+  .v-sketch .sub { color:#5a5a5a; }
+
+  /* ====== J. 蒸馏 meme ====== */
+  .v-distill {
+    background:var(--paper);
+    color:var(--ink);
+    align-items:stretch;
+  }
+  .v-distill .topbar { color:var(--muted); }
+  .v-distill .topbar .right { color:var(--coral); }
+  .v-distill .row {
+    display:flex; align-items:center; justify-content:center;
+    gap:36px;
+    margin-top:60px;
+  }
+  .v-distill .pile {
+    flex:1;
+    text-align:center;
+    padding:50px 20px;
+    border:3px solid var(--ink);
+    border-radius:24px;
+    background:#fff;
+  }
+  .v-distill .pile .n { font-size:120px; font-weight:900; line-height:1; }
+  .v-distill .pile .l { margin-top:14px; font-size:32px; color:var(--muted); font-weight:600; letter-spacing:.06em; }
+  .v-distill .eq { font-size:120px; font-weight:900; color:var(--coral); }
+  .v-distill .out {
+    margin-top:60px;
+    font-size:108px;
+    font-weight:900;
+    line-height:1.15;
+    text-align:left;
+    letter-spacing:-.02em;
+  }
+  .v-distill .out .hl-y {
+    background:linear-gradient(180deg, transparent 55%, var(--hl-yellow) 55%, var(--hl-yellow) 88%, transparent 88%);
+    padding:0 10px;
+  }
+  .v-distill .sub { font-size:36px; color:var(--muted); margin-top:48px; }
+
+  /* ====== K. Sticker collage ====== */
+  .v-sticker {
+    background:#FFE066;
+    color:var(--ink);
+    overflow:hidden;
+  }
+  .v-sticker .topbar { color:rgba(0,0,0,.45); }
+  .v-sticker .topbar .right { color:#B8722E; }
+  .v-sticker .stick {
+    position:absolute;
+    padding:14px 28px;
+    border-radius:14px;
+    font-size:30px;
+    font-weight:800;
+    box-shadow:6px 6px 0 rgba(0,0,0,.15);
+  }
+  .v-sticker .s1 { top:170px; left:80px; background:#FF7A6B; color:#fff; transform:rotate(-5deg); }
+  .v-sticker .s2 { top:170px; right:80px; background:#fff; color:var(--ink); transform:rotate(4deg); }
+  .v-sticker .s3 { top:1050px; left:90px; background:#9EE6CB; color:var(--ink); transform:rotate(3deg); }
+  .v-sticker .s4 { top:1080px; right:80px; background:var(--ink); color:#FFE066; transform:rotate(-4deg); }
+  .v-sticker .s5 { top:1170px; left:300px; background:#C5A3FF; color:var(--ink); transform:rotate(-2deg); font-size:26px; }
+  .v-sticker .center {
+    position:absolute;
+    inset:0;
+    display:flex; flex-direction:column; justify-content:center; align-items:center;
+    text-align:center;
+    padding:0 80px;
+  }
+  .v-sticker .center .h {
+    font-weight:900;
+    font-size:200px;
+    line-height:.95;
+    letter-spacing:-.03em;
+    color:var(--ink);
+  }
+  .v-sticker .center .h .red { color:#E83A2B; }
+  .v-sticker .center .sub {
+    margin-top:40px;
+    font-size:42px;
+    font-weight:700;
+    color:var(--ink);
+  }
+
+  /* ====== L. Dark tech credibility ====== */
+  .v-dark {
+    background:#0E1411;
+    color:#E8F5E9;
+    background-image:
+      linear-gradient(rgba(168,224,99,.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(168,224,99,.06) 1px, transparent 1px);
+    background-size:60px 60px;
+  }
+  .v-dark .topbar { color:rgba(255,255,255,.4); }
+  .v-dark .topbar .right { color:#A8E063; }
+  .v-dark .label {
+    background:#A8E063;
+    color:#0E1411;
+    font-family:ui-monospace,'SF Mono',Menlo,monospace;
+    font-size:24px;
+    letter-spacing:.15em;
+  }
+  .v-dark .hero {
+    margin-top:80px;
+    font-weight:900;
+    font-size:172px;
+    line-height:1.1;
+    letter-spacing:-.01em;
+    color:#fff;
+  }
+  .v-dark .hero .green { color:#A8E063; }
+  .v-dark .data-row {
+    margin-top:80px;
+    display:flex; gap:28px;
+    flex-wrap:wrap;
+  }
+  .v-dark .chip {
+    padding:18px 28px;
+    border:2px solid rgba(168,224,99,.4);
+    border-radius:12px;
+    font-family:ui-monospace,'SF Mono',Menlo,monospace;
+    font-size:30px;
+    color:#A8E063;
+  }
+  .v-dark .chip b { color:#fff; font-weight:700; }
+  .v-dark .footer { color:rgba(255,255,255,.4); font-family:ui-monospace,'SF Mono',Menlo,monospace; }
+
+</style>
+</head>
+<body>
+
+<!-- A. CORAL: data-led winning formula -->
+<section class="card v-coral">
+  <div class="topbar"><span class="dots">···</span><span class="right">A · CORAL</span></div>
+  <span class="label">基于 101 个真实创始人</span>
+  <h1 class="hero">死亡<br>清单 +<br>skill <span class="emoji">🐶</span></h1>
+  <p class="sub">100+ solo 创业者数据 · 7 个死法 · 7 个 skill</p>
+  <div class="footer"><span>solo founder playbook</span><span>第二弹 ↓</span></div>
+</section>
+
+<!-- B. MINT: 数字 hook -->
+<section class="card v-mint">
+  <div class="topbar"><span class="dots">···</span><span class="right">B · MINT</span></div>
+  <span class="label">7 / 101</span>
+  <h1 class="hero">7 个死法，<br><span class="hl-w">100+</span> 个真实<br>创始人</h1>
+  <p class="sub">从 0 到 1 创业的 7 个 skill 避坑清单</p>
+  <div class="footer"><span>solo founder playbook</span><span>第二弹 ↓</span></div>
+</section>
+
+<!-- C. 黄底 玩梗反 hook（数据强信号 5454 赞同款 structure）-->
+<section class="card v-yellow">
+  <div class="topbar"><span class="dots">···</span><span class="right">C · YELLOW</span></div>
+  <span class="label">100+ solo 创业数据</span>
+  <h1 class="hero">学了 7 种 skill<br>还是<br><span class="hl-p">死</span><span class="hl-p">了</span> 🪦</h1>
+  <p class="sub">基于 101 个真实创始人 · 死法 + 避坑 skill</p>
+  <div class="footer"><span>solo founder playbook</span><span>第二弹 ↓</span></div>
+</section>
+
+<!-- D. 米色 paper Notes-style 改良（用反 hook 开头） -->
+<section class="card v-paper">
+  <div class="topbar"><span class="dots">···</span><span class="right">D · PAPER</span></div>
+  <span class="label">Test Note · 第二弹</span>
+  <h1 class="hero">不是分析<span class="strike">独角兽</span><br>是 100+ <span class="hl-g">个人创业者</span><br>怎么死的 🐶</h1>
+  <p class="sub" style="margin-top:64px;">7 个死法 + 7 个避坑 skill · 基于 101 个真实创始人</p>
+  <div class="footer"><span>solo founder playbook</span><span>第二弹 ↓</span></div>
+</section>
+
+<!-- E. Lavender 大数字 49.5% -->
+<section class="card v-lav">
+  <div class="topbar"><span class="dots">···</span><span class="right">E · LAVENDER</span></div>
+  <span class="label">SKILL 第二弹</span>
+  <div class="megabox">
+    <div class="mega">49.5<span style="font-size:200px;">%</span></div>
+    <div class="mega-cap">的 solo 创业者会主动聊自己的失败<br><b>失败不是少数派，是中位数。</b></div>
+  </div>
+  <p class="sub" style="position:absolute;bottom:140px;left:100px;right:100px;font-size:36px;color:var(--ink);">7 个死法 + 7 个避坑 skill ↓</p>
+  <div class="footer"><span>solo founder playbook</span><span>第二弹 ↓</span></div>
+</section>
+
+<!-- F. 双色 split「不是 X，是 Y」结构 -->
+<section class="card v-split">
+  <div class="topbar"><span class="dots">···</span><span class="right">F · SPLIT</span></div>
+  <div class="top-half">
+    <span style="display:inline-block;padding:8px 24px;border:1.5px solid rgba(255,255,255,.5);border-radius:999px;font-size:24px;letter-spacing:.1em;color:rgba(255,255,255,.7);margin-bottom:32px;">不是这个</span>
+    <div class="h"><span class="strike">独角兽崩塌史</span></div>
+  </div>
+  <div class="bottom-half">
+    <span style="display:inline-block;padding:8px 24px;background:var(--ink);color:var(--paper);border-radius:999px;font-size:24px;letter-spacing:.1em;margin-bottom:32px;">是这个</span>
+    <div class="h">100+ 个人创业者<br>怎么<span class="hl-y">死</span>的 🐶</div>
+    <p style="margin-top:48px;color:var(--muted);font-size:34px;">7 个死法 + 避坑 skill · 基于 101 个真实创始人</p>
+  </div>
+  <div class="footer"><span>solo founder playbook</span><span>第二弹 ↓</span></div>
+</section>
+
+<!-- G. 大数字 7 单焦点 -->
+<section class="card v-bignum">
+  <div class="topbar"><span class="dots">···</span><span class="right">G · BIG NUM</span></div>
+  <span class="label">7 / 101</span>
+  <div class="num">7</div>
+  <span class="grave">⚰️</span>
+  <div class="cap">
+    个人创业的 7 种死法
+    <small>基于 101 个真实创始人 · 第二弹</small>
+  </div>
+  <div class="footer"><span>solo founder playbook</span><span>第二弹 ↓</span></div>
+</section>
+
+<!-- H. iMessage style -->
+<section class="card v-imsg">
+  <div class="topbar"><span class="dots">···</span><span class="right">H · iMESSAGE</span></div>
+  <div class="imsg-title"><b>solo founder</b>iMessage</div>
+  <div style="display:flex;flex-direction:column;flex:1;">
+    <div class="bubble b-them">为什么你创业失败了？</div>
+    <div class="bubble b-me">不是钱的问题</div>
+    <div class="bubble b-me">是这 7 个死法之一</div>
+    <div class="stamp">已读 · 101 位创始人</div>
+    <div class="bubble b-them">展开说说？</div>
+  </div>
+  <div class="footer"><span>solo founder playbook</span><span>第二弹 ↓</span></div>
+</section>
+
+<!-- I. 手写 sketch -->
+<section class="card v-sketch">
+  <div class="topbar"><span class="dots">···</span><span class="right">I · SKETCH</span></div>
+  <span class="label">手写笔记 · 第二弹</span>
+  <h1 class="hero">从 0 到 1<br>会<span class="circle-word">死</span>的<br>7 种方式 🐶</h1>
+  <svg class="arrow" viewBox="0 0 280 120">
+    <path d="M10 60 Q 100 0 250 60" stroke="#FF7A6B" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M230 40 L 252 60 L 232 80" stroke="#FF7A6B" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <div class="note">基于 101 个<br>真实创始人</div>
+  <p class="sub" style="margin-top:auto;font-size:38px;">不是营销号分析独角兽<br>是真实数据看个人创业怎么死</p>
+  <div class="footer"><span>solo founder playbook</span><span>第二弹 ↓</span></div>
+</section>
+
+<!-- J. 蒸馏 meme -->
+<section class="card v-distill">
+  <div class="topbar"><span class="dots">···</span><span class="right">J · DISTILL</span></div>
+  <span class="label">蒸馏系列 · 02</span>
+  <div class="row">
+    <div class="pile"><div class="n">101</div><div class="l">FOUNDERS</div></div>
+    <div class="eq">→</div>
+    <div class="pile"><div class="n">7</div><div class="l">DEATHS</div></div>
+  </div>
+  <div class="out">蒸馏 101 个个人创业者<br>= <span class="hl-y">7 种死法</span> 🪦</div>
+  <p class="sub">+ 7 个避坑 skill · 第二弹</p>
+  <div class="footer"><span>solo founder playbook</span><span>第二弹 ↓</span></div>
+</section>
+
+<!-- K. Sticker collage -->
+<section class="card v-sticker">
+  <div class="topbar"><span class="dots">···</span><span class="right">K · STICKER</span></div>
+  <span class="stick s1">基于 101 个</span>
+  <span class="stick s2">真实数据 ✓</span>
+  <span class="stick s3">7 个死法</span>
+  <span class="stick s4">+ 7 个 skill</span>
+  <span class="stick s5">第二弹 ↓</span>
+  <div class="center">
+    <div class="h">个人创业<br><span class="red">死亡</span>清单</div>
+    <div class="sub">🐶 你大概率会踩 3 个</div>
+  </div>
+  <div class="footer"><span style="position:absolute;left:100px;bottom:60px;color:rgba(0,0,0,.4);">solo founder playbook</span></div>
+</section>
+
+<!-- L. Dark tech credibility -->
+<section class="card v-dark">
+  <div class="topbar"><span class="dots">···</span><span class="right">L · DARK</span></div>
+  <span class="label">DATA · 101 FOUNDERS</span>
+  <h1 class="hero">个人创业<br>的 7 种<br><span class="green">死法</span> 🪦</h1>
+  <div class="data-row">
+    <div class="chip">N = <b>101</b></div>
+    <div class="chip">FAIL_RATE = <b>49.5%</b></div>
+    <div class="chip">DEATHS = <b>7</b></div>
+    <div class="chip">SKILLS = <b>7</b></div>
+  </div>
+  <div class="footer"><span>$ solo-founder-playbook</span><span>cat ./第二弹</span></div>
+</section>
+
+</body>
+</html>

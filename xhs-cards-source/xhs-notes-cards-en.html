@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Why Startups Die — From 101 Founder Interviews</title>
+<style>
+  *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    background:#E8E8E8;
+    font-family:-apple-system,"SF Pro Display","Helvetica Neue","PingFang SC","Hiragino Sans GB",sans-serif;
+    color:#1c1c1e;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  :root {
+    --paper:#FBFAF6;
+    --ink:#1c1c1e;
+    --muted:#8e8e93;
+    --hl-green:#A8E063;
+    --hl-yellow:#FFE08A;
+    --hl-pink:#FFB7B7;
+    --hl-blue:#A6D7FF;
+    --rule:#e5e5e7;
+    --notes-amber:#FFB300;
+  }
+  .card {
+    width:1080px; height:1440px;
+    background:var(--paper);
+    padding:90px 100px 110px;
+    margin:0 auto 0;
+    position:relative;
+    overflow:hidden;
+    display:flex; flex-direction:column;
+  }
+
+  /* iOS Notes top bar */
+  .topbar {
+    display:flex; justify-content:space-between; align-items:center;
+    color:var(--muted);
+    font-size:36px;
+    margin-bottom:36px;
+    letter-spacing:.02em;
+  }
+  .topbar .dots { letter-spacing:.15em; font-size:42px; line-height:.4; padding-bottom:18px; }
+  .topbar .right { color:var(--notes-amber); font-weight:600; font-size:32px; }
+  .topbar .pageno { font-weight:600; font-size:30px; color:var(--muted); font-family:"SF Mono",monospace; }
+
+  /* Failure rank chip */
+  .chip {
+    display:inline-block;
+    background:var(--ink);
+    color:#fff;
+    padding:14px 30px;
+    border-radius:999px;
+    font-size:30px;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    align-self:flex-start;
+    margin-bottom:32px;
+  }
+
+  /* Hero text */
+  .hero {
+    font-weight:900;
+    font-size:140px;
+    line-height:1.05;
+    letter-spacing:-.02em;
+    color:var(--ink);
+  }
+  .hero.smaller {
+    font-size:118px;
+    line-height:1.06;
+  }
+  .hero.tiny {
+    font-size:96px;
+    line-height:1.08;
+  }
+  .hl {
+    background:linear-gradient(180deg, transparent 55%, var(--hl-green) 55%, var(--hl-green) 88%, transparent 88%);
+    padding:0 8px;
+  }
+  .hl.y { background:linear-gradient(180deg, transparent 55%, var(--hl-yellow) 55%, var(--hl-yellow) 88%, transparent 88%); }
+  .hl.p { background:linear-gradient(180deg, transparent 55%, var(--hl-pink) 55%, var(--hl-pink) 88%, transparent 88%); }
+  .hl.b { background:linear-gradient(180deg, transparent 55%, var(--hl-blue) 55%, var(--hl-blue) 88%, transparent 88%); }
+
+  /* Stat block */
+  .stat-row {
+    display:flex; align-items:baseline; gap:32px;
+    margin:48px 0 32px;
+  }
+  .stat-num {
+    font-weight:900;
+    font-size:280px;
+    line-height:.85;
+    color:var(--ink);
+    letter-spacing:-.04em;
+  }
+  .stat-num.smaller { font-size:240px; }
+  .stat-denom {
+    font-size:64px;
+    color:var(--muted);
+    font-weight:600;
+    letter-spacing:-.01em;
+  }
+
+  /* Body text */
+  .body {
+    font-size:42px;
+    line-height:1.42;
+    color:var(--ink);
+    font-weight:500;
+    letter-spacing:-.01em;
+    margin-top:auto;
+  }
+  .body .cn-accent {
+    font-size:32px;
+    color:var(--muted);
+    margin-top:18px;
+    font-weight:400;
+  }
+
+  /* Footer */
+  .foot {
+    display:flex; justify-content:space-between; align-items:center;
+    color:var(--muted);
+    font-size:28px;
+    font-weight:500;
+    margin-top:34px;
+    padding-top:28px;
+    border-top:2px solid var(--rule);
+  }
+  .foot .label { font-family:"SF Mono",monospace; letter-spacing:.06em; }
+  .foot .arrow { font-size:32px; }
+
+  /* Cover */
+  .cover .hero { font-size:154px; }
+  .cover .stat-num { font-size:340px; }
+  .cover-stats {
+    display:flex; gap:48px; margin-top:auto;
+    padding-top:40px;
+    border-top:2px solid var(--rule);
+  }
+  .cover-stat {
+    flex:1;
+  }
+  .cover-stat .num {
+    font-weight:900; font-size:160px; line-height:.9;
+    color:var(--ink); letter-spacing:-.03em;
+  }
+  .cover-stat .label {
+    font-size:30px; color:var(--muted); margin-top:14px;
+    line-height:1.3; font-weight:500;
+  }
+
+  /* Final card CTA button */
+  .cta-btn {
+    display:inline-block;
+    background:var(--ink);
+    color:var(--paper);
+    padding:30px 50px;
+    border-radius:18px;
+    font-size:38px;
+    font-weight:800;
+    letter-spacing:-.01em;
+    margin-top:36px;
+    align-self:flex-start;
+  }
+
+  /* Sub-line under hero (English subtitle for cover) */
+  .subline {
+    font-size:38px;
+    color:var(--muted);
+    margin-top:24px;
+    line-height:1.4;
+    font-weight:500;
+    letter-spacing:-.005em;
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== CARD 1 — COVER ========== -->
+<div class="card cover">
+  <div class="topbar">
+    <span class="dots">⋯</span>
+    <span class="right">Test Note · 5/9</span>
+  </div>
+
+  <div style="display:flex; flex-direction:column; gap:0; height:100%;">
+    <div class="hero" style="font-size:140px;">why<br>startups<br><span class="hl p">die</span>.</div>
+    <div class="subline">a data drop from 101 founder interviews<br>49.5% of them openly discussed failure on camera</div>
+
+    <div class="cover-stats">
+      <div class="cover-stat">
+        <div class="num">49.5<span style="font-size:80px;">%</span></div>
+        <div class="label">openly discussed<br>failure</div>
+      </div>
+      <div class="cover-stat">
+        <div class="num">7</div>
+        <div class="label">core failure<br>modes · ranked</div>
+      </div>
+      <div class="cover-stat">
+        <div class="num">101</div>
+        <div class="label">starter story<br>founders</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="label">solo-founder-playbook</span>
+    <span class="arrow">→ swipe</span>
+  </div>
+</div>
+
+<!-- ========== CARD 2 — Multiple failures ========== -->
+<div class="card">
+  <div class="topbar">
+    <span class="dots">⋯</span>
+    <span class="pageno">02 / 08</span>
+  </div>
+
+  <div class="chip">Failure 01</div>
+
+  <div class="stat-row">
+    <span class="stat-num">15</span>
+    <span class="stat-denom">/ 101</span>
+  </div>
+
+  <div class="hero smaller">failure is<br>the <span class="hl">median</span>,<br>not the exception.</div>
+
+  <div class="body">
+    most founders fail 5–20 times before the breakthrough. treat venture #1 as tuition, not last shot.
+  </div>
+
+  <div class="foot">
+    <span class="label">multiple failures before success</span>
+    <span class="arrow">→</span>
+  </div>
+</div>
+
+<!-- ========== CARD 3 — Financial crisis ========== -->
+<div class="card">
+  <div class="topbar">
+    <span class="dots">⋯</span>
+    <span class="pageno">03 / 08</span>
+  </div>
+
+  <div class="chip">Failure 02</div>
+
+  <div class="stat-row">
+    <span class="stat-num">13</span>
+    <span class="stat-denom">/ 101</span>
+  </div>
+
+  <div class="hero smaller">cash death<br>is just a<br><span class="hl y">symptom</span>.</div>
+
+  <div class="body">
+    real cause: no validation → no PMF → no revenue → no runway. don't borrow your way out of an upstream problem.
+  </div>
+
+  <div class="foot">
+    <span class="label">financial crisis &amp; near-bankruptcy</span>
+    <span class="arrow">→</span>
+  </div>
+</div>
+
+<!-- ========== CARD 4 — Burnout ========== -->
+<div class="card">
+  <div class="topbar">
+    <span class="dots">⋯</span>
+    <span class="pageno">04 / 08</span>
+  </div>
+
+  <div class="chip">Failure 03</div>
+
+  <div class="stat-row">
+    <span class="stat-num">12</span>
+    <span class="stat-denom">/ 101</span>
+  </div>
+
+  <div class="hero smaller">the founder<br>breaks before<br>the <span class="hl p">business</span>.</div>
+
+  <div class="body">
+    16-hour days alone collapse decision quality in 4–6 months. sleep + a peer group is free insurance.
+  </div>
+
+  <div class="foot">
+    <span class="label">burnout from overwork &amp; isolation</span>
+    <span class="arrow">→</span>
+  </div>
+</div>
+
+<!-- ========== CARD 5 — No validation ========== -->
+<div class="card">
+  <div class="topbar">
+    <span class="dots">⋯</span>
+    <span class="pageno">05 / 08</span>
+  </div>
+
+  <div class="chip">Failure 04</div>
+
+  <div class="stat-row">
+    <span class="stat-num">11</span>
+    <span class="stat-denom">/ 101</span>
+  </div>
+
+  <div class="hero smaller">building rockets<br>in a <span class="hl b">vacuum</span>.</div>
+
+  <div class="body">
+    8 months in stealth ≠ 8 months of progress. get one paying customer this week or stop coding.
+  </div>
+
+  <div class="foot">
+    <span class="label">building without customer validation</span>
+    <span class="arrow">→</span>
+  </div>
+</div>
+
+<!-- ========== CARD 6 — Refusing to pivot ========== -->
+<div class="card">
+  <div class="topbar">
+    <span class="dots">⋯</span>
+    <span class="pageno">06 / 08</span>
+  </div>
+
+  <div class="chip">Failure 05</div>
+
+  <div class="stat-row">
+    <span class="stat-num">10</span>
+    <span class="stat-denom">/ 101</span>
+  </div>
+
+  <div class="hero smaller">the more<br>you <span class="hl p">love it</span>,<br>the deadlier<br>it gets.</div>
+
+  <div class="body" style="margin-top:32px;">
+    sunk cost + identity = late pivots. pre-commit a pivot trigger before you need it.
+  </div>
+
+  <div class="foot">
+    <span class="label">refusing to pivot</span>
+    <span class="arrow">→</span>
+  </div>
+</div>
+
+<!-- ========== CARD 7 — No safety net ========== -->
+<div class="card">
+  <div class="topbar">
+    <span class="dots">⋯</span>
+    <span class="pageno">07 / 08</span>
+  </div>
+
+  <div class="chip">Failure 06</div>
+
+  <div class="stat-row">
+    <span class="stat-num">8</span>
+    <span class="stat-denom">/ 101</span>
+  </div>
+
+  <div class="hero smaller">quitting too<br>early <span class="hl y">warps</span><br>your decisions.</div>
+
+  <div class="body">
+    financial pressure compresses your time horizon. don't quit before recurring revenue covers 80% of burn or 12 months runway.
+  </div>
+
+  <div class="foot">
+    <span class="label">corporate-job safety net premature exit</span>
+    <span class="arrow">→</span>
+  </div>
+</div>
+
+<!-- ========== CARD 8 — Shiny object + CTA ========== -->
+<div class="card">
+  <div class="topbar">
+    <span class="dots">⋯</span>
+    <span class="pageno">08 / 08</span>
+  </div>
+
+  <div class="chip">Failure 07</div>
+
+  <div class="stat-row">
+    <span class="stat-num">7</span>
+    <span class="stat-denom">/ 101</span>
+  </div>
+
+  <div class="hero tiny">new idea every<br>4 weeks =<br><span class="hl">compounding</span><br>reset to zero.</div>
+
+  <div class="body" style="margin-top:32px;">
+    distribution compounds. pick one channel + one product. 90 days minimum. tell someone.
+    <div class="cta-btn">📌 save this card</div>
+  </div>
+
+  <div class="foot">
+    <span class="label">solo-founder-playbook.vercel.app/try</span>
+    <span class="arrow">↑</span>
+  </div>
+</div>
+
+</body>
+</html>

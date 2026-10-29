@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Why Startups Die · 8 cards · EN</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --red: #FF3C2F;
+  --cream: #F5F0E8;
+  --dark: #111;
+  --card: #ECEAE3;
+  --muted: #888;
+}
+
+html, body {
+  background: #2a2a2a;
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.card {
+  width: 1080px;
+  height: 1440px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 96px 88px;
+}
+.card.bg-cream { background: var(--cream); color: var(--dark); }
+.card.bg-dark  { background: var(--dark);  color: var(--cream); }
+
+.card.bg-dark::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 72px 72px;
+  pointer-events: none;
+}
+.card.bg-cream::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(0,0,0,.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,.018) 1px, transparent 1px);
+  background-size: 72px 72px;
+  pointer-events: none;
+}
+
+.card > * { position: relative; z-index: 1; }
+
+.kicker {
+  font-family: 'DM Mono', monospace;
+  font-size: 24px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--red);
+  font-weight: 500;
+}
+.kicker-muted {
+  font-family: 'DM Mono', monospace;
+  font-size: 22px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.bg-dark .kicker-muted { color: #777; }
+.bg-cream .kicker-muted { color: #999; }
+
+.t-hero {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-weight: 900;
+  font-size: 218px;
+  line-height: .96;
+  letter-spacing: -.035em;
+}
+.t-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-weight: 900;
+  font-size: 138px;
+  line-height: 1.02;
+  letter-spacing: -.025em;
+}
+.t-title.smaller {
+  font-size: 118px;
+  line-height: 1.04;
+}
+.t-body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 44px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+.bg-dark .t-body { color: #d4d0c8; }
+.bg-cream .t-body { color: #1a1a1a; }
+
+.t-small {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 28px;
+  line-height: 1.45;
+}
+.bg-dark .t-small { color: #999; }
+.bg-cream .t-small { color: #555; }
+
+.t-mono {
+  font-family: 'DM Mono', monospace;
+  font-size: 26px;
+}
+
+.pill {
+  display: inline-flex; align-items: center;
+  border-radius: 100px;
+  padding: 14px 30px;
+  font-family: 'DM Mono', monospace;
+  font-size: 24px;
+  letter-spacing: .08em;
+  width: fit-content;
+  font-weight: 500;
+  text-transform: lowercase;
+}
+.pill-red {
+  background: rgba(255,60,47,.13);
+  border: 1.5px solid rgba(255,60,47,.34);
+  color: var(--red);
+}
+
+.tag {
+  display: inline-flex; align-items: center;
+  background: rgba(255,60,47,.12);
+  color: var(--red);
+  border-radius: 9px;
+  padding: 11px 22px;
+  font-family: 'DM Mono', monospace;
+  font-size: 26px;
+  letter-spacing: .04em;
+  font-weight: 500;
+}
+.bg-dark .tag {
+  background: rgba(255,60,47,.18);
+}
+
+.highlight {
+  background: var(--red);
+  color: #fff;
+  border-radius: 18px;
+  padding: 44px 50px;
+}
+
+.divider {
+  height: 1px;
+}
+.bg-dark .divider { background: rgba(255,255,255,.1); }
+.bg-cream .divider { background: rgba(0,0,0,.1); }
+
+.col { display: flex; flex-direction: column; }
+.row { display: flex; }
+.between { justify-content: space-between; }
+.center { align-items: center; }
+.flex1 { flex: 1; }
+
+.underline-red {
+  border-bottom: 7px solid var(--red);
+  padding-bottom: 4px;
+}
+
+em.red {
+  font-style: normal;
+  color: var(--red);
+}
+
+.footer {
+  font-family: 'DM Mono', monospace;
+  font-size: 24px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.bg-dark .footer { color: #777; }
+.bg-cream .footer { color: #888; }
+
+.stat-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 18px;
+  padding: 44px 46px;
+}
+</style>
+</head>
+<body>
+<div class="stack">
+
+<!-- ════════════════════ CARD 1 · COVER (dark) ════════════════════ -->
+<section class="card bg-dark">
+  <div class="col flex1 between">
+
+    <span class="pill pill-red">solo-failures · 101 founders</span>
+
+    <div class="col" style="gap:36px">
+      <h1 class="t-hero" style="color:var(--cream)">
+        why<br>startups<br><em class="red">die</em>?
+      </h1>
+      <p class="t-mono" style="color:#888;font-size:32px;letter-spacing:.04em">
+        101 founders &nbsp;·&nbsp; 7 hard truths
+      </p>
+    </div>
+
+    <div class="row" style="gap:30px;margin-top:20px">
+      <div class="stat-card flex1">
+        <p class="kicker-muted" style="color:#666;margin-bottom:18px">openly discussed</p>
+        <p style="font-family:'Playfair Display',serif;font-weight:900;font-size:184px;line-height:.9;color:var(--red);letter-spacing:-.04em">49.5<span style="font-size:104px">%</span></p>
+        <p class="t-small" style="color:#aaa;margin-top:20px">talked failure on camera</p>
+      </div>
+      <div class="stat-card flex1">
+        <p class="kicker-muted" style="color:#666;margin-bottom:18px">core failure modes</p>
+        <p style="font-family:'Playfair Display',serif;font-weight:900;font-size:184px;line-height:.9;color:var(--cream);letter-spacing:-.04em">7</p>
+        <p class="t-small" style="color:#aaa;margin-top:20px">ranked by frequency</p>
+      </div>
+    </div>
+
+    <div class="row between center" style="margin-top:48px">
+      <span class="footer">starter story · 101</span>
+      <span class="footer" style="color:var(--red)">→ swipe</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════ CARD 2 · MULTIPLE FAILURES (cream) ════════════════════ -->
+<section class="card bg-cream">
+  <div class="col flex1 between">
+
+    <div class="row between center">
+      <span class="pill pill-red">#01 · multiple failures</span>
+      <span class="tag">15 / 101</span>
+    </div>
+
+    <h2 class="t-title" style="color:var(--dark)">
+      failure is the<br><span class="underline-red">median</span>,<br>not the exception.
+    </h2>
+
+    <div style="text-align:left">
+      <p class="kicker-muted">most founders fail</p>
+      <p style="font-family:'Playfair Display',serif;font-weight:900;font-size:240px;line-height:.9;color:var(--red);letter-spacing:-.04em;margin-top:14px">5–20<span style="font-size:96px;color:#666;font-weight:700">×</span></p>
+      <p class="t-small" style="color:#444;margin-top:20px;font-size:32px">before the breakthrough.</p>
+    </div>
+
+    <div class="highlight">
+      <p style="color:#fff;font-weight:600;font-size:46px;line-height:1.32;font-family:'DM Sans',sans-serif">
+        venture #1 = tuition,<br>not last shot.
+      </p>
+    </div>
+
+    <div class="row between center">
+      <span class="footer">02 / 08</span>
+      <span class="footer" style="color:var(--red)">multiple failures</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════ CARD 3 · FINANCIAL CRISIS (dark) ════════════════════ -->
+<section class="card bg-dark">
+  <div class="col flex1 between">
+
+    <div class="row between center">
+      <span class="pill pill-red">#02 · cash crisis</span>
+      <span class="tag">13 / 101</span>
+    </div>
+
+    <h2 class="t-title" style="color:var(--cream)">
+      <em class="red">cash death</em><br>is just a<br>symptom.
+    </h2>
+
+    <div class="col" style="gap:22px">
+      <p class="kicker-muted" style="color:#777">the actual chain</p>
+      <div class="col" style="gap:18px">
+        <div class="row center" style="gap:18px;flex-wrap:wrap">
+          <span class="t-mono" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);color:#ddd;padding:18px 28px;border-radius:12px;font-size:30px">no validation</span>
+          <span style="color:var(--red);font-size:34px">→</span>
+          <span class="t-mono" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);color:#ddd;padding:18px 28px;border-radius:12px;font-size:30px">no PMF</span>
+        </div>
+        <div class="row center" style="gap:18px;flex-wrap:wrap">
+          <span class="t-mono" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);color:#ddd;padding:18px 28px;border-radius:12px;font-size:30px">no revenue</span>
+          <span style="color:var(--red);font-size:34px">→</span>
+          <span class="t-mono" style="background:var(--red);color:#fff;padding:18px 28px;border-radius:12px;font-size:30px;font-weight:500">no runway</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="t-body" style="color:#d4d0c8">
+      borrowing buys time —<br><span style="color:var(--red);font-weight:600">not PMF.</span>
+    </p>
+
+    <div class="row between center">
+      <span class="footer">03 / 08</span>
+      <span class="footer" style="color:var(--red)">cash crisis</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════ CARD 4 · BURNOUT (cream) ════════════════════ -->
+<section class="card bg-cream">
+  <div class="col flex1 between">
+
+    <div class="row between center">
+      <span class="pill pill-red">#03 · burnout</span>
+      <span class="tag">12 / 101</span>
+    </div>
+
+    <h2 class="t-title" style="color:var(--dark)">
+      the founder<br>breaks before<br>the <span class="underline-red">business</span>.
+    </h2>
+
+    <div class="col" style="gap:22px">
+      <p class="kicker-muted">decision quality over time</p>
+      <div class="row" style="gap:0;align-items:stretch;border-radius:16px;overflow:hidden;border:1px solid rgba(0,0,0,.1)">
+        <div style="flex:1;padding:30px 22px;background:#fff;border-right:1px solid rgba(0,0,0,.07)">
+          <p class="t-mono" style="color:#888;font-size:22px;margin-bottom:10px">m1</p>
+          <p style="color:var(--dark);font-weight:500;font-size:30px;font-family:'DM Sans',sans-serif">on point</p>
+        </div>
+        <div style="flex:1;padding:30px 22px;background:#fff;border-right:1px solid rgba(0,0,0,.07)">
+          <p class="t-mono" style="color:#888;font-size:22px;margin-bottom:10px">m3</p>
+          <p style="color:#666;font-weight:500;font-size:30px;font-family:'DM Sans',sans-serif">snappy</p>
+        </div>
+        <div style="flex:1.2;padding:30px 22px;background:rgba(255,60,47,.08);border-right:1px solid rgba(0,0,0,.07)">
+          <p class="t-mono" style="color:var(--red);font-size:22px;margin-bottom:10px">m5</p>
+          <p style="color:var(--red);font-weight:500;font-size:30px;font-family:'DM Sans',sans-serif">paralysis</p>
+        </div>
+        <div style="flex:1;padding:30px 22px;background:var(--red)">
+          <p class="t-mono" style="color:rgba(255,255,255,.7);font-size:22px;margin-bottom:10px">m6</p>
+          <p style="color:#fff;font-weight:500;font-size:30px;font-family:'DM Sans',sans-serif">offline</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <p style="color:#fff;font-weight:600;font-size:46px;line-height:1.32;font-family:'DM Sans',sans-serif">
+        sleep + a peer group<br>= free insurance.
+      </p>
+    </div>
+
+    <div class="row between center">
+      <span class="footer">04 / 08</span>
+      <span class="footer" style="color:var(--red)">burnout</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════ CARD 5 · NO VALIDATION (dark) ════════════════════ -->
+<section class="card bg-dark">
+  <div class="col flex1 between">
+
+    <div class="row between center">
+      <span class="pill pill-red">#04 · no validation</span>
+      <span class="tag">11 / 101</span>
+    </div>
+
+    <h2 class="t-title" style="color:var(--cream)">
+      building rockets<br>in a <em class="red">vacuum</em>.
+    </h2>
+
+    <div class="row" style="gap:28px">
+      <div style="flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:42px 36px">
+        <p class="kicker-muted" style="color:#666;margin-bottom:24px;font-size:20px">fake progress</p>
+        <p style="color:#888;font-size:34px;line-height:1.55;font-family:'DM Sans',sans-serif">writing code<br>tweaking styles<br>running tests</p>
+      </div>
+      <div style="flex:1;background:rgba(255,60,47,.08);border:1.5px solid rgba(255,60,47,.4);border-radius:18px;padding:42px 36px">
+        <p class="kicker" style="margin-bottom:24px;font-size:20px">real progress</p>
+        <p style="color:var(--cream);font-size:34px;font-weight:500;line-height:1.55;font-family:'DM Sans',sans-serif">$1 prepaid<br>1 person on waitlist<br>1 sales call</p>
+      </div>
+    </div>
+
+    <p class="t-body" style="color:#d4d0c8">
+      one paying customer this week,<br>or <span style="color:var(--red);font-weight:600">stop coding</span>.
+    </p>
+
+    <div class="row between center">
+      <span class="footer">05 / 08</span>
+      <span class="footer" style="color:var(--red)">no validation</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════ CARD 6 · REFUSING TO PIVOT (cream) ════════════════════ -->
+<section class="card bg-cream">
+  <div class="col flex1 between">
+
+    <div class="row between center">
+      <span class="pill pill-red">#05 · refusing to pivot</span>
+      <span class="tag">10 / 101</span>
+    </div>
+
+    <h2 class="t-title smaller" style="color:var(--dark)">
+      the more you<br>love it, the<br><span class="underline-red">deadlier</span> it gets.
+    </h2>
+
+    <div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:44px 48px">
+      <p class="kicker-muted" style="margin-bottom:18px">the equation</p>
+      <p style="font-family:'Playfair Display',serif;font-weight:700;font-size:62px;line-height:1.2;color:var(--dark);letter-spacing:-.01em">
+        sunk cost <span style="color:#bbb">+</span> identity<br><span style="color:var(--red)">= late pivot.</span>
+      </p>
+    </div>
+
+    <div class="highlight">
+      <p style="color:#fff;font-weight:600;font-size:44px;line-height:1.32;font-family:'DM Sans',sans-serif">
+        decide your pivot trigger<br>before you need it.
+      </p>
+    </div>
+
+    <div class="row between center">
+      <span class="footer">06 / 08</span>
+      <span class="footer" style="color:var(--red)">refusing to pivot</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════ CARD 7 · NO SAFETY NET (dark) ════════════════════ -->
+<section class="card bg-dark">
+  <div class="col flex1 between">
+
+    <div class="row between center">
+      <span class="pill pill-red">#06 · no safety net</span>
+      <span class="tag">8 / 101</span>
+    </div>
+
+    <h2 class="t-title" style="color:var(--cream)">
+      quit too early<br>= <em class="red">warped</em><br>decisions.
+    </h2>
+
+    <div class="col" style="gap:22px">
+      <p class="kicker-muted" style="color:#777">don't quit until ONE is true</p>
+      <div class="row" style="gap:28px">
+        <div style="flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:42px 36px">
+          <p style="font-family:'Playfair Display',serif;font-weight:900;font-size:148px;line-height:1;color:var(--red);letter-spacing:-.04em">80<span style="font-size:74px">%</span></p>
+          <p class="t-small" style="color:#bbb;margin-top:24px;font-size:26px">of personal burn covered<br>by recurring revenue</p>
+        </div>
+        <div style="flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:42px 36px">
+          <p style="font-family:'Playfair Display',serif;font-weight:900;font-size:148px;line-height:1;color:var(--red);letter-spacing:-.04em">12<span style="font-size:74px">m</span></p>
+          <p class="t-small" style="color:#bbb;margin-top:24px;font-size:26px">personal cash runway<br>already saved</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row between center">
+      <span class="footer">07 / 08</span>
+      <span class="footer" style="color:var(--red)">no safety net</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════ CARD 8 · SHINY OBJECT + CTA (cream) ════════════════════ -->
+<section class="card bg-cream">
+  <div class="col flex1 between">
+
+    <div class="row between center">
+      <span class="pill pill-red">#07 · shiny object</span>
+      <span class="tag">7 / 101</span>
+    </div>
+
+    <h2 class="t-title smaller" style="color:var(--dark)">
+      new idea every<br>4 weeks =<br><span class="underline-red">compounding</span> reset.
+    </h2>
+
+    <div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:42px 44px">
+      <div class="row between center" style="margin-bottom:28px">
+        <span class="kicker-muted">distribution compounds</span>
+        <span class="t-mono" style="color:#aaa;font-size:22px">90 days min</span>
+      </div>
+      <div class="col" style="gap:22px">
+        <div class="row center" style="gap:22px">
+          <span class="t-mono" style="color:#888;width:120px;font-size:24px">day 30</span>
+          <div style="flex:1;height:22px;background:rgba(0,0,0,.06);border-radius:5px;overflow:hidden">
+            <div style="width:18%;height:100%;background:#ddd"></div>
+          </div>
+          <span class="t-mono" style="color:#aaa;width:60px;text-align:right;font-size:24px">18</span>
+        </div>
+        <div class="row center" style="gap:22px">
+          <span class="t-mono" style="color:#888;width:120px;font-size:24px">day 60</span>
+          <div style="flex:1;height:22px;background:rgba(0,0,0,.06);border-radius:5px;overflow:hidden">
+            <div style="width:42%;height:100%;background:#bbb"></div>
+          </div>
+          <span class="t-mono" style="color:#888;width:60px;text-align:right;font-size:24px">42</span>
+        </div>
+        <div class="row center" style="gap:22px">
+          <span class="t-mono" style="color:var(--red);width:120px;font-size:24px;font-weight:500">day 90</span>
+          <div style="flex:1;height:22px;background:rgba(0,0,0,.06);border-radius:5px;overflow:hidden">
+            <div style="width:88%;height:100%;background:var(--red)"></div>
+          </div>
+          <span class="t-mono" style="color:var(--red);width:60px;text-align:right;font-size:24px;font-weight:500">88</span>
+        </div>
+        <div class="row center" style="gap:22px;opacity:.45">
+          <span class="t-mono" style="color:#888;width:120px;font-size:24px">↻ reset</span>
+          <div style="flex:1;height:22px;background:rgba(0,0,0,.06);border-radius:5px;overflow:hidden">
+            <div style="width:4%;height:100%;background:#ccc"></div>
+          </div>
+          <span class="t-mono" style="color:#aaa;width:60px;text-align:right;font-size:24px">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <p class="kicker" style="margin-bottom:14px;font-size:22px;color:rgba(255,255,255,.7)">save · save this card</p>
+      <p style="color:#fff;font-weight:600;font-size:44px;line-height:1.3;font-family:'DM Sans',sans-serif">
+        next time you're spiraling —<br>flip back through.
+      </p>
+    </div>
+
+    <div class="row between center">
+      <span class="footer">08 / 08</span>
+      <span class="footer" style="color:var(--red)">→ end</span>
+    </div>
+
+  </div>
+</section>
+
+</div>
+</body>
+</html>

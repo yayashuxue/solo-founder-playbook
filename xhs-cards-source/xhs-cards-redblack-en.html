@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    background:#0a0a0a;
+    font-family:-apple-system,'SF Pro Display','Helvetica Neue',sans-serif;
+    color:#EAE6DD;
+  }
+  :root {
+    --red:#E83A2B;
+    --red-deep:#3A0E0E;
+    --ink:#0a0a0a;
+    --paper:#EAE6DD;
+    --muted:#7A7670;
+    --grid:rgba(255,255,255,0.03);
+  }
+  .card {
+    width:1080px; height:1440px;
+    position:relative;
+    background:var(--ink);
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size:60px 60px;
+    padding:90px 80px;
+    overflow:hidden;
+    display:flex; flex-direction:column;
+    margin:0 auto 0;
+  }
+  .pill {
+    display:inline-flex; align-items:center;
+    padding:14px 28px;
+    border:1.5px solid var(--red);
+    border-radius:999px;
+    background:var(--red-deep);
+    color:var(--red);
+    font-family:'SF Mono','Menlo',monospace;
+    font-size:24px; letter-spacing:.05em;
+    align-self:flex-start;
+  }
+  .kicker {
+    margin-top:24px;
+    color:var(--muted);
+    font-family:'SF Mono','Menlo',monospace;
+    font-size:22px;
+    letter-spacing:.32em;
+  }
+  .hero {
+    margin-top:56px;
+    font-family:'Georgia','Times New Roman',serif;
+    font-weight:900;
+    font-size:188px;
+    line-height:1.0;
+    color:var(--paper);
+    letter-spacing:-.03em;
+  }
+  .hero .red { color:var(--red); }
+
+  .sub {
+    margin-top:36px;
+    color:#9A958C;
+    font-size:32px;
+    letter-spacing:.04em;
+    font-family:'SF Mono','Menlo',monospace;
+  }
+
+  .footer {
+    position:absolute; left:80px; right:80px; bottom:60px;
+    display:flex; justify-content:space-between; align-items:center;
+    font-family:'SF Mono','Menlo',monospace;
+    font-size:22px; letter-spacing:.32em;
+    color:var(--muted);
+  }
+  .footer .swipe { color:var(--red); }
+
+  .stats {
+    margin-top:auto;
+    display:flex; gap:28px;
+  }
+  .stat {
+    flex:1;
+    background:rgba(255,255,255,0.025);
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:12px;
+    padding:46px 40px;
+  }
+  .stat .label {
+    font-family:'SF Mono','Menlo',monospace;
+    font-size:20px; letter-spacing:.28em;
+    color:var(--muted);
+    text-transform:uppercase;
+  }
+  .stat .num {
+    margin-top:24px;
+    font-family:'Georgia',serif;
+    font-weight:900;
+    font-size:148px;
+    line-height:1;
+    color:var(--red);
+  }
+  .stat .cap {
+    margin-top:18px;
+    color:#9A958C;
+    font-size:22px;
+    letter-spacing:.04em;
+    font-family:'SF Mono','Menlo',monospace;
+    text-transform:uppercase;
+  }
+
+  /* Failure-mode card layout */
+  .rank {
+    margin-top:60px;
+    display:flex; align-items:baseline; gap:22px;
+  }
+  .rank .n {
+    font-family:'Georgia',serif;
+    font-weight:900;
+    font-size:340px;
+    line-height:.85;
+    color:var(--red);
+    letter-spacing:-.04em;
+  }
+  .rank .of {
+    font-family:'SF Mono',monospace;
+    font-size:42px;
+    color:var(--muted);
+    letter-spacing:.1em;
+  }
+  .headline {
+    margin-top:36px;
+    font-family:'Georgia','Times New Roman',serif;
+    font-weight:900;
+    font-size:118px;
+    line-height:1.05;
+    color:var(--paper);
+    letter-spacing:-.02em;
+  }
+  .headline.tight { font-size:104px; }
+  .headline .red { color:var(--red); }
+  .body {
+    margin-top:auto; margin-bottom:120px;
+    font-size:34px;
+    line-height:1.5;
+    color:#C7C2B9;
+    max-width:92%;
+  }
+
+  /* CTA card variant */
+  .cta-headline {
+    margin-top:32px;
+    font-family:'Georgia','Times New Roman',serif;
+    font-weight:900;
+    font-size:96px;
+    line-height:1.08;
+    color:var(--paper);
+    letter-spacing:-.02em;
+  }
+  .cta-headline .red { color:var(--red); }
+  .cta-body {
+    margin-top:28px;
+    font-size:32px;
+    line-height:1.55;
+    color:#C7C2B9;
+    max-width:92%;
+  }
+  .save {
+    margin-top:48px; margin-bottom:160px;
+    align-self:flex-start;
+    border:2px solid var(--red);
+    color:var(--red);
+    background:transparent;
+    padding:28px 52px;
+    border-radius:999px;
+    font-family:'SF Mono',monospace;
+    font-size:26px;
+    letter-spacing:.18em;
+  }
+</style>
+</head>
+<body>
+
+<!-- Card 1: Cover -->
+<section class="card">
+  <span class="pill">solo-failures</span>
+  <div class="kicker">WHY STARTUPS DIE · 101 FOUNDERS</div>
+  <h1 class="hero">why<br>startups<br><span class="red">die</span>?</h1>
+  <div class="sub">101 FOUNDERS &nbsp;·&nbsp; 7 HARD TRUTHS</div>
+  <div class="stats">
+    <div class="stat">
+      <div class="label">OPENLY DISCUSSED</div>
+      <div class="num">49.5%</div>
+      <div class="cap">talked failure on camera</div>
+    </div>
+    <div class="stat">
+      <div class="label">CORE FAILURE MODES</div>
+      <div class="num">7</div>
+      <div class="cap">ranked by frequency</div>
+    </div>
+  </div>
+  <div class="footer"><span>STARTER STORY · 101</span><span class="swipe">→ SWIPE</span></div>
+</section>
+
+<!-- Card 2: 15/101 Multiple Failures -->
+<section class="card">
+  <span class="pill">FAILURE MODE 01</span>
+  <div class="rank"><span class="n">15</span><span class="of">/ 101</span></div>
+  <h2 class="headline">failure is the<br><span class="red">median</span>,<br>not the exception.</h2>
+  <p class="body">most founders fail 5–20 times before the breakthrough. treat venture #1 as tuition, not last shot.</p>
+  <div class="footer"><span>STARTER STORY · 101</span><span class="swipe">→ SWIPE</span></div>
+</section>
+
+<!-- Card 3: 13/101 Cash Death -->
+<section class="card">
+  <span class="pill">FAILURE MODE 02</span>
+  <div class="rank"><span class="n">13</span><span class="of">/ 101</span></div>
+  <h2 class="headline"><span class="red">cash death</span><br>is just a<br>symptom.</h2>
+  <p class="body">real cause: no validation → no PMF → no revenue → no runway. don't borrow your way out of an upstream problem.</p>
+  <div class="footer"><span>STARTER STORY · 101</span><span class="swipe">→ SWIPE</span></div>
+</section>
+
+<!-- Card 4: 12/101 Burnout -->
+<section class="card">
+  <span class="pill">FAILURE MODE 03</span>
+  <div class="rank"><span class="n">12</span><span class="of">/ 101</span></div>
+  <h2 class="headline">the founder<br>breaks <span class="red">before</span><br>the business.</h2>
+  <p class="body">16-hour days alone collapse decision quality in 4–6 months. sleep + a peer group = free insurance.</p>
+  <div class="footer"><span>STARTER STORY · 101</span><span class="swipe">→ SWIPE</span></div>
+</section>
+
+<!-- Card 5: 11/101 No Validation -->
+<section class="card">
+  <span class="pill">FAILURE MODE 04</span>
+  <div class="rank"><span class="n">11</span><span class="of">/ 101</span></div>
+  <h2 class="headline">building rockets<br>in a <span class="red">vacuum</span>.</h2>
+  <p class="body">8 months in stealth ≠ 8 months of progress. get one paying customer this week or stop coding.</p>
+  <div class="footer"><span>STARTER STORY · 101</span><span class="swipe">→ SWIPE</span></div>
+</section>
+
+<!-- Card 6: 10/101 Refusing Pivot -->
+<section class="card">
+  <span class="pill">FAILURE MODE 05</span>
+  <div class="rank"><span class="n">10</span><span class="of">/ 101</span></div>
+  <h2 class="headline">the more you<br>love it, the<br><span class="red">deadlier</span> it gets.</h2>
+  <p class="body">sunk cost + identity = late pivots. pre-commit a pivot trigger before you need it.</p>
+  <div class="footer"><span>STARTER STORY · 101</span><span class="swipe">→ SWIPE</span></div>
+</section>
+
+<!-- Card 7: 8/101 No Safety Net -->
+<section class="card">
+  <span class="pill">FAILURE MODE 06</span>
+  <div class="rank"><span class="n">8</span><span class="of">/ 101</span></div>
+  <h2 class="headline">quit too early<br>= <span class="red">warped</span><br>decisions.</h2>
+  <p class="body">financial pressure compresses your time horizon. don't quit before recurring revenue covers 80% of burn or 12 months runway.</p>
+  <div class="footer"><span>STARTER STORY · 101</span><span class="swipe">→ SWIPE</span></div>
+</section>
+
+<!-- Card 8: 7/101 Shiny Object + CTA -->
+<section class="card">
+  <span class="pill">FAILURE MODE 07</span>
+  <div class="rank"><span class="n">7</span><span class="of">/ 101</span></div>
+  <h2 class="cta-headline">new idea every 4 weeks<br>= <span class="red">compounding</span><br>reset to zero.</h2>
+  <p class="cta-body">distribution compounds. pick one channel + one product. 90 days minimum. tell someone.</p>
+  <button class="save">SAVE THIS CARD</button>
+  <div class="footer"><span>STARTER STORY · 101</span><span class="swipe">→ END</span></div>
+</section>
+
+</body>
+</html>

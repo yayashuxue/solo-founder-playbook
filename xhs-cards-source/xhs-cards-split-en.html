@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    background:#cccccc;
+    font-family:-apple-system,'SF Pro Display','Helvetica Neue',sans-serif;
+  }
+  :root {
+    --ink:#0a0a0a;
+    --paper:#FBFAF6;
+    --hl:#FFE08A;
+    --muted-paper:#7d7a73;
+    --muted-ink:#7d8088;
+  }
+  .card {
+    width:1080px; height:1440px;
+    margin:0 auto 0;
+    position:relative;
+    overflow:hidden;
+    display:grid;
+    grid-template-rows:480px 1fr;
+    background:var(--paper);
+  }
+  /* TOP BAND — black with strikethrough "myth" */
+  .top {
+    background:var(--ink);
+    color:#9a9a9a;
+    padding:70px 80px;
+    position:relative;
+    display:flex; flex-direction:column;
+  }
+  .tag {
+    display:inline-flex; align-items:center;
+    padding:10px 24px;
+    border:1.5px solid #4a4a4a;
+    border-radius:999px;
+    color:#bcbcbc;
+    font-family:'SF Mono','Menlo',monospace;
+    font-size:22px; letter-spacing:.06em;
+    align-self:flex-start;
+    margin-bottom:36px;
+  }
+  .myth {
+    font-weight:900;
+    font-size:120px;
+    line-height:1;
+    letter-spacing:-.025em;
+    color:#5a5a5a;
+    text-decoration:line-through;
+    text-decoration-thickness:6px;
+    text-decoration-color:#7a7a7a;
+  }
+  .myth.smaller { font-size:96px; }
+  .myth.tiny { font-size:78px; line-height:1.05; }
+
+  /* BOTTOM BAND — paper with real story */
+  .bot {
+    background:var(--paper);
+    color:var(--ink);
+    padding:70px 80px;
+    position:relative;
+    display:flex; flex-direction:column;
+  }
+  .truth-tag {
+    display:inline-flex; align-items:center;
+    padding:10px 24px;
+    border-radius:999px;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'SF Mono','Menlo',monospace;
+    font-size:22px; letter-spacing:.06em;
+    align-self:flex-start;
+    margin-bottom:32px;
+  }
+
+  /* Cover specific */
+  .cover-truth {
+    font-weight:900;
+    font-size:144px;
+    line-height:1.0;
+    letter-spacing:-.03em;
+    color:var(--ink);
+  }
+  .cover-truth .hl {
+    background:linear-gradient(180deg, transparent 55%, var(--hl) 55%, var(--hl) 92%, transparent 92%);
+    padding:0 6px;
+  }
+  .cover-truth .doggo {
+    display:inline-block; vertical-align:-12px;
+    margin-left:14px; font-size:120px;
+    -webkit-text-fill-color:initial;
+  }
+  .cover-meta {
+    margin-top:auto;
+    display:flex; justify-content:space-between; align-items:flex-end;
+    color:var(--muted-paper);
+    font-size:28px;
+    line-height:1.3;
+  }
+  .cover-meta .left { font-weight:500; }
+  .cover-meta .left .lo { font-family:'SF Mono',monospace; font-size:24px; margin-top:8px; letter-spacing:.04em; }
+  .cover-meta .right { font-family:'SF Mono',monospace; font-size:24px; letter-spacing:.04em; }
+
+  /* Inner card — stat + headline */
+  .stat-row {
+    display:flex; align-items:baseline; gap:24px;
+    margin-bottom:24px;
+  }
+  .stat-num {
+    font-weight:900;
+    font-size:200px;
+    line-height:.85;
+    color:var(--ink);
+    letter-spacing:-.04em;
+  }
+  .stat-of {
+    font-family:'SF Mono',monospace;
+    font-size:36px;
+    color:var(--muted-paper);
+    letter-spacing:.06em;
+  }
+  .truth-head {
+    font-weight:900;
+    font-size:78px;
+    line-height:1.06;
+    letter-spacing:-.02em;
+    color:var(--ink);
+  }
+  .truth-head .hl {
+    background:linear-gradient(180deg, transparent 55%, var(--hl) 55%, var(--hl) 92%, transparent 92%);
+    padding:0 6px;
+  }
+  .truth-body {
+    margin-top:auto;
+    font-size:30px;
+    line-height:1.45;
+    color:#1c1c1e;
+    font-weight:500;
+  }
+  .pageno {
+    position:absolute; top:36px; right:80px;
+    font-family:'SF Mono',monospace;
+    font-size:22px;
+    color:#bcbcbc;
+    letter-spacing:.08em;
+  }
+  .footer-strip {
+    margin-top:30px;
+    padding-top:24px;
+    border-top:1.5px solid #d8d6d0;
+    display:flex; justify-content:space-between;
+    color:var(--muted-paper);
+    font-family:'SF Mono',monospace;
+    font-size:22px;
+    letter-spacing:.06em;
+  }
+
+  /* CTA card */
+  .cta-btn {
+    margin-top:40px;
+    align-self:flex-start;
+    padding:26px 48px;
+    border-radius:14px;
+    background:var(--ink);
+    color:var(--paper);
+    font-weight:800;
+    font-size:32px;
+    letter-spacing:-.005em;
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== CARD 1 — COVER (split reframe) ========== -->
+<div class="card">
+  <div class="top">
+    <span class="tag">NOT THIS</span>
+    <div class="myth tiny">"why <em>that</em><br>unicorn died."<br>(again.)</div>
+    <div class="pageno" style="color:#5a5a5a">01 / 08</div>
+  </div>
+  <div class="bot">
+    <span class="truth-tag">THIS</span>
+    <div class="cover-truth">how 100+<br>solo founders<br>actually <span class="hl">die</span><span class="doggo">🐶</span></div>
+    <div class="cover-meta">
+      <div class="left">7 failure modes + avoid-the-trap skills · from 101 real founders<div class="lo">solo · founder · playbook</div></div>
+      <div class="right">→ swipe</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CARD 2 — Multiple failures ========== -->
+<div class="card">
+  <div class="top">
+    <span class="tag">NOT THIS</span>
+    <div class="myth smaller">"i failed.<br>i'm done."</div>
+    <div class="pageno" style="color:#5a5a5a">02 / 08</div>
+  </div>
+  <div class="bot">
+    <span class="truth-tag">FAILURE 01</span>
+    <div class="stat-row">
+      <span class="stat-num">15</span>
+      <span class="stat-of">/ 101</span>
+    </div>
+    <div class="truth-head">failure is<br>the <span class="hl">median</span>,<br>not the exception.</div>
+    <div class="truth-body">most founders fail 5–20 times before the breakthrough. treat venture #1 as tuition, not last shot.</div>
+    <div class="footer-strip"><span>multiple failures before success</span><span>→</span></div>
+  </div>
+</div>
+
+<!-- ========== CARD 3 — Cash death ========== -->
+<div class="card">
+  <div class="top">
+    <span class="tag">NOT THIS</span>
+    <div class="myth smaller">"ran out<br>of money."</div>
+    <div class="pageno" style="color:#5a5a5a">03 / 08</div>
+  </div>
+  <div class="bot">
+    <span class="truth-tag">FAILURE 02</span>
+    <div class="stat-row">
+      <span class="stat-num">13</span>
+      <span class="stat-of">/ 101</span>
+    </div>
+    <div class="truth-head">cash death<br>is just a<br><span class="hl">symptom</span>.</div>
+    <div class="truth-body">real cause: no validation → no PMF → no revenue → no runway. don't borrow your way out of an upstream problem.</div>
+    <div class="footer-strip"><span>financial crisis &amp; near-bankruptcy</span><span>→</span></div>
+  </div>
+</div>
+
+<!-- ========== CARD 4 — Burnout ========== -->
+<div class="card">
+  <div class="top">
+    <span class="tag">NOT THIS</span>
+    <div class="myth smaller">"i'll just<br>grind harder."</div>
+    <div class="pageno" style="color:#5a5a5a">04 / 08</div>
+  </div>
+  <div class="bot">
+    <span class="truth-tag">FAILURE 03</span>
+    <div class="stat-row">
+      <span class="stat-num">12</span>
+      <span class="stat-of">/ 101</span>
+    </div>
+    <div class="truth-head">the founder<br>breaks before<br>the <span class="hl">business</span>.</div>
+    <div class="truth-body">16-hour days alone collapse decision quality in 4–6 months. sleep + a peer group is free insurance.</div>
+    <div class="footer-strip"><span>burnout from overwork &amp; isolation</span><span>→</span></div>
+  </div>
+</div>
+
+<!-- ========== CARD 5 — No validation ========== -->
+<div class="card">
+  <div class="top">
+    <span class="tag">NOT THIS</span>
+    <div class="myth smaller">"8 months<br>in stealth."</div>
+    <div class="pageno" style="color:#5a5a5a">05 / 08</div>
+  </div>
+  <div class="bot">
+    <span class="truth-tag">FAILURE 04</span>
+    <div class="stat-row">
+      <span class="stat-num">11</span>
+      <span class="stat-of">/ 101</span>
+    </div>
+    <div class="truth-head">building rockets<br>in a <span class="hl">vacuum</span>.</div>
+    <div class="truth-body">8 months in stealth ≠ 8 months of progress. get one paying customer this week or stop coding.</div>
+    <div class="footer-strip"><span>building without customer validation</span><span>→</span></div>
+  </div>
+</div>
+
+<!-- ========== CARD 6 — Refusing pivot ========== -->
+<div class="card">
+  <div class="top">
+    <span class="tag">NOT THIS</span>
+    <div class="myth smaller">"i love<br>this idea."</div>
+    <div class="pageno" style="color:#5a5a5a">06 / 08</div>
+  </div>
+  <div class="bot">
+    <span class="truth-tag">FAILURE 05</span>
+    <div class="stat-row">
+      <span class="stat-num">10</span>
+      <span class="stat-of">/ 101</span>
+    </div>
+    <div class="truth-head">the more you<br>love it, the<br><span class="hl">deadlier</span> it gets.</div>
+    <div class="truth-body">sunk cost + identity = late pivots. pre-commit a pivot trigger before you need it.</div>
+    <div class="footer-strip"><span>refusing to pivot</span><span>→</span></div>
+  </div>
+</div>
+
+<!-- ========== CARD 7 — No safety net ========== -->
+<div class="card">
+  <div class="top">
+    <span class="tag">NOT THIS</span>
+    <div class="myth smaller">"all in.<br>quit today."</div>
+    <div class="pageno" style="color:#5a5a5a">07 / 08</div>
+  </div>
+  <div class="bot">
+    <span class="truth-tag">FAILURE 06</span>
+    <div class="stat-row">
+      <span class="stat-num">8</span>
+      <span class="stat-of">/ 101</span>
+    </div>
+    <div class="truth-head">quitting too<br>early <span class="hl">warps</span><br>your decisions.</div>
+    <div class="truth-body">financial pressure compresses your time horizon. don't quit before recurring revenue covers 80% of burn or 12 months runway.</div>
+    <div class="footer-strip"><span>corporate-job safety net premature exit</span><span>→</span></div>
+  </div>
+</div>
+
+<!-- ========== CARD 8 — Shiny object + CTA ========== -->
+<div class="card">
+  <div class="top">
+    <span class="tag">NOT THIS</span>
+    <div class="myth tiny">"new idea.<br>this one's<br>the one."</div>
+    <div class="pageno" style="color:#5a5a5a">08 / 08</div>
+  </div>
+  <div class="bot">
+    <span class="truth-tag">FAILURE 07</span>
+    <div class="stat-row">
+      <span class="stat-num">7</span>
+      <span class="stat-of">/ 101</span>
+    </div>
+    <div class="truth-head">new idea every<br>4 weeks =<br><span class="hl">compounding</span> reset.</div>
+    <div class="truth-body">distribution compounds. pick one channel + one product. 90 days minimum. tell someone.</div>
+    <div class="cta-btn">📌 save this card</div>
+    <div class="footer-strip"><span>solo-founder-playbook.vercel.app/try</span><span>↑</span></div>
+  </div>
+</div>
+
+</body>
+</html>

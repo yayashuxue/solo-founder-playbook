@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<style>
+  *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    background:#E8E8E8;
+    font-family:-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+    color:#1c1c1e;
+  }
+  :root {
+    --paper:#FBFAF6;
+    --ink:#1c1c1e;
+    --muted:#8e8e93;
+    --hl-green:#A8E063;
+    --hl-yellow:#FFE08A;
+    --hl-pink:#FFB7B7;
+    --rule:#e5e5e7;
+    --notes-blue:#FFB300;
+  }
+  .card {
+    width:1080px; height:1440px;
+    background:var(--paper);
+    padding:90px 100px 110px;
+    margin:0 auto 24px;
+    position:relative;
+    overflow:hidden;
+    display:flex; flex-direction:column;
+  }
+
+  /* iOS Notes top bar mimic */
+  .topbar {
+    display:flex; justify-content:space-between; align-items:center;
+    color:var(--muted);
+    font-size:36px;
+    margin-bottom:48px;
+    letter-spacing:.02em;
+  }
+  .topbar .dots { letter-spacing:.15em; font-size:42px; line-height:.4; padding-bottom:18px; }
+  .topbar .right { color:var(--notes-blue); font-weight:500; font-size:32px; }
+
+  /* Hero text — handwriting-leaning sans, very XHS */
+  .hero {
+    font-weight:800;
+    font-size:140px;
+    line-height:1.18;
+    letter-spacing:-.005em;
+    color:var(--ink);
+  }
+  .hero.smaller {
+    font-size:120px;
+  }
+  .hl {
+    background:linear-gradient(180deg, transparent 55%, var(--hl-green) 55%, var(--hl-green) 88%, transparent 88%);
+    padding:0 6px;
+  }
+  .hl.y { background:linear-gradient(180deg, transparent 55%, var(--hl-yellow) 55%, var(--hl-yellow) 88%, transparent 88%); }
+  .hl.p { background:linear-gradient(180deg, transparent 55%, var(--hl-pink) 55%, var(--hl-pink) 88%, transparent 88%); }
+
+  .emoji { font-style:normal; }
+
+  /* Underline rule used as section divider */
+  .rule {
+    margin:56px 0 40px;
+    height:2px;
+    background:var(--rule);
+  }
+
+  /* Stat block */
+  .stat-row {
+    display:flex; align-items:baseline; gap:32px;
+    margin-top:56px;
+  }
+  .stat-num {
+    font-weight:900;
+    font-size:240px;
+    line-height:.85;
+    color:var(--ink);
+    letter-spacing:-.04em;
+  }
+  .stat-of {
+    font-weight:600;
+    font-size:42px;
+    color:var(--muted);
+    letter-spacing:.05em;
+  }
+  .stat-cap {
+    margin-top:24px;
+    font-size:42px;
+    color:var(--ink);
+    line-height:1.4;
+    font-weight:500;
+  }
+
+  /* Body / one-liner */
+  .one {
+    margin-top:auto;
+    padding-top:80px;
+    font-size:42px;
+    line-height:1.55;
+    color:#3a3a3c;
+    font-weight:400;
+  }
+
+  /* Footer pseudo */
+  .footer {
+    position:absolute; left:100px; right:100px; bottom:60px;
+    display:flex; justify-content:space-between;
+    color:var(--muted);
+    font-size:28px;
+  }
+
+  /* Cover layout */
+  .cover .hero { font-size:160px; line-height:1.15; }
+  .cover .sub  {
+    margin-top:48px;
+    color:var(--muted);
+    font-size:42px;
+    line-height:1.4;
+  }
+
+  /* CTA card */
+  .cta-line {
+    margin-top:48px;
+    font-size:48px;
+    color:var(--ink);
+    line-height:1.5;
+    font-weight:500;
+  }
+  .cta-line .hl { padding:0 4px; }
+
+  /* tag pill */
+  .tag {
+    align-self:flex-start;
+    padding:14px 32px;
+    border-radius:999px;
+    background:#1c1c1e;
+    color:var(--paper);
+    font-size:30px;
+    font-weight:700;
+    letter-spacing:.08em;
+  }
+  .tag.ghost { background:transparent; color:var(--ink); border:2px solid var(--ink); }
+
+  /* spacing fix: headline after a stat-row needs breathing room */
+  .stat-row + .hero,
+  .stat-row + .hero.smaller {
+    margin-top:56px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Card 1: Cover -->
+<section class="card cover">
+  <div class="topbar"><span class="dots">···</span><span class="right">Test Note</span></div>
+  <h1 class="hero">个人创业<br><span class="hl">死亡清单</span> +<br>skills <span class="emoji">🐶</span></h1>
+  <p class="sub">101 个 solo founders 数据 · 49.5% 公开聊过失败</p>
+  <div class="one">从 0 到 1 的死法只有 7 种。我把它做成了 skill。</div>
+  <div class="footer"><span>solo-founder-playbook</span><span>→ swipe</span></div>
+</section>
+
+<!-- Card 2: 49.5% -->
+<section class="card">
+  <div class="topbar"><span class="dots">···</span><span class="right">01 / 08</span></div>
+  <h2 class="hero smaller">先放<br>一个<span class="hl y">数字</span></h2>
+  <div class="stat-row"><span class="stat-num">49.5%</span></div>
+  <p class="stat-cap">的 solo 创始人，会在视频里主动聊自己的失败。<br>失败不是少数派，是<span class="hl">中位数</span>。</p>
+  <div class="footer"><span>data: starter story · 101</span><span>→</span></div>
+</section>
+
+<!-- Card 3: 15/101 -->
+<section class="card">
+  <div class="topbar"><span class="dots">···</span><span class="right">02 / 08</span></div>
+  <span class="tag">FAILURE 01</span>
+  <div class="stat-row"><span class="stat-num">15</span><span class="stat-of">/ 101</span></div>
+  <h2 class="hero smaller">失败是<br><span class="hl">中位数</span></h2>
+  <p class="one">大多数人在突破前失败 5–20 次。<br>第一次创业 = 学费，不是最后一搏。</p>
+  <div class="footer"><span>multiple failures before success</span><span>→</span></div>
+</section>
+
+<!-- Card 4: 13/101 -->
+<section class="card">
+  <div class="topbar"><span class="dots">···</span><span class="right">03 / 08</span></div>
+  <span class="tag">FAILURE 02</span>
+  <div class="stat-row"><span class="stat-num">13</span><span class="stat-of">/ 101</span></div>
+  <h2 class="hero smaller"><span class="hl p">现金死亡</span><br>只是症状</h2>
+  <p class="one">真死因：没验证 → 没 PMF → 没收入 → 没 runway。<br>借钱救不了根本。</p>
+  <div class="footer"><span>cash death</span><span>→</span></div>
+</section>
+
+<!-- Card 5: 12/101 -->
+<section class="card">
+  <div class="topbar"><span class="dots">···</span><span class="right">04 / 08</span></div>
+  <span class="tag">FAILURE 03</span>
+  <div class="stat-row"><span class="stat-num">12</span><span class="stat-of">/ 101</span></div>
+  <h2 class="hero smaller">创始人比<br>生意<span class="hl y">先垮</span></h2>
+  <p class="one">每天 16 小时单干，4–6 个月决策就崩。<br>睡觉是免费的。</p>
+  <div class="footer"><span>burnout · isolation</span><span>→</span></div>
+</section>
+
+<!-- Card 6: 11/101 -->
+<section class="card">
+  <div class="topbar"><span class="dots">···</span><span class="right">05 / 08</span></div>
+  <span class="tag">FAILURE 04</span>
+  <div class="stat-row"><span class="stat-num">11</span><span class="stat-of">/ 101</span></div>
+  <h2 class="hero smaller">在<span class="hl">真空</span>里<br>造火箭</h2>
+  <p class="one">8 个月闭门 ≠ 8 个月进展。<br>这周拿一个付费用户，不然别再写代码。</p>
+  <div class="footer"><span>building without validation</span><span>→</span></div>
+</section>
+
+<!-- Card 7: 10/101 -->
+<section class="card">
+  <div class="topbar"><span class="dots">···</span><span class="right">06 / 08</span></div>
+  <span class="tag">FAILURE 05</span>
+  <div class="stat-row"><span class="stat-num">10</span><span class="stat-of">/ 101</span></div>
+  <h2 class="hero smaller">越爱它，<br>越<span class="hl p">危险</span></h2>
+  <p class="one">沉没成本 + 身份认同 = pivot 太晚。<br>trigger 提前定，别等到那天再判断。</p>
+  <div class="footer"><span>refusing to pivot</span><span>→</span></div>
+</section>
+
+<!-- Card 8: 8/101 -->
+<section class="card">
+  <div class="topbar"><span class="dots">···</span><span class="right">07 / 08</span></div>
+  <span class="tag">FAILURE 06</span>
+  <div class="stat-row"><span class="stat-num">8</span><span class="stat-of">/ 101</span></div>
+  <h2 class="hero smaller">辞职太早<br>= <span class="hl y">决策变形</span></h2>
+  <p class="one">财务压力会压缩你的时间感。<br>recurring revenue 没覆盖 80% 开销，别裸辞。</p>
+  <div class="footer"><span>no safety net</span><span>→</span></div>
+</section>
+
+<!-- Card 9: 7/101 + CTA -->
+<section class="card">
+  <div class="topbar"><span class="dots">···</span><span class="right">08 / 08</span></div>
+  <span class="tag">FAILURE 07</span>
+  <div class="stat-row"><span class="stat-num">7</span><span class="stat-of">/ 101</span></div>
+  <h2 class="hero smaller" style="font-size:96px;line-height:1.15;">每 4 周换 idea<br>= <span class="hl">复利清零</span></h2>
+  <p class="one" style="margin-top:48px;padding-top:0;">分发会复利，乱换不会。<br>一个渠道 + 一个产品 + 90 天起。</p>
+  <p class="one" style="margin-top:32px;padding-top:0;color:#1c1c1e;font-weight:500;">下次想换 idea 之前，翻一下这 7 张吧。</p>
+  <div class="footer"><span>solo-founder-playbook</span><span>· end ·</span></div>
+</section>
+
+</body>
+</html>
