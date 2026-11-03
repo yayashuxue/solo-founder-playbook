@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<title>Try in 30s · Solo Founder Playbook</title>
+<meta name="description" content="Pick a skill, paste your idea, copy a self-contained prompt to use in Claude/ChatGPT/Gemini — 30 seconds to data-backed feedback drawn from 101 founder interviews.">
+<meta property="og:title" content="Try in 30s — Solo Founder Playbook">
+<meta property="og:description" content="Pick skill, paste idea, copy prompt. Powered by data from 101 founder interviews.">
+<meta property="og:image" content="/cards/card-01.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --red: #FF3C2F;
+  --cream: #F5F0E8;
+  --dark: #111;
+  --muted: #888;
+  --border: rgba(0,0,0,.1);
+  --border-strong: rgba(0,0,0,.2);
+  --t-mono-xs: 11px;
+  --t-mono-sm: 12px;
+  --t-mono-md: 13px;
+  --t-body-sm: 14px;
+  --t-body-md: 16px;
+  --t-body-lg: 18px;
+  --t-h6: clamp(15px, 1.3vw, 18px);
+  --t-h5: clamp(20px, 1.8vw, 24px);
+  --t-h4: clamp(22px, 2vw, 28px);
+  --t-h3: clamp(28px, 3.4vw, 40px);
+  --t-h2: clamp(34px, 4.8vw, 56px);
+  --t-h1: clamp(34px, 4.8vw, 60px);
+  --t-display: clamp(40px, 6vw, 80px);
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 20px;
+  --s-6: 24px; --s-8: 32px; --s-10: 40px; --s-12: 48px; --s-16: 64px;
+  --s-20: 80px; --s-24: 96px;
+}
+html, body {
+  background: var(--cream);
+  color: var(--dark);
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body { overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+body::before {
+  content: "";
+  position: fixed; inset: 0;
+  background-image:
+    linear-gradient(rgba(0,0,0,.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,.02) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+.wrap { position: relative; z-index: 1; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 var(--s-8); }
+@media (max-width: 600px) { .container { padding: 0 var(--s-5); } }
+
+/* nav */
+nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(245,240,232,.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+nav .row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--s-4) 0;
+}
+.logo {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 900; font-size: 18px; letter-spacing: -.01em;
+}
+.logo .dot { color: var(--red); }
+.nav-links {
+  display: flex; gap: var(--s-6);
+  font-family: 'DM Mono', monospace;
+  font-size: var(--t-mono-sm); text-transform: uppercase; letter-spacing: .15em;
+}
+.nav-links a:hover { color: var(--red); }
+
+/* hero */
+.hero {
+  padding: var(--s-16) 0 var(--s-12);
+  text-align: center;
+}
+.kicker {
+  font-family: 'DM Mono', monospace;
+  font-weight: 500;
+  font-size: var(--t-mono-md);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: var(--s-5);
+}
+.hero h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 900;
+  font-size: var(--t-display);
+  line-height: 1;
+  letter-spacing: -.025em;
+  margin-bottom: var(--s-5);
+}
+.hero h1 em {
+  font-style: italic; color: var(--red);
+}
+.hero p {
+  font-size: var(--t-body-lg);
+  color: #444;
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+/* skill picker */
+.section { padding: var(--s-12) 0; }
+.section h2 {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 700;
+  font-size: var(--t-h3);
+  margin-bottom: var(--s-3);
+  letter-spacing: -.015em;
+}
+.section .lede {
+  font-size: var(--t-body-md);
+  color: var(--muted);
+  margin-bottom: var(--s-8);
+  max-width: 600px;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--s-4);
+  margin-bottom: var(--s-10);
+}
+.skill {
+  background: #fff;
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  padding: var(--s-5);
+  cursor: pointer;
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.skill:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+}
+.skill.selected {
+  border-color: var(--red);
+  box-shadow: 0 8px 24px rgba(255,60,47,.18);
+}
+.skill .cmd {
+  font-family: 'DM Mono', monospace;
+  font-size: var(--t-mono-md);
+  font-weight: 500;
+  color: var(--red);
+  letter-spacing: -.01em;
+}
+.skill .ttl {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 700;
+  font-size: 17px;
+  margin-top: 2px;
+}
+.skill .desc {
+  font-size: var(--t-body-sm);
+  color: #555;
+  line-height: 1.45;
+}
+
+/* input */
+.input-box {
+  background: #fff;
+  border: 2px solid var(--border);
+  border-radius: 18px;
+  padding: var(--s-5);
+}
+.input-box label {
+  display: block;
+  font-family: 'DM Mono', monospace;
+  font-size: var(--t-mono-md);
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  color: var(--muted);
+  margin-bottom: var(--s-3);
+}
+textarea {
+  width: 100%;
+  min-height: 160px;
+  border: none;
+  outline: none;
+  resize: vertical;
+  font-family: 'DM Sans', sans-serif;
+  font-size: var(--t-body-md);
+  line-height: 1.55;
+  background: transparent;
+  color: var(--dark);
+}
+textarea::placeholder { color: #aaa; font-style: italic; }
+.input-actions {
+  display: flex; gap: var(--s-3); flex-wrap: wrap;
+  margin-top: var(--s-5);
+}
+
+.btn {
+  font-family: 'DM Mono', monospace;
+  font-size: var(--t-mono-md);
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 14px 22px;
+  border-radius: 100px;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn.primary { background: var(--red); color: #fff; }
+.btn.primary:hover { background: var(--dark); color: var(--cream); }
+.btn.dark { background: var(--dark); color: var(--cream); }
+.btn.dark:hover { background: var(--red); color: #fff; }
+.btn.outline-dark { background: transparent; color: var(--dark); border: 1.5px solid rgba(0,0,0,.25); }
+.btn.outline-dark:hover { border-color: var(--red); color: var(--red); }
+.btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+.btn[disabled]:hover { transform: none; }
+.gen-hint {
+  margin-top: var(--s-3);
+  font-family: 'DM Mono', monospace;
+  font-size: var(--t-mono-md);
+  color: var(--red);
+  letter-spacing: -.005em;
+}
+
+/* output */
+.output {
+  margin-top: var(--s-8);
+  display: none;
+}
+.output.shown { display: block; }
+.output h3 {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 700;
+  font-size: var(--t-h4);
+  margin-bottom: var(--s-4);
+}
+.prompt-box {
+  position: relative;
+  background: var(--dark);
+  color: #f4f4f4;
+  border-radius: 14px;
+  padding: var(--s-6);
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 480px;
+  overflow-y: auto;
+}
+.prompt-actions {
+  display: flex; gap: var(--s-3); flex-wrap: wrap;
+  margin-top: var(--s-5);
+}
+
+/* install footer */
+.install {
+  margin-top: var(--s-16);
+  padding: var(--s-10) 0;
+  border-top: 2px dashed var(--border);
+}
+.install h3 {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 700;
+  font-size: var(--t-h4);
+  margin-bottom: var(--s-3);
+}
+.install p {
+  color: #555;
+  font-size: var(--t-body-md);
+  margin-bottom: var(--s-5);
+  max-width: 560px;
+  line-height: 1.55;
+}
+.install-block {
+  background: var(--dark);
+  color: #f4f4f4;
+  padding: var(--s-5);
+  border-radius: 14px;
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  position: relative;
+}
+.install-block .label {
+  color: #888;
+  font-size: 11px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: var(--s-2);
+}
+.copy-mini {
+  position: absolute;
+  top: 12px; right: 12px;
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .12em;
+  border: 1px solid rgba(255,255,255,.18);
+  padding: 6px 10px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background .15s ease;
+}
+.copy-mini:hover { background: rgba(255,60,47,.5); }
+
+/* footer */
+footer {
+  margin-top: var(--s-20);
+  padding: var(--s-10) 0;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: var(--t-body-sm);
+}
+footer a { color: var(--red); }
+footer a:hover { text-decoration: underline; }
+
+/* toast */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--dark);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 100px;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
+  z-index: 100;
+}
+.toast.shown {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 600px) {
+  .hero { padding: var(--s-10) 0 var(--s-8); }
+  .skill { padding: var(--s-4); }
+  .input-box, .prompt-box, .install-block { padding: var(--s-4); }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav>
+  <div class="container">
+    <div class="row">
+      <a href="/" class="logo">Solo Founder Playbook<span class="dot">.</span></a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/cn/try" title="中文" style="opacity:.7">中</a>
+        <a href="https://github.com/yayashuxue/solo-founder-playbook" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="kicker">Try in 30s · No Install</div>
+    <h1>Pick skill, paste idea, <em>copy prompt</em>.</h1>
+    <p>Pick a skill → paste your idea / plan / problem → get a self-contained prompt you can paste into Claude / ChatGPT / Gemini. Powered by data from 101 Starter Story founder interviews.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>1. Pick a skill</h2>
+    <p class="lede">Each skill matches a specific situation. Click to select.</p>
+    <div class="skills" id="skills">
+      <button type="button" class="skill" data-skill="solo-roast">
+        <span class="cmd">/solo-roast</span>
+        <span class="ttl">Hard roast</span>
+        <span class="desc">Garry Tan-style critique, data-backed. For "this feels off but I can't say why."</span>
+      </button>
+      <button type="button" class="skill" data-skill="solo-analyze">
+        <span class="cmd">/solo-analyze</span>
+        <span class="ttl">Idea evaluation</span>
+        <span class="desc">Match against 7 idea-origin patterns + risk signals. Returns origin / strengths / risks.</span>
+      </button>
+      <button type="button" class="skill" data-skill="solo-failures">
+        <span class="cmd">/solo-failures</span>
+        <span class="ttl">Failure-mode diagnosis</span>
+        <span class="desc">7 dominant failure modes + real causal chains + early signals. Works as pre-mortem too.</span>
+      </button>
+      <button type="button" class="skill" data-skill="solo-growth">
+        <span class="cmd">/solo-growth</span>
+        <span class="ttl">Growth strategy</span>
+        <span class="desc">Channel recommendations matched to your business type (organic vs paid 3.5:1).</span>
+      </button>
+      <button type="button" class="skill" data-skill="solo-patterns">
+        <span class="cmd">/solo-patterns</span>
+        <span class="ttl">Pattern browser</span>
+        <span class="desc">Index of 80+ patterns across 11 categories. Use this for "how do founders actually do X?"</span>
+      </button>
+      <button type="button" class="skill" data-skill="solo-playbook">
+        <span class="cmd">/solo-playbook</span>
+        <span class="ttl">Action playbook</span>
+        <span class="desc">"I want to do X" → a step-by-step playbook with tools, platforms, and timing.</span>
+      </button>
+    </div>
+
+    <h2>2. Paste your situation</h2>
+    <p class="lede">More specific = better. Idea description, current stage, real numbers, where you're stuck. 1–3 paragraphs is fine.</p>
+    <div class="input-box">
+      <label>Your idea / plan / problem</label>
+      <textarea id="userInput" placeholder="Example: I'm building B2B SaaS — an AI tool for marketing teams. 8 months in stealth, 0 users, planning Product Hunt next month. Quit my job, no cofounder. 14-hour days, 6 weeks no rest. $15k savings left."></textarea>
+      <div class="input-actions">
+        <button type="button" id="generateBtn" class="btn primary">Generate prompt →</button>
+        <a href="/" class="btn outline-dark">Back to home</a>
+      </div>
+      <div id="genHint" class="gen-hint" style="display:none;"></div>
+    </div>
+
+    <div id="output" class="output">
+      <h3>3. Copy the prompt and paste into Claude</h3>
+      <div class="prompt-box" id="promptBox"></div>
+      <div class="prompt-actions">
+        <button type="button" id="copyBtn" class="btn dark">📋 Copy prompt</button>
+        <a id="claudeBtn" class="btn primary" target="_blank" rel="noopener">Open in Claude.ai →</a>
+        <a id="chatgptBtn" class="btn outline-dark" target="_blank" rel="noopener">ChatGPT</a>
+      </div>
+    </div>
+
+    <div class="install">
+      <h3>Want it native: install to your terminal, use /solo-X directly</h3>
+      <p>Don't want to copy-paste every time? Install the 6 skills into Claude Code and use <code>/solo-roast</code> <code>/solo-analyze</code> directly in your terminal — always reads the freshest pattern data.</p>
+      <div class="install-block">
+        <span class="label">Claude Code Plugin</span>
+        <button type="button" class="copy-mini" data-copy="/plugin marketplace add yayashuxue/solo-founder-playbook
+/plugin install solo-founder-playbook">Copy</button>
+        /plugin marketplace add yayashuxue/solo-founder-playbook<br>
+        /plugin install solo-founder-playbook
+      </div>
+      <p style="margin-top: 24px; font-size: 14px; color: #777;">Full source for all 6 skills + the 101-founder pattern data: <a href="https://github.com/yayashuxue/solo-founder-playbook" style="color: var(--red);">github.com/yayashuxue/solo-founder-playbook</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    Built by <a href="https://github.com/yayashuxue" target="_blank">@yayashuxue</a> · MIT · Data from <a href="https://www.starterstory.com" target="_blank">Starter Story</a> 101 founder interviews
+  </div>
+</footer>
+
+</div>
+
+<div class="toast" id="toast">Copied ✓</div>
+
+<script>
+const PROMPT_TEMPLATES = {
+  'solo-roast': `You are a brutally honest startup plan critic in the style of Garry Tan, powered by data from 101 Starter Story founder video analyses. Be kind but never sugarcoat — roast my plan with data.
+
+[Top failure modes from the dataset, ranked by frequency]
+- Multiple Failures Before Success (15/101) — failure is the median, not exception
+- Financial Crisis & Near-Bankruptcy (13/101) — runway math kills more than bad decisions
+- Burnout from Overwork & Isolation (12/101) — founder breaks before business
+- Building Without Customer Validation (11/101) — months of build, zero users
+- Pivoting After Initial Failure (10/101) — refusing to let go of a dead idea
+- Shiny Object Syndrome (7/101) — chronic switching costs
+
+[Top success patterns from the dataset]
+- Ship Fast, Iterate (32 videos)
+- Quick MVP, Validate, Charge from Day 1 (15+14 videos)
+- Organic Distribution >> Paid (3.5:1 ratio across 42 vs 12 mentions)
+- AI-Accelerated Workflow (74.3% of videos)
+- Niche Community Targeting (22 videos)
+
+Roast my plan against both lists. Tell me, in order:
+1. Which failure mode I'm closest to (with the X/101 count) and why
+2. Which success pattern I'm violating
+3. The cheapest 48-hour intervention I can run
+4. One thing I should stop doing this week
+
+Don't hedge. Use data references. Be specific to my plan.
+
+MY PLAN:
+"""
+{INPUT}
+"""`,
+
+  'solo-analyze': `You are a startup idea evaluator powered by data from 101 Starter Story founder video analyses.
+
+Evaluate my idea against real patterns from successful founders.
+
+[Idea origin patterns — which one does this idea fit?]
+- Solving Personal Problem (32/101)
+- Cloning & Improving Validated Ideas (18/101)
+- Mining Communities for Pain Points (24/101)
+- Leveraging Domain Experience (16/101)
+- Spotting Trends Early (21/101)
+- Building for Underserved Niches (14/101)
+- Replicating Proven Business Models (13/101)
+
+[Risks to flag from Challenges/Failures]
+- Building Without Customer Validation (11/101)
+- Burnout from Overwork (12/101)
+- Financial Crisis (13/101)
+- Shiny Object Syndrome (7/101)
+
+Output structure:
+### Origin Match
+[Which 1-2 origin patterns this fits, with counts]
+
+### Strengths
+[Patterns from successful founders that align — be specific]
+
+### Risks
+[Failure patterns visible from my description, ranked]
+
+### What to Validate Next
+[3 concrete experiments under $500 and 2 weeks]
+
+### One Thing I'm Underestimating
+[The non-obvious risk a thoughtful founder friend would flag]
+
+MY IDEA:
+"""
+{INPUT}
+"""`,
+
+  'solo-failures': `You are a startup failure-mode analyst, powered by data from 101 Starter Story video analyses (49.5% explicitly discussed failure). Help me see how startups actually die so I can avoid the same traps.
+
+Diagnose, prescribe, and back every claim with the data.
+
+[Top failure modes ranked by frequency in the dataset]
+1. Multiple Failures Before Success (15/101) — failure is the median
+2. Financial Crisis & Near-Bankruptcy (13/101) — runway math
+3. Burnout from Overwork & Isolation (12/101) — founder breaks first
+4. Building Without Customer Validation (11/101) — months of build, zero users
+5. Pivoting After Initial Failure (10/101) — refusing to let go
+6. Corporate Job as Safety Net (8/101) — risk-management pattern
+7. Shiny Object Syndrome (7/101) — chronic switching
+
+Distinguish symptoms from root causes. "Ran out of money" is almost never the real cause — it's the consequence of: no validation → no PMF → no revenue → no runway. Walk the chain back.
+
+Output:
+
+### Failure Mode Match
+[Top 1-3 failure modes that match my situation, with X/101 counts]
+
+### How This Actually Kills You
+[Walk the chain — what looks fine today, what breaks in 2 weeks, what's terminal in 3 months]
+
+### Early Warning Signs
+[Specific, observable signals I can check today]
+
+### What 101 Founders Did to Survive
+[Concrete countermeasures from the dataset]
+
+### Your Next Move
+[ONE concrete action for the next 48 hours]
+
+MY SITUATION:
+"""
+{INPUT}
+"""`,
+
+  'solo-growth': `You are a growth strategy advisor powered by data from 101 Starter Story video analyses. Recommend a growth strategy based on what actually worked for similar founders.
+
+[Business type breakdown in dataset]
+- SaaS/App (37.6%)
+- Content/Media (21.8%)
+- Agency/Service (7.9%)
+- Education (4.0%)
+- E-commerce (3.0%)
+
+[Marketing/Distribution channels ranked]
+- Organic Social Media (42 videos) — Twitter, TikTok, IG, LinkedIn
+- Viral Video / UGC (31 videos)
+- SEO & Long-Form Content (28 videos)
+- Building in Public (25 videos)
+- Niche Community Targeting (22 videos)
+- Influencer / Partnerships (18 videos)
+- Product Hunt / Marketplace (12 videos)
+- Paid Ads (12 videos) — note organic:paid runs ~3.5:1
+
+[Growth patterns]
+- Ship Fast, Iterate (32 videos)
+- Charge from Day 1 (14 videos)
+- Niche Then Expand (consistent across categories)
+
+Output:
+
+### Business Match
+[Which category, similar founders by archetype]
+
+### Top 2 Channels for You (with reasoning)
+[Pick from the data; explain why these match]
+
+### 30-Day Channel Plan
+[Concrete weekly experiments — not platitudes]
+
+### What to Stop Doing
+[Common waste patterns specific to my situation]
+
+### Metric to Watch
+[ONE leading indicator to track weekly]
+
+MY BUSINESS:
+"""
+{INPUT}
+"""`,
+
+  'solo-patterns': `You are a startup patterns browser powered by data from 101 Starter Story video analyses (11 categories, 80+ patterns).
+
+[Categories]
+- Idea Generation (7 patterns, 42 keywords)
+- Validation (7 patterns, 34 keywords)
+- Building/Development (7 patterns, 36 keywords)
+- Launch (7 patterns, 21 keywords)
+- Marketing/Distribution (7 patterns, 31 keywords)
+- Growth (8 patterns, 35 keywords)
+- Monetization (8 patterns, 26 keywords)
+- Challenges/Failures (7 patterns, 18 keywords)
+- Team/Hiring (7 patterns, 10 keywords)
+- Cost/Expenses (7 patterns, 36 keywords)
+- Advice/Lessons (9 patterns, 33 keywords)
+
+For my query below, do this:
+1. Identify which 1-3 categories are most relevant
+2. Surface the top patterns within those categories with their video counts
+3. Cross-reference: which patterns frequently co-occur in the same founder's journey?
+4. End with 3 follow-up questions I might want to dig into next
+
+MY QUERY:
+"""
+{INPUT}
+"""`,
+
+  'solo-playbook': `You are a startup playbook generator powered by data from 101 Starter Story video analyses. Generate a concrete, data-backed playbook for my goal.
+
+[Tools and platforms commonly mentioned across videos]
+- Reddit, Twitter/X, TikTok, IG, LinkedIn (distribution)
+- Cursor, Claude, ChatGPT, v0, Replit (build)
+- Stripe, Lemon Squeezy, Paddle (monetization)
+- AppSumo, Product Hunt, Microacquire (launch/exit)
+- Notion, Airtable, Webflow (ops)
+
+[Pattern categories to draw from]
+- Idea Generation, Validation, Building/Development, Launch, Marketing/Distribution, Growth, Monetization, Team/Hiring, Cost/Expenses
+
+Output a playbook structured as:
+
+### My Goal (restated)
+
+### Phase 1 — Week 1 (validation)
+[Specific actions, tools, target outcomes]
+
+### Phase 2 — Weeks 2-4 (build & launch)
+
+### Phase 3 — Months 2-3 (growth)
+
+### What to Skip / Common Wastes
+
+### Patterns from Founders Who Hit This Goal
+[Real patterns with frequency from the dataset]
+
+### Decision Points (when to keep going vs pivot)
+
+MY GOAL:
+"""
+{INPUT}
+"""`,
+};
+
+const skillButtons = document.querySelectorAll('.skill');
+const userInput = document.getElementById('userInput');
+const generateBtn = document.getElementById('generateBtn');
+const output = document.getElementById('output');
+const promptBox = document.getElementById('promptBox');
+const copyBtn = document.getElementById('copyBtn');
+const claudeBtn = document.getElementById('claudeBtn');
+const chatgptBtn = document.getElementById('chatgptBtn');
+const toast = document.getElementById('toast');
+
+let selectedSkill = null;
+const genHint = document.getElementById('genHint');
+
+function updateHint() {
+  if (!selectedSkill && !userInput.value.trim()) {
+    genHint.textContent = '↑ pick a skill, then write your situation';
+    genHint.style.display = 'block';
+  } else if (!selectedSkill) {
+    genHint.textContent = '↑ one more step: pick a skill';
+    genHint.style.display = 'block';
+  } else if (!userInput.value.trim()) {
+    genHint.textContent = '↑ describe your situation (one line is fine)';
+    genHint.style.display = 'block';
+  } else {
+    genHint.style.display = 'none';
+  }
+}
+
+skillButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    skillButtons.forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    selectedSkill = btn.dataset.skill;
+    updateHint();
+  });
+});
+
+userInput.addEventListener('input', updateHint);
+updateHint();
+
+function buildPrompt() {
+  if (!selectedSkill) return '';
+  const tmpl = PROMPT_TEMPLATES[selectedSkill];
+  return tmpl.replace('{INPUT}', userInput.value.trim());
+}
+
+function showToast(text) {
+  toast.textContent = text;
+  toast.classList.add('shown');
+  setTimeout(() => toast.classList.remove('shown'), 1600);
+}
+
+function copyText(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(
+      () => showToast('Copied ✓'),
+      () => fallbackCopy(text)
+    );
+  } else {
+    fallbackCopy(text);
+  }
+}
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); showToast('Copied ✓'); }
+  catch (e) { showToast('Copy failed — please select manually'); }
+  document.body.removeChild(ta);
+}
+
+generateBtn.addEventListener('click', () => {
+  if (!selectedSkill) {
+    showToast('Pick a skill first');
+    document.querySelector('.skills').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return;
+  }
+  if (!userInput.value.trim()) {
+    showToast('Write your situation first');
+    userInput.focus();
+    return;
+  }
+  const prompt = buildPrompt();
+  promptBox.textContent = prompt;
+  output.classList.add('shown');
+  copyText(prompt);
+  // claude.ai doesn't support prefill via URL; we just open the chat
+  claudeBtn.href = 'https://claude.ai/new';
+  chatgptBtn.href = 'https://chat.openai.com/';
+  output.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+copyBtn.addEventListener('click', () => copyText(promptBox.textContent));
+
+document.querySelectorAll('.copy-mini').forEach(b => {
+  b.addEventListener('click', () => copyText(b.dataset.copy));
+});
+</script>
+
+</body>
+</html>
