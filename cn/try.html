@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 <title>30 秒试一下 · Solo Founder Playbook</title>
-<meta name="description" content="选一个 skill，粘上你的 idea，拿到一个能直接 paste 进 Claude/ChatGPT 的 prompt — 30 秒内拿到基于 101 位创始人数据的回答。">
+<meta name="description" content="选一个技能，写下你的想法，生成可直接交给 Claude 或 ChatGPT 的提示词 — 30 秒内拿到基于 101 位创始人数据的回答。">
 <meta property="og:title" content="30 秒试一下 — Solo Founder Playbook">
-<meta property="og:description" content="选 skill，粘 idea，拿 prompt。基于 101 位创始人数据。">
+<meta property="og:description" content="选技能，写想法，拿提示词。基于 101 位创始人数据。">
 <meta property="og:image" content="/cards/card-01.png">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -391,66 +391,66 @@ footer a:hover { text-decoration: underline; }
 
 <section class="hero">
   <div class="container">
-    <div class="kicker">30 秒试一下 · No Install</div>
-    <h1>选 skill, 粘 idea, <em>拿 prompt</em>.</h1>
-    <p>挑一个技能 → 粘上你的想法/计划/困境 → 拿到一段能直接 paste 进 Claude / ChatGPT / Gemini 的 prompt。基于 101 位 Starter Story 创始人的真实数据。</p>
+    <div class="kicker">30 秒试一下 · 无需安装</div>
+    <h1>选技能、写想法，<em>拿提示词</em>。</h1>
+    <p>挑一个技能 → 粘上你的想法/计划/困境 → 拿到一段能直接交给 Claude / ChatGPT / Gemini 的提示词。基于 101 位 Starter Story 创始人的真实数据。</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <h2>1. 选个 skill</h2>
-    <p class="lede">每个 skill 对应一种特定场景。点一下就选中。</p>
+    <h2>1. 选个技能</h2>
+    <p class="lede">每个技能对应一种特定场景。点一下就选中。</p>
     <div class="skills" id="skills">
       <button type="button" class="skill" data-skill="solo-roast">
         <span class="cmd">/solo-roast</span>
         <span class="ttl">硬核吐槽</span>
-        <span class="desc">Garry Tan 风格，用数据砸 idea。适合"我觉得好像不太对但说不上来"。</span>
+        <span class="desc">Garry Tan 风格，用访谈数据检查点子。适合"我觉得好像不太对但说不上来"。</span>
       </button>
       <button type="button" class="skill" data-skill="solo-analyze">
         <span class="cmd">/solo-analyze</span>
-        <span class="ttl">Idea 评估</span>
-        <span class="desc">对照 7 种 idea origin pattern + 风险信号，给出来源/强项/风险。</span>
+        <span class="ttl">点子评估</span>
+        <span class="desc">对照 7 种点子来源模式和风险信号，给出来源/强项/风险。</span>
       </button>
       <button type="button" class="skill" data-skill="solo-failures">
         <span class="cmd">/solo-failures</span>
         <span class="ttl">死法诊断</span>
-        <span class="desc">7 种主流 failure mode + 真实因果链 + 早期信号。pre-mortem 也用得上。</span>
+        <span class="desc">7 种常见失败模式、可能的原因和早期信号，也适合提前排查风险。</span>
       </button>
       <button type="button" class="skill" data-skill="solo-growth">
         <span class="cmd">/solo-growth</span>
         <span class="ttl">增长策略</span>
-        <span class="desc">基于品类匹配的 channel 推荐 (organic vs paid 3.5:1)。</span>
+        <span class="desc">根据业务类型推荐获客渠道，比较自然流量与付费投放。</span>
       </button>
       <button type="button" class="skill" data-skill="solo-patterns">
         <span class="cmd">/solo-patterns</span>
         <span class="ttl">模式浏览</span>
-        <span class="desc">11 大类 80+ patterns 的索引。想看"创始人都怎么搞 X"用这个。</span>
+        <span class="desc">11 大类、80 多个模式的索引。想看"创始人都怎么搞 X"用这个。</span>
       </button>
       <button type="button" class="skill" data-skill="solo-playbook">
         <span class="cmd">/solo-playbook</span>
         <span class="ttl">行动手册</span>
-        <span class="desc">"我要做 X"→ 一份带步骤、工具、平台的 playbook。</span>
+        <span class="desc">"我要做 X"→ 一份包含步骤、工具和平台的行动方案。</span>
       </button>
     </div>
 
     <h2>2. 粘上你的情况</h2>
-    <p class="lede">越具体越好 — idea 描述、当前阶段、真实数字、卡在哪。1-3 段都行。</p>
+    <p class="lede">越具体越好 — 点子描述、当前阶段、真实数字、卡在哪。1-3 段都行。</p>
     <div class="input-box">
-      <label>你的 idea / 计划 / 问题</label>
-      <textarea id="userInput" placeholder="例：我在做 B2B SaaS — 给营销团队的 AI 工具。stealth 模式做了 8 个月，0 用户，下个月计划上 PH。辞职专心做，无 cofounder。每天 14 小时，6 周没休息。手里 $15k。"></textarea>
+      <label>你的点子 / 计划 / 问题</label>
+      <textarea id="userInput" placeholder="例：我在做 B2B SaaS — 给营销团队的 AI 工具。闭门开发了 8 个月，还没有用户，下个月计划发布。已经辞职，没有联合创始人。每天 14 小时，6 周没休息。手里 $15k。"></textarea>
       <div class="input-actions">
-        <button type="button" id="generateBtn" class="btn primary">生成 prompt →</button>
+        <button type="button" id="generateBtn" class="btn primary">生成提示词 →</button>
         <a href="/cn" class="btn outline-dark">回主页</a>
       </div>
       <div id="genHint" class="gen-hint" style="display:none;"></div>
     </div>
 
     <div id="output" class="output">
-      <h3>3. 复制 prompt，paste 到 Claude</h3>
+      <h3>3. 复制提示词，交给 Claude</h3>
       <div class="prompt-box" id="promptBox"></div>
       <div class="prompt-actions">
-        <button type="button" id="copyBtn" class="btn dark">📋 复制 prompt</button>
+        <button type="button" id="copyBtn" class="btn dark">📋 复制提示词</button>
         <a id="claudeBtn" class="btn primary" target="_blank" rel="noopener">在 Claude.ai 打开 →</a>
         <a id="chatgptBtn" class="btn outline-dark" target="_blank" rel="noopener">ChatGPT</a>
       </div>
@@ -458,7 +458,7 @@ footer a:hover { text-decoration: underline; }
 
     <div class="install">
       <h3>更顺手：装到终端，原生用 /solo-X</h3>
-      <p>不想每次 copy-paste？把 6 个 skill 装进 Claude Code，直接在终端用 <code>/solo-roast</code> <code>/solo-analyze</code>，每次自动读最新 patterns 数据。</p>
+      <p>不想每次复制粘贴？把 6 个技能装进 Claude Code，直接在终端用 <code>/solo-roast</code> <code>/solo-analyze</code>，每次自动读取最新模式数据。</p>
       <div class="install-block">
         <span class="label">Claude Code Plugin</span>
         <button type="button" class="copy-mini" data-copy="/plugin marketplace add yayashuxue/solo-founder-playbook
@@ -466,14 +466,14 @@ footer a:hover { text-decoration: underline; }
         /plugin marketplace add yayashuxue/solo-founder-playbook<br>
         /plugin install solo-founder-playbook
       </div>
-      <p style="margin-top: 24px; font-size: 14px; color: #777;">想看完整 6 个 skill 的源码 + 101 位创始人 patterns 数据：<a href="https://github.com/yayashuxue/solo-founder-playbook" style="color: var(--red);">github.com/yayashuxue/solo-founder-playbook</a></p>
+      <p style="margin-top: 24px; font-size: 14px; color: #777;">想看六个技能的源码和 101 期访谈的模式数据：<a href="https://github.com/yayashuxue/solo-founder-playbook" style="color: var(--red);">github.com/yayashuxue/solo-founder-playbook</a></p>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="container">
-    Built by <a href="https://github.com/yayashuxue" target="_blank">@yayashuxue</a> · MIT · 数据来自 <a href="https://www.starterstory.com" target="_blank">Starter Story</a> 101 位创始人访谈
+    由 <a href="https://github.com/yayashuxue" target="_blank">@yayashuxue</a> · MIT · 数据来自 <a href="https://www.starterstory.com" target="_blank">Starter Story</a> 101 位创始人访谈
   </div>
 </footer>
 
@@ -483,216 +483,128 @@ footer a:hover { text-decoration: underline; }
 
 <script>
 const PROMPT_TEMPLATES = {
-  'solo-roast': `You are a brutally honest startup plan critic in the style of Garry Tan, powered by data from 101 Starter Story founder video analyses. Be kind but never sugarcoat — roast my plan with data.
+  'solo-roast': `你是创业计划评审员。请以直接、具体但尊重人的方式检查我的计划，参考 101 期 Starter Story 创始人访谈整理出的模式。下列数字是访谈提及次数，不是创业成功或失败的概率；不要把相关性说成因果，也不要编造访谈案例。
 
-[Top failure modes from the dataset, ranked by frequency]
-- Multiple Failures Before Success (15/101) — failure is the median, not exception
-- Financial Crisis & Near-Bankruptcy (13/101) — runway math kills more than bad decisions
-- Burnout from Overwork & Isolation (12/101) — founder breaks before business
-- Building Without Customer Validation (11/101) — months of build, zero users
-- Pivoting After Initial Failure (10/101) — refusing to let go of a dead idea
-- Shiny Object Syndrome (7/101) — chronic switching costs
+常见风险：多次失败后才成功 15/101；现金危机 13/101；过劳与孤立 12/101；未经客户验证就开发 11/101；首次失败后转向 10/101；频繁更换方向 7/101。
+常见做法：快速上线迭代 32 期；尽早做最小可行产品和收费验证 15+14 期；自然渠道与付费渠道提及次数约 42:12；使用 AI 加快工作流约占 74.3%；瞄准细分社区 22 期。
 
-[Top success patterns from the dataset]
-- Ship Fast, Iterate (32 videos)
-- Quick MVP, Validate, Charge from Day 1 (15+14 videos)
-- Organic Distribution >> Paid (3.5:1 ratio across 42 vs 12 mentions)
-- AI-Accelerated Workflow (74.3% of videos)
-- Niche Community Targeting (22 videos)
+请用简体中文回答：
+1. 我的计划最接近哪一种风险？说明依据与对应提及次数。
+2. 我忽略了哪一种有效做法？
+3. 未来 48 小时内成本最低的验证动作是什么？
+4. 本周应该停做的一件事是什么？
+如果信息不足，请指出需要补充什么，不要假装已有结论。
 
-Roast my plan against both lists. Tell me, in order:
-1. Which failure mode I'm closest to (with the X/101 count) and why
-2. Which success pattern I'm violating
-3. The cheapest 48-hour intervention I can run
-4. One thing I should stop doing this week
-
-Don't hedge. Use data references. Be specific to my plan.
-
-MY PLAN:
+我的计划：
 """
 {INPUT}
 """`,
 
-  'solo-analyze': `You are a startup idea evaluator powered by data from 101 Starter Story founder video analyses.
+  'solo-analyze': `你是创业点子评估员，参考 101 期 Starter Story 创始人访谈整理出的模式。以下数字是访谈提及次数，不代表成功概率；请勿编造个案或把相关性当成因果。
 
-Evaluate my idea against real patterns from successful founders.
+点子来源模式：解决自己的问题 32/101；改进已验证的点子 18/101；从社区寻找痛点 24/101；利用行业经验 16/101；较早发现趋势 21/101；服务被忽略的细分人群 14/101；复制已验证的商业模式 13/101。
+需要排查的风险：未验证客户需求就开发 11/101；过劳 12/101；现金危机 13/101；频繁更换方向 7/101。
 
-[Idea origin patterns — which one does this idea fit?]
-- Solving Personal Problem (32/101)
-- Cloning & Improving Validated Ideas (18/101)
-- Mining Communities for Pain Points (24/101)
-- Leveraging Domain Experience (16/101)
-- Spotting Trends Early (21/101)
-- Building for Underserved Niches (14/101)
-- Replicating Proven Business Models (13/101)
+请用简体中文按以下结构回答：
+### 点子来源
+最符合的 1–2 种模式及其提及次数。
+### 优势
+哪些可观察的成功模式与点子相符？
+### 风险
+从我提供的信息中能看出的风险，按优先级排序。
+### 下一步验证
+三个在两周内、总花费低于 500 美元的具体实验。
+### 容易低估的事
+指出一个不明显但值得检查的风险。
+信息不足时请明确说明。
 
-[Risks to flag from Challenges/Failures]
-- Building Without Customer Validation (11/101)
-- Burnout from Overwork (12/101)
-- Financial Crisis (13/101)
-- Shiny Object Syndrome (7/101)
-
-Output structure:
-### Origin Match
-[Which 1-2 origin patterns this fits, with counts]
-
-### Strengths
-[Patterns from successful founders that align — be specific]
-
-### Risks
-[Failure patterns visible from my description, ranked]
-
-### What to Validate Next
-[3 concrete experiments under $500 and 2 weeks]
-
-### One Thing I'm Underestimating
-[The non-obvious risk a thoughtful founder friend would flag]
-
-MY IDEA:
+我的点子：
 """
 {INPUT}
 """`,
 
-  'solo-failures': `You are a startup failure-mode analyst, powered by data from 101 Starter Story video analyses (49.5% explicitly discussed failure). Help me see how startups actually die so I can avoid the same traps.
+  'solo-failures': `你是创业风险分析员，参考 101 期 Starter Story 创始人访谈整理出的模式。其中 49.5% 主动谈到失败。以下次数表示访谈提及，不是失败概率；类别可能重叠。不要编造个案或未经证实的因果。
 
-Diagnose, prescribe, and back every claim with the data.
+七类风险或应对模式：成功前多次失败 15/101；现金危机 13/101；过劳与孤立 12/101；未经客户验证就开发 11/101；首次失败后转向 10/101；保留工作作为安全网 8/101；频繁更换方向 7/101。第六项是风险管理方式，不要把它直接称为失败原因。
 
-[Top failure modes ranked by frequency in the dataset]
-1. Multiple Failures Before Success (15/101) — failure is the median
-2. Financial Crisis & Near-Bankruptcy (13/101) — runway math
-3. Burnout from Overwork & Isolation (12/101) — founder breaks first
-4. Building Without Customer Validation (11/101) — months of build, zero users
-5. Pivoting After Initial Failure (10/101) — refusing to let go
-6. Corporate Job as Safety Net (8/101) — risk-management pattern
-7. Shiny Object Syndrome (7/101) — chronic switching
+请用简体中文按以下结构回答：
+### 最相关的风险
+选择 1–3 类，附提及次数，并解释与我的情况如何对应。
+### 可能的发展链条
+区分早期选择、中间症状和最终后果；不要把“钱花完”自动当作根本原因。
+### 早期信号
+列出今天就能检查的可观察指标。
+### 应对动作
+给出具体措施，并标清哪些来自上述模式、哪些是你的推断。
+### 未来 48 小时
+只给出一个最优先动作。
 
-Distinguish symptoms from root causes. "Ran out of money" is almost never the real cause — it's the consequence of: no validation → no PMF → no revenue → no runway. Walk the chain back.
-
-Output:
-
-### Failure Mode Match
-[Top 1-3 failure modes that match my situation, with X/101 counts]
-
-### How This Actually Kills You
-[Walk the chain — what looks fine today, what breaks in 2 weeks, what's terminal in 3 months]
-
-### Early Warning Signs
-[Specific, observable signals I can check today]
-
-### What 101 Founders Did to Survive
-[Concrete countermeasures from the dataset]
-
-### Your Next Move
-[ONE concrete action for the next 48 hours]
-
-MY SITUATION:
+我的情况：
 """
 {INPUT}
 """`,
 
-  'solo-growth': `You are a growth strategy advisor powered by data from 101 Starter Story video analyses. Recommend a growth strategy based on what actually worked for similar founders.
+  'solo-growth': `你是增长策略顾问，参考 101 期 Starter Story 创始人访谈整理出的模式。请根据我的业务类型、阶段和资源提出可执行方案。以下数字是访谈提及次数或样本占比，不表示渠道效果的因果比较；不要编造案例。
 
-[Business type breakdown in dataset]
-- SaaS/App (37.6%)
-- Content/Media (21.8%)
-- Agency/Service (7.9%)
-- Education (4.0%)
-- E-commerce (3.0%)
+样本业务类型：SaaS/应用 37.6%；内容/媒体 21.8%；代理/服务 7.9%；教育 4.0%；电商 3.0%。
+渠道提及次数：自然社交媒体 42；短视频/用户生成内容 31；搜索优化与长内容 28；公开构建 25；细分社区 22；网红或合作伙伴 18；Product Hunt/市场平台 12；付费广告 12。
+其他模式：快速上线迭代 32 期；尽早收费 14 期；先聚焦细分人群再扩展。
 
-[Marketing/Distribution channels ranked]
-- Organic Social Media (42 videos) — Twitter, TikTok, IG, LinkedIn
-- Viral Video / UGC (31 videos)
-- SEO & Long-Form Content (28 videos)
-- Building in Public (25 videos)
-- Niche Community Targeting (22 videos)
-- Influencer / Partnerships (18 videos)
-- Product Hunt / Marketplace (12 videos)
-- Paid Ads (12 videos) — note organic:paid runs ~3.5:1
+请用简体中文按以下结构回答：
+### 业务匹配
+判断我属于哪类业务，说明样本参考范围。
+### 最值得测试的两个渠道
+结合我的目标客户、资源和产品形态解释选择。
+### 30 天计划
+按周列出具体实验与预期可观察结果。
+### 暂停的做法
+指出目前最可能浪费资源的一件事。
+### 每周指标
+选一个领先指标，说明如何记录。
+信息不足时请列出关键假设。
 
-[Growth patterns]
-- Ship Fast, Iterate (32 videos)
-- Charge from Day 1 (14 videos)
-- Niche Then Expand (consistent across categories)
-
-Output:
-
-### Business Match
-[Which category, similar founders by archetype]
-
-### Top 2 Channels for You (with reasoning)
-[Pick from the data; explain why these match]
-
-### 30-Day Channel Plan
-[Concrete weekly experiments — not platitudes]
-
-### What to Stop Doing
-[Common waste patterns specific to my situation]
-
-### Metric to Watch
-[ONE leading indicator to track weekly]
-
-MY BUSINESS:
+我的业务：
 """
 {INPUT}
 """`,
 
-  'solo-patterns': `You are a startup patterns browser powered by data from 101 Starter Story video analyses (11 categories, 80+ patterns).
+  'solo-patterns': `你是创业模式库检索助手。资料来自 101 期 Starter Story 创始人访谈，整理为 11 个类别、80 多个模式。请只把已提供的数字当作数据；具体模式或个案若没有证据，请说明需要查阅源仓库，不要编造。
 
-[Categories]
-- Idea Generation (7 patterns, 42 keywords)
-- Validation (7 patterns, 34 keywords)
-- Building/Development (7 patterns, 36 keywords)
-- Launch (7 patterns, 21 keywords)
-- Marketing/Distribution (7 patterns, 31 keywords)
-- Growth (8 patterns, 35 keywords)
-- Monetization (8 patterns, 26 keywords)
-- Challenges/Failures (7 patterns, 18 keywords)
-- Team/Hiring (7 patterns, 10 keywords)
-- Cost/Expenses (7 patterns, 36 keywords)
-- Advice/Lessons (9 patterns, 33 keywords)
+类别与索引数量：点子生成 7 个模式/42 个关键词；需求验证 7/34；产品开发 7/36；发布 7/21；营销分发 7/31；增长 8/35；变现 8/26；挑战与失败 7/18；团队招聘 7/10；成本开支 7/36；经验教训 9/33。
 
-For my query below, do this:
-1. Identify which 1-3 categories are most relevant
-2. Surface the top patterns within those categories with their video counts
-3. Cross-reference: which patterns frequently co-occur in the same founder's journey?
-4. End with 3 follow-up questions I might want to dig into next
+请用简体中文回答：
+1. 与我的问题最相关的 1–3 个类别是什么？
+2. 在已知资料范围内，哪些模式值得优先查？如无法确认具体提及次数，请明确说明。
+3. 哪些模式可能在同一创业路径中一起出现？把推断和数据分开。
+4. 给我三个值得继续追问的问题。
 
-MY QUERY:
+我的问题：
 """
 {INPUT}
 """`,
 
-  'solo-playbook': `You are a startup playbook generator powered by data from 101 Starter Story video analyses. Generate a concrete, data-backed playbook for my goal.
+  'solo-playbook': `你是创业行动方案助手，参考 101 期 Starter Story 创始人访谈整理出的模式。请根据我的具体目标给出步骤、工具、时间和判断标准。不要编造访谈案例或不存在的提及次数；请标明数据与建议的区别。
 
-[Tools and platforms commonly mentioned across videos]
-- Reddit, Twitter/X, TikTok, IG, LinkedIn (distribution)
-- Cursor, Claude, ChatGPT, v0, Replit (build)
-- Stripe, Lemon Squeezy, Paddle (monetization)
-- AppSumo, Product Hunt, Microacquire (launch/exit)
-- Notion, Airtable, Webflow (ops)
+访谈中常见工具和平台：Reddit、X、TikTok、Instagram、LinkedIn（分发）；Cursor、Claude、ChatGPT、v0、Replit（开发）；Stripe、Lemon Squeezy、Paddle（收费）；AppSumo、Product Hunt、Microacquire（发布或退出）；Notion、Airtable、Webflow（运营）。
+可参考的类别：点子生成、验证、开发、发布、营销分发、增长、变现、团队、成本。
 
-[Pattern categories to draw from]
-- Idea Generation, Validation, Building/Development, Launch, Marketing/Distribution, Growth, Monetization, Team/Hiring, Cost/Expenses
+请用简体中文按以下结构回答：
+### 我的目标
+用一句话复述，写明关键假设。
+### 第一阶段：第 1 周验证
+列出行动、工具、预算和成功信号。
+### 第二阶段：第 2–4 周开发与发布
+给出优先级和交付物。
+### 第三阶段：第 2–3 个月增长
+列出可测的渠道实验。
+### 应跳过的事
+指出当前最容易浪费时间的动作。
+### 访谈模式
+只引用能够确认的模式及频率，无法确认时说明。
+### 决策节点
+说明何时继续、调整或停止。
 
-Output a playbook structured as:
-
-### My Goal (restated)
-
-### Phase 1 — Week 1 (validation)
-[Specific actions, tools, target outcomes]
-
-### Phase 2 — Weeks 2-4 (build & launch)
-
-### Phase 3 — Months 2-3 (growth)
-
-### What to Skip / Common Wastes
-
-### Patterns from Founders Who Hit This Goal
-[Real patterns with frequency from the dataset]
-
-### Decision Points (when to keep going vs pivot)
-
-MY GOAL:
+我的目标：
 """
 {INPUT}
 """`,
@@ -713,10 +625,10 @@ const genHint = document.getElementById('genHint');
 
 function updateHint() {
   if (!selectedSkill && !userInput.value.trim()) {
-    genHint.textContent = '↑ 先选一个 skill，再写你的情况';
+    genHint.textContent = '↑ 先选一个技能，再写你的情况';
     genHint.style.display = 'block';
   } else if (!selectedSkill) {
-    genHint.textContent = '↑ 还差一步：选一个 skill';
+    genHint.textContent = '↑ 还差一步：选一个技能';
     genHint.style.display = 'block';
   } else if (!userInput.value.trim()) {
     genHint.textContent = '↑ 写一下你的情况（一句话也行）';
@@ -734,6 +646,9 @@ skillButtons.forEach(btn => {
     updateHint();
   });
 });
+const requestedSkill = new URLSearchParams(window.location.search).get('skill');
+const preselectedButton = [...skillButtons].find(btn => btn.dataset.skill === requestedSkill);
+if (preselectedButton) preselectedButton.click();
 
 userInput.addEventListener('input', updateHint);
 updateHint();
@@ -767,13 +682,13 @@ function fallbackCopy(text) {
   document.body.appendChild(ta);
   ta.select();
   try { document.execCommand('copy'); showToast('已复制 ✓'); }
-  catch (e) { showToast('复制失败，请手动 select'); }
+  catch (e) { showToast('复制失败，请手动选择文本'); }
   document.body.removeChild(ta);
 }
 
 generateBtn.addEventListener('click', () => {
   if (!selectedSkill) {
-    showToast('请先选一个 skill');
+    showToast('请先选一个技能');
     document.querySelector('.skills').scrollIntoView({ behavior: 'smooth', block: 'start' });
     return;
   }

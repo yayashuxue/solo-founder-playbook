@@ -119,6 +119,16 @@ body::before {
 .btn.outline:hover { border-color: var(--red); color: var(--red); }
 .btn.outline-dark { color: var(--dark); border: 1.5px solid rgba(0,0,0,.25); }
 .btn.outline-dark:hover { border-color: var(--red); color: var(--red); }
+.quick-actions { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; margin: -10px 0 38px; font-family: 'DM Sans', sans-serif; font-size: 13px; }
+.quick-actions span { color: #665f58; margin-right: 4px; }
+.quick-actions a { border: 1px solid #b7aea3; border-radius: 2px; padding: 9px 13px; color: var(--dark); background: rgba(255,255,255,.38); }
+.quick-actions a:hover, .quick-actions a:focus-visible { border-color: var(--red); color: var(--red); }
+.agent-setup { max-width: 760px; margin: 0 auto 18px; padding: 20px 24px; background: #fffaf3; border: 1px solid #b7aea3; text-align: left; font-family: 'DM Sans', sans-serif; }
+.agent-setup strong { display: block; font-size: 17px; margin-bottom: 5px; }
+.agent-setup p { color: #665f58; font-size: 14px; line-height: 1.5; margin: 0 0 14px; }
+.agent-setup code { display: block; font-size: 13px; line-height: 1.5; white-space: normal; overflow-wrap: anywhere; margin-bottom: 14px; }
+.agent-setup button { border: 0; background: var(--dark); color: var(--cream); padding: 10px 16px; font: inherit; font-weight: 700; cursor: pointer; }
+.agent-setup button:hover, .agent-setup button:focus-visible { background: var(--red); }
 
 /* ─────────── NAV ─────────── */
 nav {
@@ -882,18 +892,29 @@ footer .legal a:hover { color: var(--red); }
       创业<span class="red">顾问</span>。
     </h1>
     <p class="lede">
-      每一句建议都来自从 101 期
+      这些建议参考了从 101 期
       <a href="https://www.youtube.com/@starterstory" target="_blank" rel="noopener">Starter Story</a>
-      创始人访谈里抽出来的<strong>真实模式</strong> —— 不是 pitch deck 里的童话。
-      idea 评估、增长策略、失败诊断、计划吐槽，一次安装，六个技能。
+      创始人访谈里抽出来的<strong>真实模式</strong>。点子评估、增长策略、失败诊断、计划检验，一次安装，六个技能。
     </p>
 
     <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin:28px 0 36px;">
-      <a href="/try.html" class="btn primary">⚡ 30 秒试一下，不用装</a>
+      <a href="/cn/try" class="btn primary">⚡ 30 秒试一下，不用装</a>
       <a href="#install-section" class="btn outline-dark">或者装到终端 ↓</a>
     </div>
+    <div class="quick-actions" aria-label="选择要试用的任务">
+      <span>从一个具体问题开始：</span>
+      <a href="/cn/try?skill=solo-analyze">评估一个点子 →</a>
+      <a href="/cn/try?skill=solo-failures">排查失败风险 →</a>
+      <a href="/cn/try?skill=solo-growth">制定增长方案 →</a>
+    </div>
 
-    <div class="install" id="install-section">
+    <div class="agent-setup" id="install-section">
+      <strong>已经在用 AI 编程助手？</strong>
+      <p>把下面这句话发给 Claude Code 或 Codex。安装说明会告诉它如何选择对应步骤。</p>
+      <code id="cmd-agent">请根据 https://sfp.fyi/setup.md 在我当前的 AI 编程环境里安装 Solo Founder Playbook，并告诉我六个技能怎么调用。</code>
+      <button type="button" class="copy-btn" data-copy="agent">复制安装请求</button>
+    </div>
+    <div class="install">
       <div class="block">
         <button type="button" class="copy-btn" data-copy="claude">复制</button>
         <div class="label">▲ Claude Code · 推荐 plugin 安装</div>
@@ -930,8 +951,8 @@ git clone --depth 1 <span class="var">https://github.com/yayashuxue/solo-founder
       <a href="https://github.com/yayashuxue/solo-founder-playbook/tree/main/skills/solo-analyze" target="_blank" rel="noopener" class="skill-card">
         <div class="skill-num">SKILL · 01</div>
         <div class="skill-cmd">/solo-analyze</div>
-        <div class="skill-cn">评估你的 idea</div>
-        <div class="skill-en">把你的 idea 跟 101 位创始人的真实路径做对照。哪些可能跑通，哪些会悄悄死掉。</div>
+        <div class="skill-cn">评估你的点子</div>
+        <div class="skill-en">把你的点子跟 101 位创始人的真实路径做对照。哪些可能跑通，哪些隐藏着风险。</div>
         <div class="skill-tag">IDEA · 验证</div>
       </a>
 
@@ -962,7 +983,7 @@ git clone --depth 1 <span class="var">https://github.com/yayashuxue/solo-founder
       <a href="https://github.com/yayashuxue/solo-founder-playbook/tree/main/skills/solo-playbook" target="_blank" rel="noopener" class="skill-card">
         <div class="skill-num">SKILL · 05</div>
         <div class="skill-cmd">/solo-playbook</div>
-        <div class="skill-cn">step-by-step 攻略</div>
+        <div class="skill-cn">分步行动方案</div>
         <div class="skill-en">问"我要怎么 [目标]？" → 拿到一份具体、有数据撑的攻略。从 101 位创始人真实做过的事里提炼。</div>
         <div class="skill-tag">计划 · 执行</div>
       </a>
@@ -970,8 +991,8 @@ git clone --depth 1 <span class="var">https://github.com/yayashuxue/solo-founder
       <a href="https://github.com/yayashuxue/solo-founder-playbook/tree/main/skills/solo-roast" target="_blank" rel="noopener" class="skill-card">
         <div class="skill-num">SKILL · 06</div>
         <div class="skill-cmd">/solo-roast</div>
-        <div class="skill-cn">把你的 plan 烤一下</div>
-        <div class="skill-en">Garry Tan 风格的吐槽。残忍但带数据 —— 善意但绝不糖衣炮弹。在 ship 之前先听一句真话。</div>
+        <div class="skill-cn">给你的计划挑刺</div>
+        <div class="skill-en">Garry Tan 风格的吐槽。残忍但带数据 —— 善意但绝不糖衣炮弹。在发布之前先听一句真话。</div>
         <div class="skill-tag">吐槽 · 现实检查</div>
       </a>
 
@@ -983,7 +1004,7 @@ git clone --depth 1 <span class="var">https://github.com/yayashuxue/solo-founder
     <div class="inner">
       <div class="header">
         <div class="left">
-          <div class="kicker" style="color:var(--red);margin-bottom:var(--s-3)">/solo-failures · 一次 session 输出 8 张卡片</div>
+          <div class="kicker" style="color:var(--red);margin-bottom:var(--s-3)">/solo-failures · 一次使用，得到 8 张卡片</div>
           <h2>为什么创业<span class="red">会死</span>?</h2>
         </div>
         <div class="right">
@@ -1016,33 +1037,33 @@ git clone --depth 1 <span class="var">https://github.com/yayashuxue/solo-founder
     <h2>101 位创始人，逐条数过、<span class="red">模式归类</span>、建好索引。</h2>
     <p class="sub">
       每一条建议都对得上源数据里的视频数 ——
-      没有 vibe，没有顾问腔，只有被真实观察到的频率。
+      不凭感觉，不说顾问套话，只有被真实观察到的频率。
     </p>
 
     <div class="data-grid">
       <div class="data-row">
         <div class="pct">49.5<span class="small">%</span></div>
-        <div class="desc"><strong>公开讨论了失败</strong> —— 大多数创始人内容会跳过尸体。这份数据不会。</div>
+        <div class="desc"><strong>访谈谈到了失败</strong> —— 这些经历也被纳入模式整理。</div>
       </div>
       <div class="data-row">
         <div class="pct">32</div>
-        <div class="desc"><strong>提到"快上线，再迭代"</strong> —— 整个数据集里被重复最多次的一句话。</div>
+        <div class="desc"><strong>提到快速上线、持续迭代</strong> —— 这是样本中出现频率较高的做法。</div>
       </div>
       <div class="data-row">
         <div class="pct">18</div>
-        <div class="desc"><strong>是"抄+改进"路线</strong> —— 原创只是营销修辞，不是策略。</div>
+        <div class="desc"><strong>采用借鉴并改进现有产品的路线</strong> —— 点子不一定从零开始。</div>
       </div>
       <div class="data-row">
         <div class="pct">15</div>
-        <div class="desc"><strong>之前有多次失败</strong>才迎来突破。失败是中位数路径，不是例外。</div>
+        <div class="desc"><strong>提到成功前的多次失败</strong> —— 值得追问他们之后改变了什么。</div>
       </div>
       <div class="data-row">
         <div class="pct">14</div>
-        <div class="desc"><strong>强调"先验证、先收费"</strong> —— 免费用户不是验证，5 美元的预付才是。</div>
+        <div class="desc"><strong>强调先验证、尽早收费</strong> —— 用实际行为检查需求。</div>
       </div>
       <div class="data-row">
         <div class="pct">12</div>
-        <div class="desc"><strong>因过劳而崩溃</strong> —— 创始人比生意先垮。决策质量在 4–6 个月后塌方。</div>
+        <div class="desc"><strong>谈到过劳与孤立</strong> —— 创始人的精力也是经营约束。</div>
       </div>
     </div>
   </section>
@@ -1084,14 +1105,14 @@ git clone --depth 1 <span class="var">https://github.com/yayashuxue/solo-founder
         <h4>资源</h4>
         <a href="/cn/blog">文章</a>
         <a href="https://github.com/yayashuxue/solo-founder-playbook" target="_blank" rel="noopener">★ GitHub 仓库</a>
-        <a href="cards.html">小红书卡片 (HTML)</a>
-        <a href="https://github.com/yayashuxue/solo-founder-playbook/issues" target="_blank" rel="noopener">Issues / 反馈</a>
+        <a href="cards.html">小红书卡片（网页）</a>
+        <a href="https://github.com/yayashuxue/solo-founder-playbook/issues" target="_blank" rel="noopener">问题反馈</a>
         <a href="https://www.youtube.com/@starterstory" target="_blank" rel="noopener">Starter Story (源)</a>
       </div>
     </div>
     <div class="legal">
       <span>© 2026 · <a href="https://github.com/yayashuxue" target="_blank" rel="noopener">@yayashuxue</a> · MIT License</span>
-      <span>由 ▲ vercel 部署 · 完全开源</span>
+      <span>由 Vercel 部署 · 完全开源</span>
     </div>
   </footer>
 
@@ -1112,6 +1133,7 @@ git clone --depth 1 <span class="var">https://github.com/yayashuxue/solo-founder
 (function () {
   // ─────── COPY-TO-CLIPBOARD on install blocks ───────
   const copyTargets = {
+    agent: 'cmd-agent',
     claude: 'cmd-claude',
     codex: 'cmd-codex',
   };
@@ -1122,10 +1144,10 @@ git clone --depth 1 <span class="var">https://github.com/yayashuxue/solo-founder
       if (!el) return;
       // strip syntax-highlight spans, keep visible text
       const text = el.innerText.trim();
+      const orig = btn.textContent;
       try {
         await navigator.clipboard.writeText(text);
-        const orig = btn.textContent;
-        btn.textContent = '✓ Copied';
+        btn.textContent = '✓ 已复制';
         btn.classList.add('ok');
         setTimeout(() => { btn.textContent = orig; btn.classList.remove('ok'); }, 1600);
       } catch (e) {
@@ -1136,9 +1158,9 @@ git clone --depth 1 <span class="var">https://github.com/yayashuxue/solo-founder
         sel.removeAllRanges(); sel.addRange(range);
         try { document.execCommand('copy'); } catch (_) {}
         sel.removeAllRanges();
-        btn.textContent = '✓ Copied';
+        btn.textContent = '✓ 已复制';
         btn.classList.add('ok');
-        setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('ok'); }, 1600);
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('ok'); }, 1600);
       }
     });
   });

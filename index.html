@@ -120,6 +120,16 @@ body::before {
 .btn.outline:hover { border-color: var(--red); color: var(--red); }
 .btn.outline-dark { color: var(--dark); border: 1.5px solid rgba(0,0,0,.25); }
 .btn.outline-dark:hover { border-color: var(--red); color: var(--red); }
+.quick-actions { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; margin: -10px 0 38px; font-family: 'DM Sans', sans-serif; font-size: 13px; }
+.quick-actions span { color: #665f58; margin-right: 4px; }
+.quick-actions a { border: 1px solid #b7aea3; border-radius: 2px; padding: 9px 13px; color: var(--dark); background: rgba(255,255,255,.38); }
+.quick-actions a:hover, .quick-actions a:focus-visible { border-color: var(--red); color: var(--red); }
+.agent-setup { max-width: 760px; margin: 0 auto 18px; padding: 20px 24px; background: #fffaf3; border: 1px solid #b7aea3; text-align: left; font-family: 'DM Sans', sans-serif; }
+.agent-setup strong { display: block; font-size: 17px; margin-bottom: 5px; }
+.agent-setup p { color: #665f58; font-size: 14px; line-height: 1.5; margin: 0 0 14px; }
+.agent-setup code { display: block; font-size: 13px; line-height: 1.5; white-space: normal; overflow-wrap: anywhere; margin-bottom: 14px; }
+.agent-setup button { border: 0; background: var(--dark); color: var(--cream); padding: 10px 16px; font: inherit; font-weight: 700; cursor: pointer; }
+.agent-setup button:hover, .agent-setup button:focus-visible { background: var(--red); }
 
 /* ─────────── NAV ─────────── */
 nav {
@@ -946,7 +956,7 @@ footer .legal a:hover { color: var(--red); }
       in your <span class="red">terminal</span>.
     </h1>
     <p class="lede">
-      Every recommendation comes from <strong>real patterns</strong> mined from 101
+      The advice draws on <strong>real patterns</strong> identified in 101
       <a href="https://www.youtube.com/@starterstory" target="_blank" rel="noopener">Starter Story</a>
       founder interviews — not pitch-deck fairytales.
       Idea evaluation, growth strategy, failure-mode diagnosis, plan roasting — six skills, one install.
@@ -956,8 +966,20 @@ footer .legal a:hover { color: var(--red); }
       <a href="/try" class="btn primary">⚡ Try in 30s, no install</a>
       <a href="#install-section" class="btn outline-dark">Or install to terminal ↓</a>
     </div>
+    <div class="quick-actions" aria-label="Choose a task to try">
+      <span>Start with a real question:</span>
+      <a href="/try?skill=solo-analyze">Evaluate an idea →</a>
+      <a href="/try?skill=solo-failures">Find failure risks →</a>
+      <a href="/try?skill=solo-growth">Plan growth →</a>
+    </div>
 
-    <div class="install" id="install-section">
+    <div class="agent-setup" id="install-section">
+      <strong>Already using an AI coding agent?</strong>
+      <p>Copy this request into Claude Code or Codex. The setup page tells it which install path to use.</p>
+      <code id="cmd-agent">Set up Solo Founder Playbook for my current coding agent. Follow https://sfp.fyi/setup.md and tell me how to use the six skills.</code>
+      <button type="button" class="copy-btn" data-copy="agent">Copy setup request</button>
+    </div>
+    <div class="install">
       <div class="block">
         <button type="button" class="copy-btn" data-copy="claude">Copy</button>
         <div class="label">▲ Claude Code · plugin install (recommended)</div>
@@ -1108,27 +1130,27 @@ git clone --depth 1 <span class="var">https://github.com/yayashuxue/solo-founder
     <div class="data-grid">
       <div class="data-row">
         <div class="pct">49.5<span class="small">%</span></div>
-        <div class="desc"><strong>openly discussed failure</strong> — most founder content skips the corpses. This dataset doesn't.</div>
+        <div class="desc"><strong>of interviews discussed failure</strong> — those experiences are included in the pattern library.</div>
       </div>
       <div class="data-row">
         <div class="pct">32</div>
-        <div class="desc"><strong>said "ship fast, iterate"</strong> — the single most repeated sentence in the entire dataset.</div>
+        <div class="desc"><strong>mentioned shipping fast and iterating</strong> — one of the more frequent practices in this sample.</div>
       </div>
       <div class="data-row">
         <div class="pct">18</div>
-        <div class="desc"><strong>took the "clone + improve" route</strong> — originality is marketing rhetoric, not strategy.</div>
+        <div class="desc"><strong>built on and improved existing ideas</strong> — an idea does not have to start from scratch.</div>
       </div>
       <div class="data-row">
         <div class="pct">15</div>
-        <div class="desc"><strong>had multiple prior failures</strong> before the breakthrough. Failure is the median path, not the exception.</div>
+        <div class="desc"><strong>mentioned multiple failures before success</strong> — ask what they changed afterward.</div>
       </div>
       <div class="data-row">
         <div class="pct">14</div>
-        <div class="desc"><strong>emphasized "validate first, charge first"</strong> — free users aren't validation; a $5 prepay is.</div>
+        <div class="desc"><strong>emphasized early validation and charging</strong> — test demand with observable behavior.</div>
       </div>
       <div class="data-row">
         <div class="pct">12</div>
-        <div class="desc"><strong>burned out from overwork</strong> — the founder collapses before the business does. Decision quality breaks at 4–6 months.</div>
+        <div class="desc"><strong>discussed overwork and isolation</strong> — founder energy is a real operating constraint.</div>
       </div>
     </div>
   </section>
@@ -1198,6 +1220,7 @@ git clone --depth 1 <span class="var">https://github.com/yayashuxue/solo-founder
 (function () {
   // ─────── COPY-TO-CLIPBOARD on install blocks ───────
   const copyTargets = {
+    agent: 'cmd-agent',
     claude: 'cmd-claude',
     codex: 'cmd-codex',
   };
@@ -1208,9 +1231,9 @@ git clone --depth 1 <span class="var">https://github.com/yayashuxue/solo-founder
       if (!el) return;
       // strip syntax-highlight spans, keep visible text
       const text = el.innerText.trim();
+      const orig = btn.textContent;
       try {
         await navigator.clipboard.writeText(text);
-        const orig = btn.textContent;
         btn.textContent = '✓ Copied';
         btn.classList.add('ok');
         setTimeout(() => { btn.textContent = orig; btn.classList.remove('ok'); }, 1600);
@@ -1224,7 +1247,7 @@ git clone --depth 1 <span class="var">https://github.com/yayashuxue/solo-founder
         sel.removeAllRanges();
         btn.textContent = '✓ Copied';
         btn.classList.add('ok');
-        setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('ok'); }, 1600);
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('ok'); }, 1600);
       }
     });
   });

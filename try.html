@@ -734,6 +734,9 @@ skillButtons.forEach(btn => {
     updateHint();
   });
 });
+const requestedSkill = new URLSearchParams(window.location.search).get('skill');
+const preselectedButton = [...skillButtons].find(btn => btn.dataset.skill === requestedSkill);
+if (preselectedButton) preselectedButton.click();
 
 userInput.addEventListener('input', updateHint);
 updateHint();
