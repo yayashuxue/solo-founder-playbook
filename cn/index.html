@@ -16,7 +16,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -43,7 +43,7 @@
   --t-h3: clamp(28px, 3.4vw, 40px);
   --t-h2: clamp(34px, 4.8vw, 56px);
   --t-h1: clamp(34px, 4.8vw, 60px);
-  --t-display: clamp(40px, 6vw, 80px);
+  --t-display: clamp(40px, 5.2vw, 70px);
 
   /* Spacing scale */
   --s-1: 4px;
@@ -70,16 +70,6 @@ html, body {
 body { overflow-x: hidden; }
 a { color: inherit; text-decoration: none; }
 
-body::before {
-  content: "";
-  position: fixed; inset: 0;
-  background-image:
-    linear-gradient(rgba(0,0,0,.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,.02) 1px, transparent 1px);
-  background-size: 48px 48px;
-  pointer-events: none;
-  z-index: 0;
-}
 .wrap { position: relative; z-index: 1; }
 
 /* shared utility classes */
@@ -98,10 +88,10 @@ body::before {
 }
 
 .btn {
-  font-family: 'DM Mono', monospace;
-  font-size: var(--t-mono-md);
-  letter-spacing: .12em;
-  text-transform: uppercase;
+  font-family: 'Noto Sans SC', 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0;
   padding: 14px 22px;
   border-radius: 100px;
   display: inline-flex;
@@ -119,12 +109,9 @@ body::before {
 .btn.outline:hover { border-color: var(--red); color: var(--red); }
 .btn.outline-dark { color: var(--dark); border: 1.5px solid rgba(0,0,0,.25); }
 .btn.outline-dark:hover { border-color: var(--red); color: var(--red); }
-.quick-actions { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; margin: -10px 0 38px; font-family: 'DM Sans', sans-serif; font-size: 13px; }
-.quick-actions span { color: #665f58; margin-right: 4px; }
-.quick-actions a { border: 1px solid #b7aea3; border-radius: 2px; padding: 9px 13px; color: var(--dark); background: rgba(255,255,255,.38); }
-.quick-actions a:hover, .quick-actions a:focus-visible { border-color: var(--red); color: var(--red); }
+.btn.text-link { color: var(--dark); padding-left: 4px; padding-right: 4px; text-decoration: underline; text-underline-offset: 5px; }
+.btn.text-link:hover, .btn.text-link:focus-visible { color: var(--red); }
 .copy-source { position: absolute; left: -10000px; white-space: pre; }
-.hero .copy-btn { cursor: pointer; border: 0; }
 
 /* ─────────── NAV ─────────── */
 nav {
@@ -188,14 +175,14 @@ nav .links .gh:hover { background: var(--red); color: #fff; }
 @media (max-width: 600px) { .hero { padding: var(--s-12) var(--s-5) var(--s-10); } }
 
 .hero h1 {
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Sans SC', sans-serif;
   font-weight: 900;
   font-size: var(--t-display);
   line-height: 1.05;
   letter-spacing: -.025em;
   color: var(--dark);
   margin-bottom: var(--s-5);
-  max-width: 14ch;
+  max-width: 100%;
 }
 .hero h1 .red { color: var(--red); }
 .hero h1 .underline {
@@ -225,32 +212,28 @@ nav .links .gh:hover { background: var(--red); color: #fff; }
 .hero .lede a { border-bottom: 1px solid var(--border-strong); }
 .hero .lede a:hover { color: var(--red); border-color: var(--red); }
 
+.install-intro { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; border-top: 1px solid var(--border-strong); padding-top: 20px; font-family: 'Noto Sans SC', sans-serif; }
+.install-intro strong { font-size: 18px; }
+.install-intro .copy-btn { background: transparent; color: var(--dark); border: 1px solid #b7aea3; padding: 9px 14px; border-radius: 4px; cursor: pointer; font: 14px 'Noto Sans SC', sans-serif; }
+.install-intro .copy-btn:hover, .install-intro .copy-btn:focus-visible { border-color: var(--red); color: var(--red); }
 /* install blocks */
 .install {
   margin-top: var(--s-12);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--s-4);
-  max-width: 980px;
+  max-width: none;
 }
 @media (max-width: 720px) { .install { grid-template-columns: 1fr; } }
 
 .install .block {
-  background: var(--dark);
-  color: var(--cream);
-  border-radius: 14px;
+  background: #fffaf3;
+  color: var(--dark);
+  border: 1px solid #c8bfb3;
+  border-radius: 8px;
   padding: var(--s-6) var(--s-6);
   position: relative;
   overflow: hidden;
-}
-.install .block::before {
-  content: "";
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
-  background-size: 36px 36px;
-  pointer-events: none;
 }
 .install .block .label {
   position: relative;
@@ -267,11 +250,11 @@ nav .links .gh:hover { background: var(--red); color: #fff; }
   font-family: 'DM Mono', monospace;
   font-size: var(--t-mono-sm);
   line-height: 1.6;
-  color: var(--cream);
+  color: var(--dark);
   word-break: break-word;
   white-space: pre-wrap;
 }
-.install .block code .var { color: #FFB18A; }
+.install .block code .var { color: #b8271e; }
 .install .block code .cmt { color: var(--muted); }
 
 /* hero meta stats */
@@ -286,7 +269,7 @@ nav .links .gh:hover { background: var(--red); color: #fff; }
 @media (max-width: 720px) { .hero-stats { grid-template-columns: repeat(2, 1fr); gap: var(--s-8); } }
 
 .hero-stats .stat .num {
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Sans SC', sans-serif;
   font-weight: 900;
   font-size: var(--t-h2);
   line-height: 1;
@@ -391,7 +374,7 @@ nav .links .gh:hover { background: var(--red); color: #fff; }
   line-height: 1.2;
 }
 .skill-card .skill-cn {
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Sans SC', sans-serif;
   font-weight: 900;
   font-size: var(--t-h4);
   line-height: 1.2;
@@ -472,7 +455,7 @@ nav .links .gh:hover { background: var(--red); color: #fff; }
   .feature-strip .header .right { text-align: left; max-width: none; }
 }
 .feature-strip .header .left h2 {
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Sans SC', sans-serif;
   font-weight: 900;
   font-size: var(--t-h2);
   line-height: 1.05;
@@ -541,9 +524,9 @@ nav .links .gh:hover { background: var(--red); color: #fff; }
   top: var(--s-3);
   right: var(--s-3);
   z-index: 2;
-  background: rgba(255,255,255,.06);
+  background: var(--dark);
   color: var(--cream);
-  border: 1px solid rgba(255,255,255,.18);
+  border: 1px solid var(--dark);
   border-radius: 100px;
   padding: 6px 12px;
   font-family: 'DM Mono', monospace;
@@ -673,7 +656,7 @@ nav .links .gh:hover { background: var(--red); color: #fff; }
 @media (max-width: 600px) { .data { padding: var(--s-16) var(--s-5); } }
 
 .data h2 {
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Sans SC', sans-serif;
   font-weight: 900;
   font-size: var(--t-h2);
   letter-spacing: -.025em;
@@ -712,7 +695,7 @@ nav .links .gh:hover { background: var(--red); color: #fff; }
   .data-row:nth-child(2n) { padding-left: 0; }
 }
 .data-row .pct {
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Sans SC', sans-serif;
   font-weight: 900;
   font-size: var(--t-h2);
   line-height: 1;
@@ -741,7 +724,7 @@ nav .links .gh:hover { background: var(--red); color: #fff; }
 
 .cta .inner { max-width: 720px; margin: 0 auto; }
 .cta h2 {
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Sans SC', sans-serif;
   font-weight: 900;
   font-size: var(--t-h2);
   line-height: 1.05;
@@ -812,7 +795,7 @@ footer .col p, footer .col a {
 }
 footer .col a:hover { color: var(--red); }
 footer .brand-block .name {
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Sans SC', sans-serif;
   font-weight: 900;
   font-size: var(--t-h4);
   color: var(--cream);
@@ -883,30 +866,23 @@ footer .legal a:hover { color: var(--red); }
   <section class="hero">
     <div class="kicker">6 个技能 · 101 位创始人访谈 · 数据驱动</div>
     <h1>
-      在终端里有一个<br>
-      <span class="underline red">基于数据</span>的<br>
-      创业<span class="red">顾问</span>。
+      创业建议，<br>
+      来自 <span class="underline red">101 位创始人</span>。
     </h1>
     <p class="lede">
       这些建议参考了从 101 期
       <a href="https://www.youtube.com/@starterstory" target="_blank" rel="noopener">Starter Story</a>
-      创始人访谈里抽出来的<strong>真实模式</strong>。点子评估、增长策略、失败诊断、计划检验，一次安装，六个技能。
+      创始人访谈里抽出来的<strong>真实模式</strong>。点子评估、增长策略、失败诊断、计划检验：可直接在网页试用，也能安装六个技能到编程助手。
     </p>
 
     <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin:28px 0 36px;">
-      <a href="/cn/try" class="btn primary">⚡ 30 秒试一下，不用装</a>
-      <button type="button" class="btn dark copy-btn" data-copy="agent" title="复制后发给 Claude Code 或 Codex">复制给编程助手安装</button>
-      <a href="#install-section" class="btn outline-dark">或者装到终端 ↓</a>
+      <a href="https://chatgpt.com/?q=%E4%BD%A0%E6%98%AF%E6%88%91%E7%9A%84%E5%88%9B%E4%B8%9A%E9%A1%BE%E9%97%AE%EF%BC%8C%E5%8F%82%E8%80%83%20Solo%20Founder%20Playbook%20%E4%BB%8E%20101%20%E6%9C%9F%20Starter%20Story%20%E5%88%9B%E5%A7%8B%E4%BA%BA%E8%AE%BF%E8%B0%88%E6%95%B4%E7%90%86%E5%87%BA%E7%9A%84%E6%A8%A1%E5%BC%8F%E3%80%82%E5%85%AD%E4%B8%AA%E6%8A%80%E8%83%BD%E8%A6%86%E7%9B%96%E7%82%B9%E5%AD%90%E8%AF%84%E4%BC%B0%E3%80%81%E5%A4%B1%E8%B4%A5%E9%A3%8E%E9%99%A9%E3%80%81%E5%A2%9E%E9%95%BF%E7%AD%96%E7%95%A5%E3%80%81%E6%A8%A1%E5%BC%8F%E6%A3%80%E7%B4%A2%E3%80%81%E8%A1%8C%E5%8A%A8%E6%96%B9%E6%A1%88%E4%B8%8E%E8%AE%A1%E5%88%92%E6%A3%80%E9%AA%8C%E3%80%82%E9%A1%B9%E7%9B%AE%E8%B5%84%E6%96%99%EF%BC%9Ahttps%3A%2F%2Fsfp.fyi%2Fcn%2Fblog%20%E3%80%82%E5%85%88%E9%97%AE%E6%88%91%E5%9C%A8%E5%81%9A%E4%BB%80%E4%B9%88%E3%80%81%E7%9B%AE%E6%A0%87%E7%94%A8%E6%88%B7%E6%98%AF%E8%B0%81%E3%80%81%E7%9B%AE%E5%89%8D%E8%BF%9B%E5%B1%95%E5%A6%82%E4%BD%95%E3%80%81%E7%8E%B0%E5%9C%A8%E8%A6%81%E5%86%B3%E5%AE%9A%E4%BB%80%E4%B9%88%EF%BC%9B%E5%90%AC%E5%AE%8C%E6%88%91%E7%9A%84%E5%9B%9E%E7%AD%94%EF%BC%8C%E5%86%8D%E7%BB%93%E5%90%88%E5%8F%AF%E6%A0%B8%E5%AF%B9%E7%9A%84%E8%AE%BF%E8%B0%88%E6%A8%A1%E5%BC%8F%E7%BB%99%E5%87%BA%E5%85%B7%E4%BD%93%E4%B8%8B%E4%B8%80%E6%AD%A5%E3%80%82%E8%AE%BF%E8%B0%88%E6%8F%90%E5%8F%8A%E6%AC%A1%E6%95%B0%E5%8F%AA%E6%98%AF%E8%A7%82%E5%AF%9F%EF%BC%8C%E4%B8%8D%E6%98%AF%E6%88%90%E5%8A%9F%E6%A6%82%E7%8E%87%EF%BC%9B%E8%AF%81%E6%8D%AE%E4%B8%8D%E8%B6%B3%E6%97%B6%E8%AF%B7%E7%9B%B4%E8%AF%B4%E3%80%82" class="btn primary" target="_blank" rel="noopener">在 ChatGPT 中开始 ↗</a>
+      <a href="/cn/try" class="btn outline-dark">在网页试用六个技能 →</a>
+      <a href="#install-section" class="btn text-link">安装到编程助手 ↓</a>
     </div>
     <code id="cmd-agent" class="copy-source" aria-hidden="true">请根据 https://sfp.fyi/setup.md 在我当前的 AI 编程环境里安装 Solo Founder Playbook，并告诉我六个技能怎么调用。</code>
-    <div class="quick-actions" aria-label="选择要试用的任务">
-      <span>从一个具体问题开始：</span>
-      <a href="/cn/try?skill=solo-analyze">评估一个点子 →</a>
-      <a href="/cn/try?skill=solo-failures">排查失败风险 →</a>
-      <a href="/cn/try?skill=solo-growth">制定增长方案 →</a>
-    </div>
-
     <div class="install" id="install-section">
+      <div class="install-intro"><strong>在 Claude Code 或 Codex 中使用</strong><button type="button" class="copy-btn" data-copy="agent">复制安装请求</button></div>
       <div class="block">
         <button type="button" class="copy-btn" data-copy="claude">复制</button>
         <div class="label">▲ Claude Code · 推荐 plugin 安装</div>

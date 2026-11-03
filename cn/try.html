@@ -12,7 +12,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -35,7 +35,7 @@
   --t-h3: clamp(28px, 3.4vw, 40px);
   --t-h2: clamp(34px, 4.8vw, 56px);
   --t-h1: clamp(34px, 4.8vw, 60px);
-  --t-display: clamp(40px, 6vw, 80px);
+  --t-display: clamp(36px, 5vw, 64px);
   --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 20px;
   --s-6: 24px; --s-8: 32px; --s-10: 40px; --s-12: 48px; --s-16: 64px;
   --s-20: 80px; --s-24: 96px;
@@ -43,22 +43,12 @@
 html, body {
   background: var(--cream);
   color: var(--dark);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Noto Sans SC', sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 body { overflow-x: hidden; }
 a { color: inherit; text-decoration: none; }
-body::before {
-  content: "";
-  position: fixed; inset: 0;
-  background-image:
-    linear-gradient(rgba(0,0,0,.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,.02) 1px, transparent 1px);
-  background-size: 48px 48px;
-  pointer-events: none;
-  z-index: 0;
-}
 .wrap { position: relative; z-index: 1; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 var(--s-8); }
 @media (max-width: 600px) { .container { padding: 0 var(--s-5); } }
@@ -75,7 +65,7 @@ nav .row {
   padding: var(--s-4) 0;
 }
 .logo {
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Sans SC', sans-serif;
   font-weight: 900; font-size: 18px; letter-spacing: -.01em;
 }
 .logo .dot { color: var(--red); }
@@ -101,15 +91,15 @@ nav .row {
   margin-bottom: var(--s-5);
 }
 .hero h1 {
-  font-family: 'Noto Serif SC', serif;
-  font-weight: 900;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-weight: 700;
   font-size: var(--t-display);
-  line-height: 1;
+  line-height: 1.16;
   letter-spacing: -.025em;
   margin-bottom: var(--s-5);
 }
 .hero h1 em {
-  font-style: italic; color: var(--red);
+  font-style: normal; color: var(--red);
 }
 .hero p {
   font-size: var(--t-body-lg);
@@ -122,7 +112,7 @@ nav .row {
 /* skill picker */
 .section { padding: var(--s-12) 0; }
 .section h2 {
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Sans SC', sans-serif;
   font-weight: 700;
   font-size: var(--t-h3);
   margin-bottom: var(--s-3);
@@ -169,7 +159,7 @@ nav .row {
   letter-spacing: -.01em;
 }
 .skill .ttl {
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Sans SC', sans-serif;
   font-weight: 700;
   font-size: 17px;
   margin-top: 2px;
@@ -208,18 +198,17 @@ textarea {
   background: transparent;
   color: var(--dark);
 }
-textarea::placeholder { color: #aaa; font-style: italic; }
+textarea::placeholder { color: #aaa; font-style: normal; }
 .input-actions {
   display: flex; gap: var(--s-3); flex-wrap: wrap;
   margin-top: var(--s-5);
 }
 
 .btn {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Noto Sans SC', sans-serif;
   font-size: var(--t-mono-md);
-  font-weight: 500;
-  letter-spacing: .12em;
-  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0;
   padding: 14px 22px;
   border-radius: 100px;
   border: 0;
@@ -253,7 +242,7 @@ textarea::placeholder { color: #aaa; font-style: italic; }
 }
 .output.shown { display: block; }
 .output h3 {
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Sans SC', sans-serif;
   font-weight: 700;
   font-size: var(--t-h4);
   margin-bottom: var(--s-4);
@@ -284,7 +273,7 @@ textarea::placeholder { color: #aaa; font-style: italic; }
   border-top: 2px dashed var(--border);
 }
 .install h3 {
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Sans SC', sans-serif;
   font-weight: 700;
   font-size: var(--t-h4);
   margin-bottom: var(--s-3);
@@ -447,12 +436,12 @@ footer a:hover { text-decoration: underline; }
     </div>
 
     <div id="output" class="output">
-      <h3>3. 复制提示词，交给 Claude</h3>
+      <h3>3. 带着提示词打开 ChatGPT</h3>
       <div class="prompt-box" id="promptBox"></div>
       <div class="prompt-actions">
+        <a id="chatgptBtn" class="btn primary" target="_blank" rel="noopener">在 ChatGPT 中打开 →</a>
         <button type="button" id="copyBtn" class="btn dark">📋 复制提示词</button>
-        <a id="claudeBtn" class="btn primary" target="_blank" rel="noopener">在 Claude.ai 打开 →</a>
-        <a id="chatgptBtn" class="btn outline-dark" target="_blank" rel="noopener">ChatGPT</a>
+        <a id="claudeBtn" class="btn outline-dark" target="_blank" rel="noopener">打开 Claude 后粘贴 →</a>
       </div>
     </div>
 
@@ -703,7 +692,7 @@ generateBtn.addEventListener('click', () => {
   copyText(prompt);
   // claude.ai doesn't support prefill via URL; we just open the chat
   claudeBtn.href = 'https://claude.ai/new';
-  chatgptBtn.href = 'https://chat.openai.com/';
+  chatgptBtn.href = 'https://chatgpt.com/?q=' + encodeURIComponent(prompt);
   output.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 

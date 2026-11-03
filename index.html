@@ -17,7 +17,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -44,7 +44,7 @@
   --t-h3: clamp(28px, 3.4vw, 40px);
   --t-h2: clamp(34px, 4.8vw, 56px);
   --t-h1: clamp(34px, 4.8vw, 60px);
-  --t-display: clamp(40px, 6vw, 80px);
+  --t-display: clamp(40px, 5.2vw, 70px);
 
   /* Spacing scale */
   --s-1: 4px;
@@ -71,16 +71,6 @@ html, body {
 body { overflow-x: hidden; }
 a { color: inherit; text-decoration: none; }
 
-body::before {
-  content: "";
-  position: fixed; inset: 0;
-  background-image:
-    linear-gradient(rgba(0,0,0,.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,.02) 1px, transparent 1px);
-  background-size: 48px 48px;
-  pointer-events: none;
-  z-index: 0;
-}
 .wrap { position: relative; z-index: 1; }
 
 /* shared utility classes */
@@ -99,10 +89,10 @@ body::before {
 }
 
 .btn {
-  font-family: 'DM Mono', monospace;
-  font-size: var(--t-mono-md);
-  letter-spacing: .12em;
-  text-transform: uppercase;
+  font-family: 'Noto Sans SC', 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0;
   padding: 14px 22px;
   border-radius: 100px;
   display: inline-flex;
@@ -120,12 +110,9 @@ body::before {
 .btn.outline:hover { border-color: var(--red); color: var(--red); }
 .btn.outline-dark { color: var(--dark); border: 1.5px solid rgba(0,0,0,.25); }
 .btn.outline-dark:hover { border-color: var(--red); color: var(--red); }
-.quick-actions { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; margin: -10px 0 38px; font-family: 'DM Sans', sans-serif; font-size: 13px; }
-.quick-actions span { color: #665f58; margin-right: 4px; }
-.quick-actions a { border: 1px solid #b7aea3; border-radius: 2px; padding: 9px 13px; color: var(--dark); background: rgba(255,255,255,.38); }
-.quick-actions a:hover, .quick-actions a:focus-visible { border-color: var(--red); color: var(--red); }
+.btn.text-link { color: var(--dark); padding-left: 4px; padding-right: 4px; text-decoration: underline; text-underline-offset: 5px; }
+.btn.text-link:hover, .btn.text-link:focus-visible { color: var(--red); }
 .copy-source { position: absolute; left: -10000px; white-space: pre; }
-.hero .copy-btn { cursor: pointer; border: 0; }
 
 /* ─────────── NAV ─────────── */
 nav {
@@ -189,14 +176,14 @@ nav .links .gh:hover { background: var(--red); color: #fff; }
 @media (max-width: 600px) { .hero { padding: var(--s-12) var(--s-5) var(--s-10); } }
 
 .hero h1 {
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Sans SC', sans-serif;
   font-weight: 900;
   font-size: var(--t-display);
   line-height: 1.05;
   letter-spacing: -.025em;
   color: var(--dark);
   margin-bottom: var(--s-5);
-  max-width: 14ch;
+  max-width: 100%;
 }
 .hero h1 .red { color: var(--red); }
 .hero h1 .underline {
@@ -226,32 +213,28 @@ nav .links .gh:hover { background: var(--red); color: #fff; }
 .hero .lede a { border-bottom: 1px solid var(--border-strong); }
 .hero .lede a:hover { color: var(--red); border-color: var(--red); }
 
+.install-intro { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; border-top: 1px solid var(--border-strong); padding-top: 20px; font-family: 'Noto Sans SC', sans-serif; }
+.install-intro strong { font-size: 18px; }
+.install-intro .copy-btn { background: transparent; color: var(--dark); border: 1px solid #b7aea3; padding: 9px 14px; border-radius: 4px; cursor: pointer; font: 14px 'Noto Sans SC', sans-serif; }
+.install-intro .copy-btn:hover, .install-intro .copy-btn:focus-visible { border-color: var(--red); color: var(--red); }
 /* install blocks */
 .install {
   margin-top: var(--s-12);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--s-4);
-  max-width: 980px;
+  max-width: none;
 }
 @media (max-width: 720px) { .install { grid-template-columns: 1fr; } }
 
 .install .block {
-  background: var(--dark);
-  color: var(--cream);
-  border-radius: 14px;
+  background: #fffaf3;
+  color: var(--dark);
+  border: 1px solid #c8bfb3;
+  border-radius: 8px;
   padding: var(--s-6) var(--s-6);
   position: relative;
   overflow: hidden;
-}
-.install .block::before {
-  content: "";
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
-  background-size: 36px 36px;
-  pointer-events: none;
 }
 .install .block .label {
   position: relative;
@@ -268,11 +251,11 @@ nav .links .gh:hover { background: var(--red); color: #fff; }
   font-family: 'DM Mono', monospace;
   font-size: var(--t-mono-sm);
   line-height: 1.6;
-  color: var(--cream);
+  color: var(--dark);
   word-break: break-word;
   white-space: pre-wrap;
 }
-.install .block code .var { color: #FFB18A; }
+.install .block code .var { color: #b8271e; }
 .install .block code .cmt { color: var(--muted); }
 
 /* hero meta stats */
@@ -287,7 +270,7 @@ nav .links .gh:hover { background: var(--red); color: #fff; }
 @media (max-width: 720px) { .hero-stats { grid-template-columns: repeat(2, 1fr); gap: var(--s-8); } }
 
 .hero-stats .stat .num {
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Sans SC', sans-serif;
   font-weight: 900;
   font-size: var(--t-h2);
   line-height: 1;
@@ -392,7 +375,7 @@ nav .links .gh:hover { background: var(--red); color: #fff; }
   line-height: 1.2;
 }
 .skill-card .skill-cn {
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Sans SC', sans-serif;
   font-weight: 900;
   font-size: var(--t-h4);
   line-height: 1.2;
@@ -473,7 +456,7 @@ nav .links .gh:hover { background: var(--red); color: #fff; }
   .feature-strip .header .right { text-align: left; max-width: none; }
 }
 .feature-strip .header .left h2 {
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Sans SC', sans-serif;
   font-weight: 900;
   font-size: var(--t-h2);
   line-height: 1.05;
@@ -559,7 +542,7 @@ nav .links .gh:hover { background: var(--red); color: #fff; }
   .earn-strip .header .right { text-align: left; max-width: none; }
 }
 .earn-strip .header .left h2 {
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Sans SC', sans-serif;
   font-weight: 900;
   font-size: var(--t-h2);
   line-height: 1.05;
@@ -605,9 +588,9 @@ nav .links .gh:hover { background: var(--red); color: #fff; }
   top: var(--s-3);
   right: var(--s-3);
   z-index: 2;
-  background: rgba(255,255,255,.06);
+  background: var(--dark);
   color: var(--cream);
-  border: 1px solid rgba(255,255,255,.18);
+  border: 1px solid var(--dark);
   border-radius: 100px;
   padding: 6px 12px;
   font-family: 'DM Mono', monospace;
@@ -737,7 +720,7 @@ nav .links .gh:hover { background: var(--red); color: #fff; }
 @media (max-width: 600px) { .data { padding: var(--s-16) var(--s-5); } }
 
 .data h2 {
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Sans SC', sans-serif;
   font-weight: 900;
   font-size: var(--t-h2);
   letter-spacing: -.025em;
@@ -776,7 +759,7 @@ nav .links .gh:hover { background: var(--red); color: #fff; }
   .data-row:nth-child(2n) { padding-left: 0; }
 }
 .data-row .pct {
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Sans SC', sans-serif;
   font-weight: 900;
   font-size: var(--t-h2);
   line-height: 1;
@@ -805,7 +788,7 @@ nav .links .gh:hover { background: var(--red); color: #fff; }
 
 .cta .inner { max-width: 720px; margin: 0 auto; }
 .cta h2 {
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Sans SC', sans-serif;
   font-weight: 900;
   font-size: var(--t-h2);
   line-height: 1.05;
@@ -876,7 +859,7 @@ footer .col p, footer .col a {
 }
 footer .col a:hover { color: var(--red); }
 footer .brand-block .name {
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Sans SC', sans-serif;
   font-weight: 900;
   font-size: var(--t-h4);
   color: var(--cream);
@@ -947,31 +930,24 @@ footer .legal a:hover { color: var(--red); }
   <section class="hero">
     <div class="kicker">6 skills · 101 founder interviews · data-backed</div>
     <h1>
-      A startup<br>
-      <span class="underline red">advisor</span><br>
-      in your <span class="red">terminal</span>.
+      Startup advice<br>
+      from <span class="underline red">101 founders</span>.
     </h1>
     <p class="lede">
       The advice draws on <strong>real patterns</strong> identified in 101
       <a href="https://www.youtube.com/@starterstory" target="_blank" rel="noopener">Starter Story</a>
       founder interviews — not pitch-deck fairytales.
-      Idea evaluation, growth strategy, failure-mode diagnosis, plan roasting — six skills, one install.
+      Evaluate ideas, spot failure risks, and plan growth. Try it in your browser or install six skills in a coding agent.
     </p>
 
     <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin:28px 0 36px;">
-      <a href="/try" class="btn primary">⚡ Try in 30s, no install</a>
-      <button type="button" class="btn dark copy-btn" data-copy="agent" title="Paste this into Claude Code or Codex">Copy agent setup request</button>
-      <a href="#install-section" class="btn outline-dark">Or install to terminal ↓</a>
+      <a href="https://chatgpt.com/?q=You%20are%20my%20startup%20advisor%20using%20Solo%20Founder%20Playbook%2C%20based%20on%20patterns%20extracted%20from%20101%20Starter%20Story%20founder%20interviews.%20The%20six%20skills%20cover%20idea%20evaluation%2C%20failure%20risks%2C%20growth%2C%20pattern%20search%2C%20action%20plans%2C%20and%20plan%20critique.%20Background%3A%20https%3A%2F%2Fsfp.fyi%2Fblog%20.%20First%20ask%20what%20I%20am%20building%2C%20who%20it%20is%20for%2C%20my%20current%20stage%2C%20and%20the%20decision%20I%20need%20to%20make.%20Then%20give%20specific%20next%20steps%20grounded%20in%20verifiable%20interview%20patterns.%20Treat%20interview%20mention%20counts%20as%20observations%2C%20not%20success%20probabilities%3B%20say%20when%20evidence%20is%20missing." class="btn primary" target="_blank" rel="noopener">Open in ChatGPT ↗</a>
+      <a href="/try" class="btn outline-dark">Try six skills here →</a>
+      <a href="#install-section" class="btn text-link">Install in a coding agent ↓</a>
     </div>
     <code id="cmd-agent" class="copy-source" aria-hidden="true">Set up Solo Founder Playbook for my current coding agent. Follow https://sfp.fyi/setup.md and tell me how to use the six skills.</code>
-    <div class="quick-actions" aria-label="Choose a task to try">
-      <span>Start with a real question:</span>
-      <a href="/try?skill=solo-analyze">Evaluate an idea →</a>
-      <a href="/try?skill=solo-failures">Find failure risks →</a>
-      <a href="/try?skill=solo-growth">Plan growth →</a>
-    </div>
-
     <div class="install" id="install-section">
+      <div class="install-intro"><strong>Use it in Claude Code or Codex</strong><button type="button" class="copy-btn" data-copy="agent">Copy setup request</button></div>
       <div class="block">
         <button type="button" class="copy-btn" data-copy="claude">Copy</button>
         <div class="label">▲ Claude Code · plugin install (recommended)</div>
