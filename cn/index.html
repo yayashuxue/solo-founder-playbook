@@ -123,12 +123,8 @@ body::before {
 .quick-actions span { color: #665f58; margin-right: 4px; }
 .quick-actions a { border: 1px solid #b7aea3; border-radius: 2px; padding: 9px 13px; color: var(--dark); background: rgba(255,255,255,.38); }
 .quick-actions a:hover, .quick-actions a:focus-visible { border-color: var(--red); color: var(--red); }
-.agent-setup { max-width: 760px; margin: 0 auto 18px; padding: 20px 24px; background: #fffaf3; border: 1px solid #b7aea3; text-align: left; font-family: 'DM Sans', sans-serif; }
-.agent-setup strong { display: block; font-size: 17px; margin-bottom: 5px; }
-.agent-setup p { color: #665f58; font-size: 14px; line-height: 1.5; margin: 0 0 14px; }
-.agent-setup code { display: block; font-size: 13px; line-height: 1.5; white-space: normal; overflow-wrap: anywhere; margin-bottom: 14px; }
-.agent-setup button { border: 0; background: var(--dark); color: var(--cream); padding: 10px 16px; font: inherit; font-weight: 700; cursor: pointer; }
-.agent-setup button:hover, .agent-setup button:focus-visible { background: var(--red); }
+.copy-source { position: absolute; left: -10000px; white-space: pre; }
+.hero .copy-btn { cursor: pointer; border: 0; }
 
 /* ─────────── NAV ─────────── */
 nav {
@@ -899,8 +895,10 @@ footer .legal a:hover { color: var(--red); }
 
     <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin:28px 0 36px;">
       <a href="/cn/try" class="btn primary">⚡ 30 秒试一下，不用装</a>
+      <button type="button" class="btn dark copy-btn" data-copy="agent" title="复制后发给 Claude Code 或 Codex">复制给编程助手安装</button>
       <a href="#install-section" class="btn outline-dark">或者装到终端 ↓</a>
     </div>
+    <code id="cmd-agent" class="copy-source" aria-hidden="true">请根据 https://sfp.fyi/setup.md 在我当前的 AI 编程环境里安装 Solo Founder Playbook，并告诉我六个技能怎么调用。</code>
     <div class="quick-actions" aria-label="选择要试用的任务">
       <span>从一个具体问题开始：</span>
       <a href="/cn/try?skill=solo-analyze">评估一个点子 →</a>
@@ -908,13 +906,7 @@ footer .legal a:hover { color: var(--red); }
       <a href="/cn/try?skill=solo-growth">制定增长方案 →</a>
     </div>
 
-    <div class="agent-setup" id="install-section">
-      <strong>已经在用 AI 编程助手？</strong>
-      <p>把下面这句话发给 Claude Code 或 Codex。安装说明会告诉它如何选择对应步骤。</p>
-      <code id="cmd-agent">请根据 https://sfp.fyi/setup.md 在我当前的 AI 编程环境里安装 Solo Founder Playbook，并告诉我六个技能怎么调用。</code>
-      <button type="button" class="copy-btn" data-copy="agent">复制安装请求</button>
-    </div>
-    <div class="install">
+    <div class="install" id="install-section">
       <div class="block">
         <button type="button" class="copy-btn" data-copy="claude">复制</button>
         <div class="label">▲ Claude Code · 推荐 plugin 安装</div>
