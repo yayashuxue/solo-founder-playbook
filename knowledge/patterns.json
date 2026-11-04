@@ -4,106 +4,120 @@
       {
         "name": "Organic Social Media Content Distribution",
         "description": "Building audiences and driving customers through consistent, authentic content on social platforms like Twitter, TikTok, Instagram, and LinkedIn. Focus on daily posting, engagement, and building relationships rather than paid advertising.",
-        "count": 42,
+        "count": 65,
         "examples": [
           "hCvy-Rt7Naw",
           "v6IF-lVuvbs",
-          "6iqo7lNR_m0"
+          "6iqo7lNR_m0",
+          "-VlJIgj6gM4",
+          "32vqaJa90kw"
         ]
       },
       {
         "name": "SEO and Long-Form Content Strategy",
         "description": "Creating blog posts, landing pages, comparison articles, and YouTube videos targeting specific keywords to drive organic search traffic. Often combined with free tools and longtail keyword targeting for compounding growth.",
-        "count": 28,
+        "count": 43,
         "examples": [
           "PSx0vcUY-sk",
           "7LZ0MTkNr34",
-          "3eY71OS4MFw"
+          "3eY71OS4MFw",
+          "4KfFB-dh71Y",
+          "5-G9WHwQMwQ"
         ]
       },
       {
         "name": "Building in Public and Community Engagement",
         "description": "Sharing daily development progress, engaging authentically in relevant communities (Reddit, Twitter, Discord), and positioning as indie hackers or founders rather than faceless companies. Creates trust and early adopters.",
-        "count": 25,
+        "count": 35,
         "examples": [
           "E_sPvPHwpuk",
           "CoqAxV6b6j4",
-          "LWPN-PAhtLA"
+          "LWPN-PAhtLA",
+          "AoE1yX9ogCM",
+          "BA_fC95p43c"
         ]
       },
       {
         "name": "Viral Video and UGC Content Creation",
         "description": "Creating high-volume short-form video content (TikTok, Instagram Reels, YouTube Shorts) that demonstrates value or entertains first, with minimal CTAs. Often involves testing organically, then scaling winners with paid ads.",
-        "count": 31,
+        "count": 44,
         "examples": [
           "1nfPvJKrYYQ",
           "5C3YCTL-36c",
-          "loXc0Tyi4R4"
+          "loXc0Tyi4R4",
+          "-VlJIgj6gM4",
+          "32vqaJa90kw"
         ]
       },
       {
         "name": "Product Hunt and Marketplace Launches",
         "description": "Leveraging Product Hunt launches, app store marketplaces, and platform-specific directories for initial visibility, reviews, and backlinks. Often combined with building champions before launch.",
-        "count": 12,
+        "count": 14,
         "examples": [
           "dXKzST0FE-A",
           "NvtsM8Nk72c",
-          "G4nsGvL4Fo0"
+          "G4nsGvL4Fo0",
+          "Nnpz1wsTjBI",
+          "RSlhgyAXsBI"
         ]
       },
       {
         "name": "Strategic Partnerships and Influencer Marketing",
         "description": "Collaborating with content creators, influencers, and complementary brands through affiliate programs, performance-based compensation, or creator partnerships. Focus on aligned incentives and authentic promotion.",
-        "count": 18,
+        "count": 37,
         "examples": [
           "b5JhfGHafZA",
           "KcCnqLBhvXY",
-          "5u9u8yzPEpA"
+          "5u9u8yzPEpA",
+          "8kM-JcKpcDs",
+          "FCGpgPZqmkY"
         ]
       },
       {
         "name": "Niche Community Targeting and Direct Outreach",
         "description": "Identifying where target customers congregate (specific subreddits, Facebook groups, LinkedIn) and engaging authentically through helpful comments, answering questions, and providing value before promoting. Often includes cold email or DM outreach.",
-        "count": 22,
+        "count": 32,
         "examples": [
           "3X4VneEHvig",
           "mjCa8IFjM2E",
-          "trNGj1BN1GU"
+          "trNGj1BN1GU",
+          "7vz6b_Ohdl0",
+          "BA_fC95p43c"
         ]
       }
     ],
     "keywords": {
-      "Twitter": 24,
-      "TikTok": 23,
-      "SEO": 22,
-      "Reddit": 15,
-      "Instagram": 14,
-      "YouTube": 21,
-      "LinkedIn": 12,
-      "Facebook": 11,
-      "Product Hunt": 9,
-      "Google Ads": 10,
-      "Meta Ads": 8,
+      "TikTok": 36,
+      "SEO": 31,
+      "YouTube": 31,
+      "Twitter": 28,
+      "Organic": 27,
+      "Reddit": 25,
+      "Viral": 23,
+      "Instagram": 21,
+      "Content Marketing": 18,
+      "Influencer": 18,
+      "LinkedIn": 16,
+      "UGC": 15,
+      "Blog": 13,
+      "Facebook": 13,
       "Email": 11,
-      "Content Marketing": 17,
-      "UGC": 10,
-      "Influencer": 9,
-      "Affiliate": 9,
+      "Google Ads": 11,
+      "Google Search": 11,
+      "Product Hunt": 11,
+      "Affiliate": 10,
+      "Landing Pages": 10,
+      "Word-of-mouth": 10,
+      "Meta Ads": 9,
+      "App Store": 8,
+      "Reels": 8,
       "Cold Email": 7,
-      "App Store": 6,
-      "Blog": 12,
-      "Landing Pages": 9,
-      "Reels": 7,
-      "Shorts": 6,
-      "Organic": 18,
-      "Viral": 16,
+      "Podcast": 7,
+      "Shorts": 7,
       "CapCut": 5,
-      "Google Search": 8,
-      "Word-of-mouth": 8,
-      "Zapier": 5,
       "Discord": 5,
       "Pinterest": 5,
-      "Podcast": 6
+      "Zapier": 5
     }
   },
   "Idea Generation": {
@@ -111,138 +125,151 @@
       {
         "name": "Solving Personal Problems First",
         "description": "Founders built products to solve their own pain points or frustrations, then discovered others had the same needs. This 'scratch your own itch' approach eliminates guesswork about product-market fit and ensures deep understanding of the problem.",
-        "count": 32,
+        "count": 59,
         "examples": [
           "ty9ZcimL6VE",
           "4hMg_CZauJs",
           "EF3uyvHHBfM",
           "T5zMsTw8GWQ",
           "e6COsh5wfNA",
-          "ZGwQoRw7mh8"
+          "ZGwQoRw7mh8",
+          "-VlJIgj6gM4",
+          "0sO2OSN3jZw"
         ]
       },
       {
         "name": "Cloning and Improving Validated Ideas",
         "description": "Rather than creating original products, founders identified successful existing solutions and built improved alternatives with better UX, lower pricing, or focused features. This eliminates market risk by targeting proven demand.",
-        "count": 18,
+        "count": 27,
         "examples": [
           "8BtHk-oNlN0",
           "_KaFS4Dxs5k",
           "67zh8_yiPh4",
           "88BbTpbWVpY",
           "w8oUlfgvcTI",
-          "4BsxnGRbF4k"
+          "4BsxnGRbF4k",
+          "2_lpZ503ZGg",
+          "EQfZCe3MkTU"
         ]
       },
       {
         "name": "Mining Communities for Pain Points",
         "description": "Founders actively participated in or researched online communities (Reddit, Twitter, Discord, forums) to identify recurring problems, feature requests, and pricing frustrations that signaled market opportunities.",
-        "count": 24,
+        "count": 37,
         "examples": [
           "ptT0tfzeu8I",
           "_KaFS4Dxs5k",
           "ty9ZcimL6VE",
           "akM6P97_0B8",
           "3X4VneEHvig",
-          "BNr1JOQdSN0"
+          "BNr1JOQdSN0",
+          "4KfFB-dh71Y",
+          "9sJ2R0rM3CA"
         ]
       },
       {
         "name": "Leveraging Domain Experience and Job Context",
         "description": "Ideas emerged from founders' professional experience working in specific industries, giving them insider knowledge of business processes, inefficiencies, and pain points that outsiders wouldn't recognize.",
-        "count": 16,
+        "count": 34,
         "examples": [
           "3eY71OS4MFw",
           "b5JhfGHafZA",
           "yue9in5oh64",
           "7pCgbhUWW54",
           "T5zMsTw8GWQ",
-          "i6kCkGmJc9M"
+          "i6kCkGmJc9M",
+          "2_lpZ503ZGg",
+          "4KfFB-dh71Y"
         ]
       },
       {
         "name": "Spotting Trends Early on Social Platforms",
         "description": "Founders identified emerging trends, viral content patterns, or technology shifts (especially AI) on platforms like Twitter, TikTok, and YouTube, then quickly built products to capitalize on the momentum.",
-        "count": 21,
+        "count": 26,
         "examples": [
           "plrni3IBEyI",
           "1nfPvJKrYYQ",
           "x9TUDb4sLE0",
           "5C3YCTL-36c",
           "8yCXyCN_NR0",
-          "irEi7DVBHdA"
+          "irEi7DVBHdA",
+          "P4QodeA_lQ0",
+          "TUN8Y8__QGU"
         ]
       },
       {
         "name": "Building for Underserved Niches in Large Markets",
         "description": "Founders targeted specific sub-segments of large markets with focused solutions, recognizing that solo founders only need 0.1% of a big market to succeed and can serve niche needs better than feature-bloated competitors.",
-        "count": 14,
+        "count": 21,
         "examples": [
           "G4nsGvL4Fo0",
           "dXKzST0FE-A",
           "vLLBzUZr6-s",
           "PmyXmpkTIdc",
           "tMkpiFIW8Xg",
-          "7LZ0MTkNr34"
+          "7LZ0MTkNr34",
+          "DiRxTfnHTaY",
+          "Eg93po_DAYo"
         ]
       },
       {
         "name": "Replicating Proven Business Models",
         "description": "Founders adapted existing successful business models from other industries or niches to their own expertise, focusing on execution quality rather than model innovation.",
-        "count": 13,
+        "count": 14,
         "examples": [
           "vedkm3ZmHIE",
           "dXKzST0FE-A",
           "5MaPEK-yVVY",
           "WctFUP4w0sc",
           "gU9FtZIfb_M",
-          "BskeAo66er0"
+          "BskeAo66er0",
+          "GQ27QVp3SzQ"
         ]
       }
     ],
     "keywords": {
-      "Reddit": 12,
-      "Twitter": 18,
-      "TikTok": 9,
-      "ChatGPT": 11,
-      "AI": 24,
-      "SEO": 8,
-      "Shopify": 5,
-      "YouTube": 12,
-      "OpenAI": 5,
-      "Discord": 3,
-      "Instagram": 4,
-      "Zapier": 4,
-      "Airtable": 2,
-      "TypeForm": 2,
-      "DocuSign": 2,
+      "AI": 30,
+      "SaaS": 23,
+      "Twitter": 20,
+      "YouTube": 16,
+      "ChatGPT": 15,
+      "Reddit": 13,
+      "TikTok": 12,
+      "API": 9,
       "GPT": 9,
-      "Fiverr": 2,
-      "App Store": 5,
-      "SaaS": 21,
-      "MicroAcquire": 2,
+      "Mobile App": 8,
+      "SEO": 8,
+      "Instagram": 7,
+      "App Store": 6,
+      "Newsletter": 6,
+      "OpenAI": 6,
+      "Podcasts": 5,
+      "Shopify": 5,
+      "Discord": 4,
+      "Subreddit": 4,
+      "Zapier": 4,
+      "Airtable": 3,
+      "Cursor": 3,
+      "Facebook": 3,
+      "LinkedIn": 3,
+      "Sensor Tower": 3,
       "Ahrefs": 2,
       "Chrome Extension": 2,
-      "API": 7,
-      "Facebook": 3,
-      "Slack": 2,
-      "Subreddit": 4,
-      "Newsletter": 6,
-      "LinkedIn": 3,
-      "Skype": 2,
-      "QuickBooks": 2,
-      "ConvertKit": 2,
-      "Framer": 2,
-      "Sensor Tower": 2,
-      "Yelp": 1,
-      "Google Trends": 2,
-      "Podcasts": 5,
-      "Typeform": 1,
       "Claude": 2,
+      "ConvertKit": 2,
+      "DocuSign": 2,
+      "Fiverr": 2,
+      "Framer": 2,
+      "Google Trends": 2,
+      "MicroAcquire": 2,
+      "QuickBooks": 2,
+      "Skype": 2,
+      "Slack": 2,
+      "TypeForm": 2,
+      "Gummysearch": 1,
       "Perplexity": 1,
-      "Cursor": 3,
-      "Mobile App": 8,
-      "Gummysearch": 1
+      "Typeform": 1,
+      "Yelp": 1
     }
   },
   "Validation": {
@@ -250,109 +277,123 @@
       {
         "name": "Competitor Analysis and Market Gap Identification",
         "description": "Founders validate ideas by studying existing competitors' performance, reviews, and weaknesses to identify market gaps. They analyze 1-2 star reviews, traffic sources, pricing models, and UX issues to find opportunities for differentiation.",
-        "count": 18,
+        "count": 27,
         "examples": [
           "w8oUlfgvcTI",
           "67zh8_yiPh4",
-          "BNr1JOQdSN0"
+          "BNr1JOQdSN0",
+          "32vqaJa90kw",
+          "9sJ2R0rM3CA"
         ]
       },
       {
         "name": "Social Media Demand Testing Before Building",
         "description": "Entrepreneurs validate demand by posting on social platforms (Reddit, Twitter, TikTok, Discord) to gauge interest through comments, likes, and DMs before investing in development. A simple post or question can generate hundreds of validation signals.",
-        "count": 16,
+        "count": 27,
         "examples": [
           "HBCwzfFbopE",
           "vLLBzUZr6-s",
-          "nzVcbrLl9VU"
+          "nzVcbrLl9VU",
+          "-VlJIgj6gM4",
+          "4KfFB-dh71Y"
         ]
       },
       {
         "name": "Landing Page and Email Collection Pre-Validation",
         "description": "Founders build landing pages or waitlists to collect emails before product development, using conversion rates (often 15%+ threshold) and signup numbers (typically 100-1000+) as validation signals. Some even sell pre-orders or deposits to confirm willingness to pay.",
-        "count": 13,
+        "count": 21,
         "examples": [
           "plrni3IBEyI",
           "3eY71OS4MFw",
-          "dphK9rh2F5U"
+          "dphK9rh2F5U",
+          "5-G9WHwQMwQ",
+          "7KqlwjBM_tM"
         ]
       },
       {
         "name": "Niche Down for Product-Market Fit",
         "description": "Successful founders narrow their focus from broad markets to specific use cases or customer segments, reducing mental friction and creating targeted experiences. This specificity makes users feel the product was built specifically for them and increases word-of-mouth.",
-        "count": 12,
+        "count": 16,
         "examples": [
           "miEUhwSR2-0",
           "i6kCkGmJc9M",
-          "G4nsGvL4Fo0"
+          "G4nsGvL4Fo0",
+          "32vqaJa90kw",
+          "Adl5_lJfkEE"
         ]
       },
       {
         "name": "Direct Customer Conversations and Observation",
         "description": "Founders validate and refine products by directly talking to users, asking what they dislike, observing workflows through screen-sharing, and calling customers to understand behavior. This qualitative feedback often reveals insights that transform the business.",
-        "count": 11,
+        "count": 23,
         "examples": [
           "IuoscQiQQLg",
           "Gv2fzC96Z40",
-          "TCGXT7ySco8"
+          "TCGXT7ySco8",
+          "AoE1yX9ogCM",
+          "BA_fC95p43c"
         ]
       },
       {
         "name": "Solve Personal Problems or Build for Yourself",
         "description": "Many successful products originate from founders solving their own genuine problems or building what they personally want as a customer. This authentic need often signals broader market demand and maintains motivation during development.",
-        "count": 10,
+        "count": 15,
         "examples": [
           "ZGwQoRw7mh8",
           "5u9u8yzPEpA",
-          "hKqLceTPLWM"
+          "hKqLceTPLWM",
+          "GQ27QVp3SzQ",
+          "LKARRA0MvY4"
         ]
       },
       {
         "name": "Quick MVP Launch and Iteration",
         "description": "Rather than spending months building, successful founders launch minimal viable products quickly (often 1-2 weeks) to get immediate market feedback. Some even deliver services manually without code initially to validate before automating.",
-        "count": 15,
+        "count": 27,
         "examples": [
           "EF3uyvHHBfM",
           "h9R6ZeNruuI",
-          "En34iY-rQc0"
+          "En34iY-rQc0",
+          "0pp4X58q_0s",
+          "5-G9WHwQMwQ"
         ]
       }
     ],
     "keywords": {
-      "Reddit": 12,
-      "TikTok": 8,
-      "Twitter": 9,
-      "SEO": 6,
-      "Google Ads": 4,
+      "MVP": 14,
+      "TikTok": 14,
+      "Reddit": 13,
       "Landing Page": 11,
-      "MVP": 10,
-      "Product Hunt": 2,
-      "Y Combinator": 1,
+      "SaaS": 10,
+      "Twitter": 10,
+      "AI": 9,
+      "Email": 9,
+      "Competitor Analysis": 8,
+      "SEO": 7,
+      "Reviews": 6,
+      "Waitlist": 6,
+      "App Store": 5,
+      "B2B": 5,
+      "Product Hunt": 5,
       "Stripe": 5,
-      "Email": 8,
-      "Newsletter": 3,
-      "Discord": 2,
-      "Facebook": 2,
+      "Google Ads": 4,
+      "MRR": 4,
+      "Pre-order": 4,
+      "UX": 4,
+      "Facebook": 3,
       "Google Sheets": 3,
-      "Airtable": 2,
-      "Notion": 2,
+      "Newsletter": 3,
       "Ahrefs": 2,
-      "Sensor Tower": 1,
-      "Google Trends": 1,
+      "Airtable": 2,
+      "Discord": 2,
+      "Google Trends": 2,
+      "Notion": 2,
       "Hacker News": 1,
       "Indie Hackers": 1,
+      "Sensor Tower": 1,
       "Typeform": 1,
-      "Shopify": 0,
-      "Pre-order": 4,
-      "Waitlist": 4,
-      "MRR": 3,
-      "SaaS": 9,
-      "AI": 6,
-      "App Store": 4,
-      "B2B": 4,
-      "Competitor Analysis": 8,
-      "Reviews": 5,
-      "UX": 4
+      "Y Combinator": 1,
+      "Shopify": 0
     }
   },
   "Building/Development": {
@@ -360,122 +401,153 @@
       {
         "name": "Ship Fast, Iterate Based on Feedback",
         "description": "Founders launched minimal MVPs quickly (often within days or weeks) rather than pursuing perfection, then improved products through real user feedback cycles. This approach prioritized speed to market and validation over polish.",
-        "count": 32,
+        "count": 63,
         "examples": [
           "plrni3IBEyI",
           "mjCa8IFjM2E",
           "TCGXT7ySco8",
           "G4nsGvL4Fo0",
-          "KpVPST_P4W8"
+          "KpVPST_P4W8",
+          "7KqlwjBM_tM",
+          "8kM-JcKpcDs"
         ]
       },
       {
         "name": "AI-Assisted Development Acceleration",
         "description": "Founders leveraged AI tools like ChatGPT, Cursor, and Windsurf to build products without traditional coding skills or to dramatically accelerate development, enabling non-technical founders to create successful apps.",
-        "count": 18,
+        "count": 45,
         "examples": [
           "4hMg_CZauJs",
           "8BtHk-oNlN0",
           "jpSY4MlWX50",
           "88BbTpbWVpY",
-          "CwHD6Fg-Mjs"
+          "CwHD6Fg-Mjs",
+          "-VlJIgj6gM4",
+          "32vqaJa90kw"
         ]
       },
       {
         "name": "Building While Working Full-Time",
         "description": "Founders maintained full-time employment for months or years while building side projects during early mornings, evenings, or weekends. Many only quit when reaching significant revenue milestones ($80K-$150K/month).",
-        "count": 15,
+        "count": 20,
         "examples": [
           "dXKzST0FE-A",
           "w3zxMrwWrt0",
           "ZGwQoRw7mh8",
           "BeRKQkU5Ceo",
-          "GFnBp8lMIf4"
+          "GFnBp8lMIf4",
+          "0sO2OSN3jZw",
+          "2_lpZ503ZGg"
         ]
       },
       {
         "name": "No-Code Platform Development",
         "description": "Non-technical founders built successful products entirely on no-code platforms like Bubble, enabling them to launch and scale to significant revenue without writing code.",
-        "count": 8,
+        "count": 12,
         "examples": [
           "DV7bBCAABg4",
           "x9TUDb4sLE0",
           "IZsQqarWXtY",
-          "VfNRd5Rk0cM"
+          "VfNRd5Rk0cM",
+          "BHhg-l9AZpM",
+          "LRX8TWC2hTM"
         ]
       },
       {
         "name": "Environment and Routine as Transformation Catalysts",
         "description": "Founders deliberately changed their physical environment (like working from Starbucks) and established strict daily routines to build consistency and break old patterns, enabling them to execute instead of just planning.",
-        "count": 7,
+        "count": 10,
         "examples": [
           "xZDofUHbZHA",
           "GFnBp8lMIf4",
           "w3zxMrwWrt0",
-          "ZGwQoRw7mh8"
+          "ZGwQoRw7mh8",
+          "D4fkiQfzw_I",
+          "NFWV9wxRuv4"
         ]
       },
       {
         "name": "Copy, Simplify, and Undercut Strategy",
         "description": "Founders identified successful existing products, built simplified versions with only essential features, and competed on price or speed, often repurposing existing code or skills.",
-        "count": 6,
+        "count": 8,
         "examples": [
           "_KaFS4Dxs5k",
           "8BtHk-oNlN0",
           "4BsxnGRbF4k",
-          "88BbTpbWVpY"
+          "88BbTpbWVpY",
+          "vw2Yc4Y1PsU",
+          "xeUhKuJbeWQ"
         ]
       },
       {
         "name": "Lean Tech Stack with Modern Frameworks",
         "description": "Successful founders used minimal, modern tech stacks (Next.js, TypeScript, Supabase, Vercel) that enabled rapid development, low operating costs, and easy scaling without complex infrastructure.",
-        "count": 25,
+        "count": 39,
         "examples": [
           "1nfPvJKrYYQ",
           "CoqAxV6b6j4",
           "LWPN-PAhtLA",
           "u8sW-NhGfXw",
-          "F8i0kkrQ8_o"
+          "F8i0kkrQ8_o",
+          "2_lpZ503ZGg",
+          "47QXbPGyzBI"
+        ]
+      },
+      {
+        "name": "Figma Wireframes in Early Builds",
+        "description": "Five new video summaries mention using Figma for UI design or wireframes before or alongside development. Their implementation paths varied from no-code tools to code-assisted mobile apps.",
+        "count": 5,
+        "examples": [
+          "P4QodeA_lQ0",
+          "dWeoSKLt_fc",
+          "g9J_-5w9Nrs",
+          "r4R_Hlw7sbo",
+          "k2jecxFu2as"
         ]
       }
     ],
     "keywords": {
-      "Next.js": 12,
-      "Cursor": 9,
-      "ChatGPT": 8,
-      "Bubble": 6,
-      "TypeScript": 7,
-      "Supabase": 5,
-      "Vercel": 5,
-      "Figma": 8,
-      "React": 7,
-      "Node.js": 6,
+      "Cursor": 20,
+      "Next.js": 17,
+      "AI": 16,
+      "ChatGPT": 16,
+      "React": 14,
+      "Figma": 13,
+      "Claude": 12,
+      "TypeScript": 11,
+      "Vercel": 11,
+      "Bubble": 10,
+      "OpenAI": 8,
+      "Node.js": 7,
+      "React Native": 7,
+      "Swift": 7,
+      "AWS": 6,
+      "Expo": 6,
+      "Supabase": 6,
+      "Firebase": 5,
       "Notion": 5,
-      "Firebase": 4,
-      "PostgreSQL": 4,
-      "Webflow": 3,
-      "React Native": 4,
+      "PostgreSQL": 5,
+      "Resend": 4,
       "Slack": 4,
-      "OpenAI": 5,
-      "Windsurf": 3,
-      "Resend": 3,
-      "Swift": 3,
+      "Starbucks": 4,
+      "Stripe": 4,
+      "App Store": 3,
+      "Clerk": 3,
       "Netlify": 3,
-      "Starbucks": 3,
+      "SEO": 3,
+      "Tailwind": 3,
+      "Vibe Coding": 3,
+      "Webflow": 3,
+      "Windsurf": 3,
       "Heroku": 2,
-      "Render": 2,
-      "Tailwind": 2,
-      "AWS": 2,
-      "Stripe": 2,
       "Loom": 2,
+      "Render": 2,
       "Trello": 2,
+      "VS Code": 2,
       "Zapier": 2,
-      "Perplexity": 1,
       "Bolt": 1,
-      "Clerk": 1,
-      "Expo": 3,
-      "Upwork": 1,
-      "VS Code": 2
+      "Perplexity": 1,
+      "Upwork": 1
     }
   },
   "Launch": {
@@ -483,61 +555,70 @@
       {
         "name": "Launch with Minimum Viable Product",
         "description": "Founders deliberately launched with bare-bones, unpolished products to validate demand quickly rather than spending months building. This includes rough websites, buggy apps, and manual processes that proved market fit before investing in proper infrastructure.",
-        "count": 12,
+        "count": 22,
         "examples": [
           "dXKzST0FE-A",
           "miEUhwSR2-0",
           "4hMg_CZauJs",
           "G4nsGvL4Fo0",
           "zPijWd9uk-I",
-          "5u9u8yzPEpA"
+          "5u9u8yzPEpA",
+          "7vz6b_Ohdl0",
+          "9sJ2R0rM3CA"
         ]
       },
       {
         "name": "Reddit-Driven Launch Strategy",
         "description": "Founders leveraged Reddit by studying top posts, posting technical breakdowns or simple screenshots to relevant subreddits, and avoiding spam-like promotion. Success came from matching subreddit tone and providing genuine value, often resulting in viral posts with hundreds to thousands of upvotes.",
-        "count": 9,
+        "count": 12,
         "examples": [
           "GFnBp8lMIf4",
           "yue9in5oh64",
           "2dfMUtHlQik",
           "IZsQqarWXtY",
           "88BbTpbWVpY",
-          "BeRKQkU5Ceo"
+          "BeRKQkU5Ceo",
+          "LrLDsvbdPr0",
+          "WuzxmeUP6ro"
         ]
       },
       {
         "name": "Pre-Launch Community Building",
         "description": "Building an engaged audience or email list before launch through building in public, content sharing, or existing communities. This created ready customers who were invested in the product's success and drove immediate sales or conversions.",
-        "count": 8,
+        "count": 18,
         "examples": [
           "6iqo7lNR_m0",
           "dphK9rh2F5U",
           "WctFUP4w0sc",
           "LWPN-PAhtLA",
-          "E_sPvPHwpuk"
+          "E_sPvPHwpuk",
+          "8kM-JcKpcDs",
+          "DiRxTfnHTaY"
         ]
       },
       {
         "name": "Lifetime Deal (LTD) Launch Platforms",
         "description": "Using platforms like AppSumo or RocketHub to launch with lifetime deals, providing instant access to large customer bases and significant upfront capital ($30K-$350K). These customers became early ambassadors despite lower lifetime revenue per user.",
-        "count": 3,
+        "count": 4,
         "examples": [
           "b5JhfGHafZA",
           "67zh8_yiPh4",
-          "BNr1JOQdSN0"
+          "BNr1JOQdSN0",
+          "hYF4fQYlrso"
         ]
       },
       {
         "name": "Viral Social Media Launch",
         "description": "Creating viral moments on Twitter/X through video teasers, building in public, or strategic launch announcements that generated millions of impressions. Success came even with tiny follower counts by creating compelling, shareable content.",
-        "count": 7,
+        "count": 12,
         "examples": [
           "u8sW-NhGfXw",
           "LWPN-PAhtLA",
           "88BbTpbWVpY",
           "E_sPvPHwpuk",
-          "4hMg_CZauJs"
+          "4hMg_CZauJs",
+          "D4fkiQfzw_I",
+          "LYdJ3dfNCVs"
         ]
       },
       {
@@ -552,37 +633,40 @@
       {
         "name": "Strategic Low Pricing for First Customers",
         "description": "Setting intentionally low initial pricing ($449/month unlimited service, $99 lifetime deals) to eliminate barriers and land first customers quickly. This 'too good to be true' approach generated immediate traction and validation within 24-48 hours.",
-        "count": 5,
+        "count": 8,
         "examples": [
           "vedkm3ZmHIE",
           "yue9in5oh64",
           "dphK9rh2F5U",
-          "8yCXyCN_NR0"
+          "8yCXyCN_NR0",
+          "aLidq3_FwW0",
+          "FCGpgPZqmkY"
         ]
       }
     ],
     "keywords": {
-      "Reddit": 9,
-      "Twitter": 7,
-      "X": 5,
+      "Reddit": 12,
+      "Twitter": 8,
+      "X": 8,
+      "App Store": 4,
+      "ChatGPT": 4,
       "AppSumo": 3,
-      "Product Hunt": 1,
-      "Hacker News": 2,
+      "Hacker News": 3,
+      "Product Hunt": 3,
+      "Facebook groups": 2,
       "Indiegogo": 2,
-      "TikTok": 1,
-      "Shopify": 1,
-      "ChatGPT": 3,
-      "Typeform": 1,
-      "Instagram": 1,
-      "Google Workspace Marketplace": 1,
+      "Instagram": 2,
+      "Notion": 2,
+      "TikTok": 2,
+      "YouTube": 2,
       "Futurepedia": 1,
-      "RocketHub": 1,
-      "Facebook groups": 1,
+      "Google Workspace Marketplace": 1,
       "LinkedIn": 1,
+      "open source": 1,
+      "RocketHub": 1,
+      "Shopify": 1,
       "Twitter Spaces": 1,
-      "YouTube": 1,
-      "Notion": 1,
-      "open source": 1
+      "Typeform": 1
     }
   },
   "Growth": {
@@ -590,13 +674,15 @@
       {
         "name": "Content-Led Growth Through Social Platforms",
         "description": "Building audiences and driving traffic through consistent, high-quality content on platforms like Reddit, Twitter, TikTok, and YouTube. Success comes from posting daily, identifying viral formats, and scaling what works across multiple accounts.",
-        "count": 25,
+        "count": 32,
         "examples": [
           "ptT0tfzeu8I",
           "1nfPvJKrYYQ",
           "YtyJ4reSQY0",
           "VZ1XspToV1E",
-          "Gv2fzC96Z40"
+          "Gv2fzC96Z40",
+          "-VlJIgj6gM4",
+          "47QXbPGyzBI"
         ]
       },
       {
@@ -612,24 +698,27 @@
       {
         "name": "Freemium and Product-Led Growth",
         "description": "Offering substantial free features to drive adoption and user volume, then converting satisfied users to paid plans through usage limits or premium features. The product itself drives growth through viral sharing and organic discovery.",
-        "count": 12,
+        "count": 19,
         "examples": [
           "_KaFS4Dxs5k",
-          "HBCwzfbopE",
           "x9TUDb4sLE0",
-          "PmyXmpkTIdc"
+          "PmyXmpkTIdc",
+          "TUN8Y8__QGU",
+          "WuzxmeUP6ro"
         ]
       },
       {
         "name": "Customer Feedback and Relationship Building",
         "description": "Obsessively engaging with early users through personal outreach, support conversations, and feature requests to iterate the product and convert happy customers into evangelists who drive word-of-mouth growth.",
-        "count": 18,
+        "count": 23,
         "examples": [
           "w3zxMrwWrt0",
           "88BbTpbWVpY",
           "BNr1JOQdSN0",
           "WctFUP4w0sc",
-          "vLLBzUZr6-s"
+          "vLLBzUZr6-s",
+          "BA_fC95p43c",
+          "LrLDsvbdPr0"
         ]
       },
       {
@@ -637,7 +726,6 @@
         "description": "Deliberately charging below market rates early on to get massive volume of reps, build world-class skills and reputation, then systematically raising prices as demand and expertise grow.",
         "count": 6,
         "examples": [
-          "vedkm3IBEyI",
           "trNGj1BN1GU",
           "i6kCkGmJc9M"
         ]
@@ -645,73 +733,102 @@
       {
         "name": "Multi-Format Content Scaling and Testing",
         "description": "Rapidly testing numerous content formats and creative variations to identify what resonates, then scaling successful formats through multiple accounts, creators, or channels to maximize reach and virality.",
-        "count": 15,
+        "count": 19,
         "examples": [
           "Gv2fzC96Z40",
           "9WWvLj-NqEE",
           "KcCnqLBhvXY",
           "hKqLceTPLWM",
-          "e6COsh5wfNA"
+          "e6COsh5wfNA",
+          "32vqaJa90kw",
+          "EQfZCe3MkTU"
         ]
       },
       {
         "name": "First-Mover Advantage in Emerging Categories",
         "description": "Being early to market with quality solutions in new or underserved niches before competition arrives, establishing dominance through superior execution and capturing market share as the category grows.",
-        "count": 9,
+        "count": 12,
         "examples": [
           "u8sW-NhGfXw",
           "x9TUDb4sLE0",
           "7LZ0MTkNr34",
-          "GGxUH6EXF9I"
+          "GGxUH6EXF9I",
+          "LrLDsvbdPr0",
+          "PIXXEAfo6MY"
         ]
       },
       {
         "name": "Community-First Engagement Before Launching",
         "description": "Spending months actively participating in target communities, building relationships with moderators, gathering feedback in comments, and validating demand before making formal product announcements.",
-        "count": 6,
+        "count": 7,
         "examples": [
           "3X4VneEHvig",
           "ptT0tfzeu8I",
-          "F8i0kkrQ8_o"
+          "F8i0kkrQ8_o",
+          "bq3-qH-CpYQ"
+        ]
+      },
+      {
+        "name": "Paid Acquisition Experiments",
+        "description": "Five new video summaries describe testing or scaling paid acquisition on TikTok, Meta, Google, or Android channels; the results and attribution are founder-reported.",
+        "count": 5,
+        "examples": [
+          "0pp4X58q_0s",
+          "DPb-M0Vt4uI",
+          "g9J_-5w9Nrs",
+          "RSlhgyAXsBI",
+          "RypUD_Fuaqw"
+        ]
+      },
+      {
+        "name": "Influencer Campaigns and Coverage",
+        "description": "Five new video summaries describe paid influencer campaigns or earned influencer coverage alongside reported growth in downloads or revenue; attribution is founder-reported.",
+        "count": 5,
+        "examples": [
+          "8kM-JcKpcDs",
+          "dWeoSKLt_fc",
+          "n7Obxh9-Rc8",
+          "rGLXc1GmsaI",
+          "uvIcGuN2iO8"
         ]
       }
     ],
     "keywords": {
-      "Twitter": 12,
-      "Reddit": 8,
-      "TikTok": 10,
-      "YouTube": 12,
-      "Facebook": 6,
-      "Instagram": 3,
-      "LinkedIn": 3,
-      "Product Hunt": 3,
-      "Kickstarter": 2,
-      "Shopify": 2,
-      "SEO": 5,
-      "Apple App Store": 3,
-      "YC": 3,
-      "Klaviyo": 1,
-      "ChatGPT": 2,
-      "Upwork": 2,
-      "SparkLoop": 1,
-      "Beehive": 1,
-      "Tweet Hunter": 1,
-      "Mixpanel": 1,
-      "Clarity": 1,
-      "Amazon": 1,
-      "paid ads": 8,
-      "influencer marketing": 4,
-      "word-of-mouth": 8,
-      "affiliate marketing": 3,
-      "cold outreach": 2,
-      "email": 4,
-      "freemium": 6,
-      "in-app reviews": 5,
-      "open source": 2,
-      "building in public": 5,
+      "TikTok": 15,
+      "Twitter": 13,
+      "YouTube": 13,
       "viral content": 12,
-      "App Store Optimization": 2,
-      "content marketing": 10
+      "content marketing": 11,
+      "paid ads": 11,
+      "SEO": 9,
+      "word-of-mouth": 9,
+      "Reddit": 8,
+      "email": 6,
+      "Facebook": 6,
+      "freemium": 6,
+      "influencer marketing": 6,
+      "building in public": 5,
+      "in-app reviews": 5,
+      "LinkedIn": 5,
+      "affiliate marketing": 3,
+      "App Store Optimization": 3,
+      "Apple App Store": 3,
+      "Instagram": 3,
+      "Product Hunt": 3,
+      "Upwork": 3,
+      "YC": 3,
+      "ChatGPT": 2,
+      "cold outreach": 2,
+      "Kickstarter": 2,
+      "open source": 2,
+      "Shopify": 2,
+      "Amazon": 1,
+      "Beehive": 1,
+      "Clarity": 1,
+      "Klaviyo": 1,
+      "Mixpanel": 1,
+      "SparkLoop": 1,
+      "Tweet Hunter": 1
     }
   },
   "Monetization": {
@@ -719,13 +836,15 @@
       {
         "name": "Subscription & Recurring Revenue Models",
         "description": "Founders prioritize monthly/annual subscriptions over one-time payments for predictable revenue, though some find lifetime deals effective for initial capital or user preference. Pricing typically ranges from $10-100/month with tiered usage limits.",
-        "count": 42,
+        "count": 87,
         "examples": [
           "DV7bBCAABg4",
           "T5zMsTw8GWQ",
           "8yCXyCN_NR0",
           "ZGwQoRw7mh8",
-          "G4nsGvL4Fo0"
+          "G4nsGvL4Fo0",
+          "0pp4X58q_0s",
+          "32vqaJa90kw"
         ]
       },
       {
@@ -743,61 +862,67 @@
       {
         "name": "Sponsorships as Primary Revenue Stream",
         "description": "Newsletters, YouTube channels, and podcasts monetize audiences through brand sponsorships, often starting with $12K-$112K deals and scaling to $80K-$120K monthly for established audiences of 100K-300K subscribers.",
-        "count": 12,
+        "count": 13,
         "examples": [
           "T_wEmB5MapE",
           "xZDofUHbZHA",
           "GFnBp8lMIf4",
           "ty9ZcimL6VE",
-          "G5cbMnFXcj0"
+          "G5cbMnFXcj0",
+          "47QXbPGyzBI"
         ]
       },
       {
         "name": "Lifetime Deals for Bootstrap Capital",
         "description": "Launching with one-time lifetime access ($29-$500) generates immediate cash flow and early users before transitioning to recurring revenue, despite some founders finding 97% of users prefer lifetime over subscriptions.",
-        "count": 11,
+        "count": 15,
         "examples": [
           "67zh8_yiPh4",
           "hYW9YDwHE20",
           "3X4VneEHvig",
           "BNr1JOQdSN0",
-          "zPijWd9uk-I"
+          "zPijWd9uk-I",
+          "LrLDsvbdPr0",
+          "NuYO7DWzlaM"
         ]
       },
       {
         "name": "Paywall Optimization & A/B Testing",
         "description": "Strategic placement and design of paywalls (hard vs soft, timing, trial requirements) dramatically impacts conversion rates from 0.5% to 25%, with mobile apps particularly benefiting from emotional onboarding before monetization.",
-        "count": 14,
+        "count": 21,
         "examples": [
           "T5zMsTw8GWQ",
           "2dfMUtHlQik",
           "loXc0Tyi4R4",
           "CwHD6Fg-Mjs",
-          "5u9u8yzPEpA"
+          "5u9u8yzPEpA",
+          "EQfZCe3MkTU",
+          "ST2ROUFbdvU"
         ]
       },
       {
         "name": "Product Portfolio & Multiple Revenue Streams",
         "description": "Diversifying income across courses, digital products, affiliates, sponsorships, and services reduces dependency on single channels. Many solopreneurs operate 2-6 simultaneous income streams with knowledge products generating 29-55% of revenue.",
-        "count": 18,
+        "count": 24,
         "examples": [
           "v6IF-lVuvbs",
-          "vedkm3ZIfb_M",
           "G5cbMnFXcj0",
           "lWwZ-fsD8gM",
-          "nzVcbrLl9VU"
+          "nzVcbrLl9VU",
+          "32vqaJa90kw",
+          "47QXbPGyzBI"
         ]
       },
       {
         "name": "High-Margin Digital & Info Products",
         "description": "Creators escape time-for-money constraints by packaging expertise into courses, templates, ebooks, and digital tools with 70-99% profit margins, eliminating delivery costs while scaling infinitely without trading hours.",
-        "count": 22,
+        "count": 23,
         "examples": [
-          "vedkm3ZIfb_M",
           "irEi7DVBHdA",
           "jpSY4MlWX50",
           "yue9in5oh64",
-          "7pCgbhUWW54"
+          "7pCgbhUWW54",
+          "47QXbPGyzBI"
         ]
       },
       {
@@ -814,32 +939,32 @@
       }
     ],
     "keywords": {
-      "Shopify": 2,
+      "YouTube": 9,
+      "AdSense": 5,
+      "Revenue Cat": 4,
       "Klaviyo": 3,
-      "Stripe": 3,
-      "YouTube": 8,
-      "TikTok": 2,
       "Reddit": 3,
-      "Twitter": 3,
-      "Instagram": 2,
-      "Facebook": 2,
-      "AdSense": 4,
-      "OpenAI": 2,
-      "ChatGPT": 2,
-      "Cursor": 2,
-      "Vercel": 2,
-      "Supabase": 2,
-      "Revenue Cat": 2,
+      "Stripe": 3,
       "Superwall": 3,
-      "Microacquire": 2,
+      "Twitter": 3,
       "Amazon": 2,
       "Apple": 2,
+      "ChatGPT": 2,
+      "Cursor": 2,
+      "Facebook": 2,
+      "Instagram": 2,
+      "Microacquire": 2,
+      "OpenAI": 2,
       "Roblox": 2,
-      "Trello": 1,
-      "Nike": 1,
-      "Windsurf": 1,
+      "Shopify": 2,
+      "Supabase": 2,
+      "TikTok": 2,
+      "Vercel": 2,
       "Bolt": 1,
-      "Onnit": 1
+      "Nike": 1,
+      "Onnit": 1,
+      "Trello": 1,
+      "Windsurf": 1
     }
   },
   "Challenges/Failures": {
@@ -847,93 +972,119 @@
       {
         "name": "Burnout from Overwork and Isolation",
         "description": "Founders experienced severe burnout from working 16-20 hour days alone, often sacrificing personal life, relationships, and health. This was especially common among solopreneurs who lacked boundaries or tried to scale without help.",
-        "count": 12,
+        "count": 14,
         "examples": [
-          "vedkm3IBEyI",
           "v6IF-lVuvbs",
-          "TNZmNIYv050"
+          "TNZmNIYv050",
+          "47QXbPGyzBI",
+          "k-aEdS28AH0"
         ]
       },
       {
         "name": "Multiple Failures Before Success",
         "description": "Entrepreneurs experienced numerous failed ventures (often 5-20+ attempts) before achieving breakthrough success. These failures provided critical lessons about customer acquisition, product-market fit, and focus.",
-        "count": 15,
+        "count": 21,
         "examples": [
           "w8oUlfgvcTI",
           "Gv2fzC96Z40",
-          "i6kCkGmJc9M"
+          "i6kCkGmJc9M",
+          "D4fkiQfzw_I",
+          "FCGpgPZqmkY"
         ]
       },
       {
         "name": "Building Without Customer Validation",
         "description": "Founders spent months or years building products in isolation without customer feedback, only to launch to zero users or discover poor product-market fit. The lesson learned was to validate demand early and build iteratively.",
-        "count": 11,
+        "count": 19,
         "examples": [
           "ptT0tfzeu8I",
           "WGVxAmmJUmY",
-          "8xgnm6SynH4"
+          "8xgnm6SynH4",
+          "FCGpgPZqmkY",
+          "LYdJ3dfNCVs"
         ]
       },
       {
         "name": "Financial Crisis and Near-Bankruptcy",
         "description": "Businesses faced existential financial threats including running out of cash, accumulating massive debt, inventory problems, or unexpected bills that nearly forced shutdown. Often resolved through creative problem-solving or last-minute solutions.",
-        "count": 13,
+        "count": 18,
         "examples": [
           "IuoscQiQQLg",
           "GGxUH6EXF9I",
-          "CnE_fLDqa7M"
+          "CnE_fLDqa7M",
+          "NPpky92ZfjA",
+          "iVy5J7iE-3Q"
         ]
       },
       {
         "name": "Pivoting After Initial Failure",
         "description": "After initial business models or products failed, founders successfully pivoted to new approaches based on lessons learned. This required letting go of failed ideas quickly and maintaining flexibility.",
-        "count": 10,
+        "count": 14,
         "examples": [
           "1nfPvJKrYYQ",
           "h9R6ZeNruuI",
-          "PmyXmpkTIdc"
+          "PmyXmpkTIdc",
+          "BA_fC95p43c",
+          "NPpky92ZfjA"
         ]
       },
       {
         "name": "Corporate Job as Safety Net",
         "description": "Many founders either kept their full-time jobs while building or could return to employment if ventures failed. This financial safety net reduced risk and enabled sustained experimentation, though it required extreme time management.",
-        "count": 8,
+        "count": 10,
         "examples": [
           "CoqAxV6b6j4",
           "VfNRd5Rk0cM",
-          "p3xa6mpxvOY"
+          "p3xa6mpxvOY",
+          "2_lpZ503ZGg",
+          "RSlhgyAXsBI"
         ]
       },
       {
         "name": "Overcoming Shiny Object Syndrome",
         "description": "Founders struggled with constantly switching ideas and strategies after seeing others' success, rather than committing long-term to one approach. Success required developing discipline to ignore noise and persist through failures.",
-        "count": 7,
+        "count": 9,
         "examples": [
           "trNGj1BN1GU",
           "x9TUDb4sLE0",
-          "nzVcbrLl9VU"
+          "nzVcbrLl9VU",
+          "jjUf7lrb_xQ",
+          "qIlX7cQ2UdU"
+        ]
+      },
+      {
+        "name": "Prolonged Low-Revenue Periods",
+        "description": "Five new video summaries describe six months to two years of very low revenue or no earnings before later changes in product, distribution, or focus. The stories do not establish that waiting alone produces growth.",
+        "count": 5,
+        "examples": [
+          "qIlX7cQ2UdU",
+          "rGLXc1GmsaI",
+          "NFWV9wxRuv4",
+          "TUN8Y8__QGU",
+          "gpn1jEoWT4A"
         ]
       }
     ],
     "keywords": {
+      "AI": 3,
+      "ChatGPT": 2,
+      "Instagram": 2,
+      "OpenAI": 2,
+      "Squarespace": 2,
+      "Excel": 1,
+      "Facebook ads": 1,
+      "GPT": 1,
+      "Microsoft": 1,
+      "Netflix": 1,
+      "Roblox": 1,
+      "RocketHub": 1,
+      "Shark Tank": 1,
+      "Starbucks": 1,
       "TikTok": 1,
       "Trello": 1,
-      "OpenAI": 2,
-      "ChatGPT": 2,
       "WeWork": 1,
       "Wix": 1,
-      "Squarespace": 1,
-      "YC": 1,
-      "Shark Tank": 1,
-      "RocketHub": 1,
-      "Facebook ads": 1,
-      "Instagram": 1,
-      "Roblox": 1,
-      "GPT": 1,
-      "Netflix": 1,
-      "Starbucks": 1,
-      "Excel": 1,
-      "Microsoft": 1
+      "YC": 1
     }
   },
   "Team/Hiring": {
@@ -941,41 +1092,47 @@
       {
         "name": "Complementary Co-Founder Partnerships",
         "description": "Founders prioritize finding partners with non-overlapping, complementary skills (technical/non-technical splits, product/sales divisions) and aligned long-term vision. Success depends on dividing responsibilities based on natural strengths rather than forcing skill overlap.",
-        "count": 12,
+        "count": 15,
         "examples": [
           "b5JhfGHafZA",
           "67zh8_yiPh4",
-          "yue9in5oh64"
+          "yue9in5oh64",
+          "32vqaJa90kw",
+          "DiRxTfnHTaY"
         ]
       },
       {
         "name": "Hire for Culture and Potential Over Experience",
         "description": "Founders consistently prioritize cultural fit, work ethic, and \"unteachable\" qualities (obsessive thinking, humility, self-awareness) over traditional credentials or direct experience. They seek people who make them say 'wow' and who they'd genuinely enjoy working with.",
-        "count": 10,
+        "count": 12,
         "examples": [
           "trNGj1BN1GU",
           "nzVcbrLl9VU",
-          "gU9FtZIfb_M"
+          "gU9FtZIfb_M",
+          "4KfFB-dh71Y",
+          "xWnqY2Mav4s"
         ]
       },
       {
         "name": "Leverage International/Overseas Talent for Cost Efficiency",
         "description": "Multiple founders build teams in Philippines, Eastern Europe, Ukraine, and Lebanon to access quality talent at significantly lower costs ($600-2K/month vs $5-8K for US employees), enabling them to scale teams while maintaining profitability.",
-        "count": 8,
+        "count": 9,
         "examples": [
           "G5cbMnFXcj0",
           "WctFUP4w0sc",
-          "loXc0Tyi4R4"
+          "loXc0Tyi4R4",
+          "nsn94Ad47GY"
         ]
       },
       {
         "name": "Audience-Driven and Network-Based Recruiting",
         "description": "Founders recruit through their existing networks, communities, and audiences rather than traditional job boards. They hire active community members, people who reach out proactively, or leverage social media posts (especially Twitter) to attract talent aligned with their mission.",
-        "count": 9,
+        "count": 10,
         "examples": [
           "akM6P97_0B8",
           "trNGj1BN1GU",
-          "BskeAo66er0"
+          "BskeAo66er0",
+          "xWnqY2Mav4s"
         ]
       },
       {
@@ -991,35 +1148,38 @@
       {
         "name": "Family Members as Core Team Members",
         "description": "Several successful founders built their initial teams with spouses, siblings, or family members who transition into the business, creating trusted partnerships with aligned incentives and complementary skills.",
-        "count": 5,
+        "count": 7,
         "examples": [
           "HBCwzfFbopE",
           "7pCgbhUWW54",
-          "MLAH5OZ5FO8"
+          "MLAH5OZ5FO8",
+          "nsn94Ad47GY",
+          "v-uhjlMg9L0"
         ]
       },
       {
         "name": "Multi-Founder Equal Equity Splits",
         "description": "Startups with 3-5 co-founders often use equal or near-equal equity splits (25% four-way splits, 50/50 partnerships) to minimize founder conflict and ensure all parties remain fully committed through pivots and uncertainty.",
-        "count": 6,
+        "count": 7,
         "examples": [
           "67zh8_yiPh4",
           "yue9in5oh64",
-          "En34iY-rQc0"
+          "En34iY-rQc0",
+          "xWnqY2Mav4s"
         ]
       }
     ],
     "keywords": {
       "Twitter": 8,
       "Philippines": 3,
-      "Upwork": 2,
+      "Upwork": 3,
+      "YouTube": 3,
+      "Eastern Europe": 2,
+      "Google": 2,
+      "Reddit": 2,
       "Ukraine": 2,
       "Lebanon": 1,
-      "Eastern Europe": 2,
-      "Reddit": 2,
-      "Google": 2,
-      "ThemeForest": 1,
-      "YouTube": 3
+      "ThemeForest": 1
     }
   },
   "Cost/Expenses": {
@@ -1027,13 +1187,15 @@
       {
         "name": "Ultra-Lean Operations (90%+ Profit Margins)",
         "description": "Founders maintain extremely high profit margins (80-99%) by minimizing expenses, using free/cheap tools, avoiding employees, and keeping infrastructure costs minimal. Common in solopreneurs and micro-SaaS businesses.",
-        "count": 18,
+        "count": 23,
         "examples": [
           "dXKzST0FE-A",
           "v6IF-lVuvbs",
           "w3zxMrwWrt0",
           "npcL7oRZQlI",
-          "vLLBzUZr6-s"
+          "vLLBzUZr6-s",
+          "XifgHi9R5Rc",
+          "g9J_-5w9Nrs"
         ]
       },
       {
@@ -1051,13 +1213,14 @@
       {
         "name": "Server/Infrastructure as Main Cost Driver",
         "description": "For SaaS and mobile apps, server hosting, database infrastructure, and rendering costs (often $1K-5K monthly) represent the largest operational expense, especially for high-traffic or compute-intensive applications.",
-        "count": 11,
+        "count": 12,
         "examples": [
           "NvtsM8Nk72c",
           "TCGXT7ySco8",
           "T5zMsTw8GWQ",
           "8BtHk-oNlN0",
-          "a1EXyJlSx9g"
+          "a1EXyJlSx9g",
+          "LYdJ3dfNCVs"
         ]
       },
       {
@@ -1075,13 +1238,15 @@
       {
         "name": "Heavy Marketing Investment (30-50% of Revenue)",
         "description": "Growth-focused businesses allocate significant budgets to paid ads across Meta, TikTok, Google, and Apple Search, with marketing representing one-third to half of revenue, accepting lower margins for faster growth.",
-        "count": 6,
+        "count": 9,
         "examples": [
           "2dfMUtHlQik",
           "tMkpiFIW8Xg",
           "5u9u8yzPEpA",
           "HBCwzfFbopE",
-          "mjCa8IFjM2E"
+          "mjCa8IFjM2E",
+          "DPb-M0Vt4uI",
+          "WuzxmeUP6ro"
         ]
       },
       {
@@ -1108,42 +1273,42 @@
       }
     ],
     "keywords": {
-      "OpenAI": 8,
-      "Stripe": 5,
-      "Firebase": 3,
-      "AWS": 2,
+      "OpenAI": 9,
+      "ChatGPT": 6,
+      "Claude": 6,
+      "Cursor": 6,
+      "RevenueCat": 6,
+      "Stripe": 6,
       "Vercel": 5,
-      "RevenueCat": 4,
-      "ChatGPT": 5,
-      "Claude": 4,
-      "Anthropic": 2,
-      "Cursor": 5,
-      "Supabase": 3,
-      "Cloudflare": 3,
-      "Meta": 2,
-      "TikTok": 2,
-      "Google": 2,
+      "Cloudflare": 4,
+      "Firebase": 4,
+      "Google": 4,
       "Apple Search Ads": 3,
-      "Kajabi": 1,
+      "Mixpanel": 3,
+      "Next.js": 3,
+      "Supabase": 3,
+      "Adobe": 2,
+      "Anthropic": 2,
+      "AWS": 2,
       "Laravel": 2,
-      "Next.js": 2,
+      "Meta": 2,
       "React": 2,
+      "TikTok": 2,
+      "99designs": 1,
+      "Amazon": 1,
+      "Figma": 1,
       "Flutter": 1,
-      "Postgres": 1,
-      "Railway": 1,
-      "Mixpanel": 2,
+      "Framer": 1,
+      "Ingramspark": 1,
       "Intercom": 1,
+      "Kajabi": 1,
       "Notion": 1,
       "Outseta": 1,
-      "Figma": 1,
-      "Webflow": 1,
-      "Adobe": 2,
-      "Upwork": 1,
-      "Framer": 1,
-      "99designs": 1,
-      "Ingramspark": 1,
+      "Postgres": 1,
+      "Railway": 1,
       "Reedsy": 1,
-      "Amazon": 1
+      "Upwork": 1,
+      "Webflow": 1
     }
   },
   "Advice/Lessons": {
@@ -1151,151 +1316,169 @@
       {
         "name": "Just Start - Action Over Planning",
         "description": "Don't over-prepare, over-plan, or wait for perfection. Ship MVPs quickly, learn by doing rather than consuming content, and take immediate action instead of spending months in preparation or research.",
-        "count": 32,
+        "count": 56,
         "examples": [
           "uBGbvKScavk",
           "v6IF-lVuvbs",
           "mjCa8IFjM2E",
           "LWPN-PAhtLA",
           "GGxUH6EXF9I",
-          "tMkpiFIW8Xg"
+          "tMkpiFIW8Xg",
+          "47QXbPGyzBI",
+          "7vz6b_Ohdl0"
         ]
       },
       {
         "name": "Clone and Improve Validated Ideas",
         "description": "Instead of inventing revolutionary products, copy proven business models and improve them. Target validated markets with existing players, find gaps, and build better versions rather than risking unvalidated ideas.",
-        "count": 15,
+        "count": 22,
         "examples": [
           "_KaFS4Dxs5k",
           "8BtHk-oNlN0",
           "4BsxnGRbF4k",
           "w8oUlfgvcTI",
           "88BbTpbWVpY",
-          "BNr1JOQdSN0"
+          "BNr1JOQdSN0",
+          "BHhg-l9AZpM",
+          "NPpky92ZfjA"
         ]
       },
       {
         "name": "Solve Your Own Problem",
         "description": "Build solutions for pain points you personally experience. Founder-problem fit provides motivation through setbacks, ensures deep understanding of the market, and validates that others likely share the same need.",
-        "count": 18,
+        "count": 36,
         "examples": [
           "w3zxMrwWrt0",
           "T5zMsTw8GWQ",
           "qeY283nBhIA",
           "b5JhfGHafZA",
           "En34iY-rQc0",
-          "h9R6ZeNruuI"
+          "h9R6ZeNruuI",
+          "0sO2OSN3jZw",
+          "2_lpZ503ZGg"
         ]
       },
       {
         "name": "Validate and Charge Early",
         "description": "Get at least one paying customer before extensive building. Charge from day one to validate real demand, use pricing to create urgency, and avoid building features nobody will pay for.",
-        "count": 14,
+        "count": 21,
         "examples": [
           "3eY71OS4MFw",
           "npcL7oRZQlI",
           "hYW9YDwHE20",
           "2dfMUtHlQik",
-          "ty9ZcimL6VE"
+          "ty9ZcimL6VE",
+          "47QXbPGyzBI",
+          "7KqlwjBM_tM"
         ]
       },
       {
         "name": "Distribution is the Real Moat",
         "description": "Success comes from mastering distribution and customer acquisition, not just building great products. Marketing matters as much as the product itself—focus on reaching customers through strategic channels before perfecting features.",
-        "count": 12,
+        "count": 27,
         "examples": [
           "ptT0tfzeu8I",
           "4hMg_CZauJs",
           "8yCXyCN_NR0",
           "3X4VneEHvig",
-          "ZGwQoRw7mh8"
+          "ZGwQoRw7mh8",
+          "-VlJIgj6gM4",
+          "47QXbPGyzBI"
         ]
       },
       {
         "name": "Consistency and Volume Over Perfection",
         "description": "Commit to high-volume consistent output rather than perfect execution. Post daily content, launch multiple projects, send massive numbers of outreach messages—understand that success requires more repetition than most people estimate.",
-        "count": 19,
+        "count": 27,
         "examples": [
           "YtyJ4reSQY0",
           "VZ1XspToV1E",
           "Fk2J2U7669o",
           "7pCgbhUWW54",
           "5MaPEK-yVVY",
-          "WctFUP4w0sc"
+          "WctFUP4w0sc",
+          "-VlJIgj6gM4",
+          "Eg93po_DAYo"
         ]
       },
       {
         "name": "Persistence Through Failure is Essential",
         "description": "Expect years of failure before success, multiple setbacks, and moments of doubt. The ability to persist through failures, keep trying despite obstacles, and not quit prematurely separates successful founders from those who stop.",
-        "count": 22,
+        "count": 30,
         "examples": [
           "Gv2fzC96Z40",
           "PSx0vcUY-sk",
           "qeY283nBhIA",
           "w8oUlfgvcTI",
           "6iqo7lNR_m0",
-          "KpVPST_P4W8"
+          "KpVPST_P4W8",
+          "OV09yPLf8BI",
+          "RypUD_Fuaqw"
         ]
       },
       {
         "name": "Build in Public and Create Content",
         "description": "Document your journey publicly, create consistent content about your process, and build an audience that carries between projects. Content creation and personal brand building provide distribution and ensure no project starts from zero.",
-        "count": 11,
+        "count": 21,
         "examples": [
           "v6IF-lVuvbs",
           "WGVxAmmJUmY",
           "wqN-gjnpns8",
           "b5JhfGHafZA",
-          "5MaPEK-yVVY"
+          "5MaPEK-yVVY",
+          "0pp4X58q_0s",
+          "Eg93po_DAYo"
         ]
       },
       {
         "name": "Focus and Commit to One Thing",
         "description": "Stop bouncing between ideas and shiny objects. Pick one path, commit deeply, and persist through the difficult periods rather than constantly switching tactics when progress is slow.",
-        "count": 13,
+        "count": 20,
         "examples": [
           "4BsxnGRbF4k",
           "NvtsM8Nk72c",
           "MLAH5OZ5FO8",
           "trNGj1BN1GU",
-          "OoFqTMPW_3E"
+          "OoFqTMPW_3E",
+          "2_lpZ503ZGg",
+          "E_rX4JJrYkY"
         ]
       }
     ],
     "keywords": {
-      "AI": 18,
-      "ChatGPT": 6,
-      "Cursor": 3,
-      "TikTok": 5,
-      "Reddit": 4,
-      "Twitter": 6,
+      "AI": 21,
+      "SaaS": 17,
+      "MVP": 9,
       "YouTube": 8,
-      "Etsy": 2,
-      "Starbucks": 1,
-      "MacBook": 1,
-      "iPhone": 3,
-      "Chrome Extension": 1,
       "Mobile App": 7,
-      "SaaS": 16,
+      "ChatGPT": 6,
+      "TikTok": 6,
+      "Twitter": 6,
       "Micro-SaaS": 4,
-      "Open Source": 2,
+      "Reddit": 4,
+      "Cursor": 3,
+      "iPhone": 3,
       "No-code": 3,
-      "MVP": 8,
-      "Lovable": 1,
-      "Bolt": 1,
-      "Make": 1,
-      "n8n": 1,
-      "Zapier": 1,
-      "Vercel": 1,
-      "Supabase": 1,
-      "Claude": 1,
-      "Pomodoro": 1,
-      "YC": 2,
-      "Roblox": 1,
+      "SEO": 3,
       "App Store": 2,
-      "LinkedIn": 1,
+      "Claude": 2,
+      "Etsy": 2,
+      "LinkedIn": 2,
+      "Make": 2,
+      "Open Source": 2,
+      "YC": 2,
+      "Bolt": 1,
+      "Chrome Extension": 1,
       "Facebook": 1,
-      "SEO": 2
+      "Lovable": 1,
+      "MacBook": 1,
+      "n8n": 1,
+      "Pomodoro": 1,
+      "Roblox": 1,
+      "Starbucks": 1,
+      "Supabase": 1,
+      "Vercel": 1,
+      "Zapier": 1
     }
   }
 }

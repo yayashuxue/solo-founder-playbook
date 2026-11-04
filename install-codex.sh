@@ -7,8 +7,7 @@ mkdir -p "$DEST"
 
 # Shared knowledge folder (used by all solo-* skills except solo-failures, which ships its own)
 mkdir -p "$DEST/knowledge"
-cp -f "$HERE/knowledge/patterns.json" "$DEST/knowledge/patterns.json"
-cp -f "$HERE/knowledge/insights.md" "$DEST/knowledge/insights.md"
+cp -R "$HERE/knowledge/." "$DEST/knowledge/"
 
 # Install each shared-knowledge skill
 for s in solo-analyze solo-growth solo-patterns solo-playbook solo-roast; do
