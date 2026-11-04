@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 <title>Try in 30s · Solo Founder Playbook</title>
-<meta name="description" content="Pick a skill, paste your idea, copy a self-contained prompt to use in Claude/ChatGPT/Gemini — 30 seconds to data-backed feedback drawn from 101 founder interviews.">
+<meta name="description" content="Pick a skill, paste your idea, copy a self-contained prompt to use in Claude/ChatGPT/Gemini — a quick preview grounded in the public Starter Story pattern catalog.">
 <meta property="og:title" content="Try in 30s — Solo Founder Playbook">
-<meta property="og:description" content="Pick skill, paste idea, copy prompt. Powered by data from 101 founder interviews.">
+<meta property="og:description" content="Pick skill, paste idea, copy prompt. Preview linked to the public Starter Story pattern catalog.">
 <meta property="og:image" content="/cards/card-01.png">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -383,7 +383,7 @@ footer a:hover { text-decoration: underline; }
   <div class="container">
     <div class="kicker">Try in 30s · No Install</div>
     <h1>Pick skill, paste idea, <em>copy prompt</em>.</h1>
-    <p>Pick a skill → paste your idea / plan / problem → get a self-contained prompt you can paste into Claude / ChatGPT / Gemini. Powered by data from 101 Starter Story founder interviews.</p>
+    <p>Pick a skill → paste your idea / plan / problem → get a self-contained prompt you can paste into Claude / ChatGPT / Gemini. The prompt links to the public Starter Story pattern catalog; your chat needs to open it to cite specific data.</p>
   </div>
 </section>
 
@@ -400,22 +400,22 @@ footer a:hover { text-decoration: underline; }
       <button type="button" class="skill" data-skill="solo-analyze">
         <span class="cmd">/solo-analyze</span>
         <span class="ttl">Idea evaluation</span>
-        <span class="desc">Match against 7 idea-origin patterns + risk signals. Returns origin / strengths / risks.</span>
+        <span class="desc">Examine idea origin, demand evidence, and risks.</span>
       </button>
       <button type="button" class="skill" data-skill="solo-failures">
         <span class="cmd">/solo-failures</span>
         <span class="ttl">Failure-mode diagnosis</span>
-        <span class="desc">7 dominant failure modes + real causal chains + early signals. Works as pre-mortem too.</span>
+        <span class="desc">Seven recurring risk themes and early signals. Works as a pre-mortem too.</span>
       </button>
       <button type="button" class="skill" data-skill="solo-growth">
         <span class="cmd">/solo-growth</span>
         <span class="ttl">Growth strategy</span>
-        <span class="desc">Channel recommendations matched to your business type (organic vs paid 3.5:1).</span>
+        <span class="desc">Channel recommendations matched to your audience, stage, and budget.</span>
       </button>
       <button type="button" class="skill" data-skill="solo-patterns">
         <span class="cmd">/solo-patterns</span>
         <span class="ttl">Pattern browser</span>
-        <span class="desc">Index of 80+ patterns across 11 categories. Use this for "how do founders actually do X?"</span>
+        <span class="desc">Explore the catalog by topic and source video.</span>
       </button>
       <button type="button" class="skill" data-skill="solo-playbook">
         <span class="cmd">/solo-playbook</span>
@@ -456,14 +456,14 @@ footer a:hover { text-decoration: underline; }
         /plugin marketplace add yayashuxue/solo-founder-playbook<br>
         /plugin install solo-founder-playbook
       </div>
-      <p style="margin-top: 24px; font-size: 14px; color: #777;">Full source for all 6 skills + the 101-founder pattern data: <a href="https://github.com/yayashuxue/solo-founder-playbook" style="color: var(--red);">github.com/yayashuxue/solo-founder-playbook</a></p>
+      <p style="margin-top: 24px; font-size: 14px; color: #777;">Full source for all 6 skills and the pattern data: <a href="https://github.com/yayashuxue/solo-founder-playbook" style="color: var(--red);">github.com/yayashuxue/solo-founder-playbook</a></p>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="container">
-    Built by <a href="https://github.com/yayashuxue" target="_blank">@yayashuxue</a> · MIT · Data from <a href="https://www.starterstory.com" target="_blank">Starter Story</a> 101 founder interviews
+    Built by <a href="https://github.com/yayashuxue" target="_blank">@yayashuxue</a> · MIT · Themes from selected <a href="https://www.starterstory.com" target="_blank">Starter Story</a> videos
   </div>
 </footer>
 
@@ -472,215 +472,45 @@ footer a:hover { text-decoration: underline; }
 <div class="toast" id="toast">Copied ✓</div>
 
 <script>
+const DATA_CONTEXT = `This is a lightweight preview of Solo Founder Playbook, not the full video database. If you can open public URLs, consult https://github.com/yayashuxue/solo-founder-playbook/blob/main/knowledge/patterns.json before naming a catalog pattern or citing a count. If you cannot access it, say so and do not invent video counts, founder stories, or causal claims. Video mentions are selected founder stories, not success probabilities.`;
+
 const PROMPT_TEMPLATES = {
-  'solo-roast': `You are a brutally honest startup plan critic in the style of Garry Tan, powered by data from 101 Starter Story founder video analyses. Be kind but never sugarcoat — roast my plan with data.
-
-[Top failure modes from the dataset, ranked by frequency]
-- Multiple Failures Before Success (15/101) — failure is the median, not exception
-- Financial Crisis & Near-Bankruptcy (13/101) — runway math kills more than bad decisions
-- Burnout from Overwork & Isolation (12/101) — founder breaks before business
-- Building Without Customer Validation (11/101) — months of build, zero users
-- Pivoting After Initial Failure (10/101) — refusing to let go of a dead idea
-- Shiny Object Syndrome (7/101) — chronic switching costs
-
-[Top success patterns from the dataset]
-- Ship Fast, Iterate (32 videos)
-- Quick MVP, Validate, Charge from Day 1 (15+14 videos)
-- Organic Distribution >> Paid (3.5:1 ratio across 42 vs 12 mentions)
-- AI-Accelerated Workflow (74.3% of videos)
-- Niche Community Targeting (22 videos)
-
-Roast my plan against both lists. Tell me, in order:
-1. Which failure mode I'm closest to (with the X/101 count) and why
-2. Which success pattern I'm violating
-3. The cheapest 48-hour intervention I can run
-4. One thing I should stop doing this week
-
-Don't hedge. Use data references. Be specific to my plan.
+  'solo-roast': `Critique my startup plan candidly and constructively. Check customer demand, distribution, cash runway, and whether the plan is sustainable. Separate facts I gave you from assumptions. Give me the biggest risk, an observable warning sign, a low-cost 48-hour test, and one thing to stop doing this week.
 
 MY PLAN:
 """
 {INPUT}
 """`,
 
-  'solo-analyze': `You are a startup idea evaluator powered by data from 101 Starter Story founder video analyses.
-
-Evaluate my idea against real patterns from successful founders.
-
-[Idea origin patterns — which one does this idea fit?]
-- Solving Personal Problem (32/101)
-- Cloning & Improving Validated Ideas (18/101)
-- Mining Communities for Pain Points (24/101)
-- Leveraging Domain Experience (16/101)
-- Spotting Trends Early (21/101)
-- Building for Underserved Niches (14/101)
-- Replicating Proven Business Models (13/101)
-
-[Risks to flag from Challenges/Failures]
-- Building Without Customer Validation (11/101)
-- Burnout from Overwork (12/101)
-- Financial Crisis (13/101)
-- Shiny Object Syndrome (7/101)
-
-Output structure:
-### Origin Match
-[Which 1-2 origin patterns this fits, with counts]
-
-### Strengths
-[Patterns from successful founders that align — be specific]
-
-### Risks
-[Failure patterns visible from my description, ranked]
-
-### What to Validate Next
-[3 concrete experiments under $500 and 2 weeks]
-
-### One Thing I'm Underestimating
-[The non-obvious risk a thoughtful founder friend would flag]
+  'solo-analyze': `Evaluate my startup idea. Identify the likely buyer and pain point, what evidence of demand exists, and which assumptions remain untested. Relate it to relevant founder patterns only if you can verify them in the linked catalog. Suggest three small validation experiments, prioritized by cost and learning value.
 
 MY IDEA:
 """
 {INPUT}
 """`,
 
-  'solo-failures': `You are a startup failure-mode analyst, powered by data from 101 Starter Story video analyses (49.5% explicitly discussed failure). Help me see how startups actually die so I can avoid the same traps.
-
-Diagnose, prescribe, and back every claim with the data.
-
-[Top failure modes ranked by frequency in the dataset]
-1. Multiple Failures Before Success (15/101) — failure is the median
-2. Financial Crisis & Near-Bankruptcy (13/101) — runway math
-3. Burnout from Overwork & Isolation (12/101) — founder breaks first
-4. Building Without Customer Validation (11/101) — months of build, zero users
-5. Pivoting After Initial Failure (10/101) — refusing to let go
-6. Corporate Job as Safety Net (8/101) — risk-management pattern
-7. Shiny Object Syndrome (7/101) — chronic switching
-
-Distinguish symptoms from root causes. "Ran out of money" is almost never the real cause — it's the consequence of: no validation → no PMF → no revenue → no runway. Walk the chain back.
-
-Output:
-
-### Failure Mode Match
-[Top 1-3 failure modes that match my situation, with X/101 counts]
-
-### How This Actually Kills You
-[Walk the chain — what looks fine today, what breaks in 2 weeks, what's terminal in 3 months]
-
-### Early Warning Signs
-[Specific, observable signals I can check today]
-
-### What 101 Founders Did to Survive
-[Concrete countermeasures from the dataset]
-
-### Your Next Move
-[ONE concrete action for the next 48 hours]
+  'solo-failures': `Analyze risks in my startup situation. Consider cash pressure, untested demand, founder capacity, and whether changing direction is warranted. Rank risks by fit to my actual situation, not by how often they appear in interviews. Explain early signals, plausible mechanisms, and one concrete action for the next 48 hours.
 
 MY SITUATION:
 """
 {INPUT}
 """`,
 
-  'solo-growth': `You are a growth strategy advisor powered by data from 101 Starter Story video analyses. Recommend a growth strategy based on what actually worked for similar founders.
-
-[Business type breakdown in dataset]
-- SaaS/App (37.6%)
-- Content/Media (21.8%)
-- Agency/Service (7.9%)
-- Education (4.0%)
-- E-commerce (3.0%)
-
-[Marketing/Distribution channels ranked]
-- Organic Social Media (42 videos) — Twitter, TikTok, IG, LinkedIn
-- Viral Video / UGC (31 videos)
-- SEO & Long-Form Content (28 videos)
-- Building in Public (25 videos)
-- Niche Community Targeting (22 videos)
-- Influencer / Partnerships (18 videos)
-- Product Hunt / Marketplace (12 videos)
-- Paid Ads (12 videos) — note organic:paid runs ~3.5:1
-
-[Growth patterns]
-- Ship Fast, Iterate (32 videos)
-- Charge from Day 1 (14 videos)
-- Niche Then Expand (consistent across categories)
-
-Output:
-
-### Business Match
-[Which category, similar founders by archetype]
-
-### Top 2 Channels for You (with reasoning)
-[Pick from the data; explain why these match]
-
-### 30-Day Channel Plan
-[Concrete weekly experiments — not platitudes]
-
-### What to Stop Doing
-[Common waste patterns specific to my situation]
-
-### Metric to Watch
-[ONE leading indicator to track weekly]
+  'solo-growth': `Recommend a growth plan for my business. Identify my likely audience, stage, and constraints; compare two channels that fit, whether organic or paid. Propose a 30-day series of small experiments, one leading metric to track weekly, and a condition for changing course. Treat any founder result as a self-reported example, not a guarantee.
 
 MY BUSINESS:
 """
 {INPUT}
 """`,
 
-  'solo-patterns': `You are a startup patterns browser powered by data from 101 Starter Story video analyses (11 categories, 80+ patterns).
-
-[Categories]
-- Idea Generation (7 patterns, 42 keywords)
-- Validation (7 patterns, 34 keywords)
-- Building/Development (7 patterns, 36 keywords)
-- Launch (7 patterns, 21 keywords)
-- Marketing/Distribution (7 patterns, 31 keywords)
-- Growth (8 patterns, 35 keywords)
-- Monetization (8 patterns, 26 keywords)
-- Challenges/Failures (7 patterns, 18 keywords)
-- Team/Hiring (7 patterns, 10 keywords)
-- Cost/Expenses (7 patterns, 36 keywords)
-- Advice/Lessons (9 patterns, 33 keywords)
-
-For my query below, do this:
-1. Identify which 1-3 categories are most relevant
-2. Surface the top patterns within those categories with their video counts
-3. Cross-reference: which patterns frequently co-occur in the same founder's journey?
-4. End with 3 follow-up questions I might want to dig into next
+  'solo-patterns': `Help me explore startup patterns relevant to my question. If you can read the linked catalog, name the relevant categories and patterns with their source video IDs. If you cannot, identify likely categories and tell me what you would need to check; do not fabricate patterns, counts, or co-occurrence. End with three useful follow-up questions.
 
 MY QUERY:
 """
 {INPUT}
 """`,
 
-  'solo-playbook': `You are a startup playbook generator powered by data from 101 Starter Story video analyses. Generate a concrete, data-backed playbook for my goal.
-
-[Tools and platforms commonly mentioned across videos]
-- Reddit, Twitter/X, TikTok, IG, LinkedIn (distribution)
-- Cursor, Claude, ChatGPT, v0, Replit (build)
-- Stripe, Lemon Squeezy, Paddle (monetization)
-- AppSumo, Product Hunt, Microacquire (launch/exit)
-- Notion, Airtable, Webflow (ops)
-
-[Pattern categories to draw from]
-- Idea Generation, Validation, Building/Development, Launch, Marketing/Distribution, Growth, Monetization, Team/Hiring, Cost/Expenses
-
-Output a playbook structured as:
-
-### My Goal (restated)
-
-### Phase 1 — Week 1 (validation)
-[Specific actions, tools, target outcomes]
-
-### Phase 2 — Weeks 2-4 (build & launch)
-
-### Phase 3 — Months 2-3 (growth)
-
-### What to Skip / Common Wastes
-
-### Patterns from Founders Who Hit This Goal
-[Real patterns with frequency from the dataset]
-
-### Decision Points (when to keep going vs pivot)
+  'solo-playbook': `Make a practical playbook for my goal. State the key assumptions, then propose validation, build or launch, and growth steps with deliverables and decision points. Choose timing from my resources and dependencies, not a generic founder timeline. Cite catalog patterns only if you can verify them through the linked file.
 
 MY GOAL:
 """
@@ -734,7 +564,7 @@ updateHint();
 function buildPrompt() {
   if (!selectedSkill) return '';
   const tmpl = PROMPT_TEMPLATES[selectedSkill];
-  return tmpl.replace('{INPUT}', userInput.value.trim());
+  return DATA_CONTEXT + '\n\n' + tmpl.replace('{INPUT}', userInput.value.trim());
 }
 
 function showToast(text) {
