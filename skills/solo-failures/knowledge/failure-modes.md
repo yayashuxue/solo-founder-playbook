@@ -1,137 +1,66 @@
-# Why Startups Fail — A Data-Backed Taxonomy
+# Startup Failure Modes in Starter Story Videos
 
-**Source:** 101 Starter Story video analyses. 49.5% of videos discuss failure explicitly. Counts below = number of distinct founder interviews mentioning the pattern.
+**Source:** The original 101-video analysis. This is a historical subset of the broader catalog and has not been recounted for later videos. The numbers below are approximate video mentions, not failure rates or causal estimates. Starter Story selects and edits founder stories, so the set is not representative of all startups.
 
-This document is the curated failure taxonomy used by the `solo-failures` skill. Read it whenever you need to diagnose, post-mortem, or pre-mortem a startup.
+Use these modes as prompts to examine a founder's actual situation. The warning signs and interventions below are practical hypotheses, not measured conclusions from the videos. Check the source material and the founder's own numbers before making a decision.
 
----
+## Seven recurring themes
 
-## The 7 Primary Failure Modes (by frequency)
+### 1. Multiple failures before a later success — ~15 videos
 
-### 1. Multiple Failures Before Success — 15 videos
-**The pattern.** Founders rarely succeed on attempt #1. Many cite 5–20+ prior failed ventures before the breakthrough. Failure isn't the exception — it's the median path.
+Some founders described previous ventures that did not work before the business in the video. This is a retrospective account from founders who were later featured; it does not establish how often founders fail or how many attempts anyone should expect.
 
-**Root cause when it kills.** Founders who treat their first venture as their last one. They over-invest emotionally and financially, then quit entirely after the first failure instead of treating it as tuition.
+- **Check:** Is one experiment consuming all available savings or time?
+- **Possible action:** Set a budget and learning goal for the next experiment, with a decision date.
 
-**Early signal.** "If this doesn't work I'm out." Single-shot framing.
+### 2. Financial crisis or near-bankruptcy — ~13 videos
 
-**Point of no return.** Burning all savings on one bet, no plan B, no learning loop.
+Founders described cash pressure, debt, inventory mistakes, or unexpected expenses. The cause differs by business; weak demand, high costs, and timing can all contribute.
 
-**Cheapest intervention.** Reframe upfront: "This is venture #1 of N. The job is to extract a lesson cheaply." Cap the spend per attempt.
+- **Check:** How many weeks of cash remain at current spending, and what assumptions would change that?
+- **Possible action:** Build a short cash forecast, identify the largest controllable expenses, and test whether the revenue plan is realistic.
 
----
+### 3. Burnout and isolation — ~12 videos
 
-### 2. Financial Crisis & Near-Bankruptcy — 13 videos
-**The pattern.** Running out of cash, accumulating debt, inventory miscalculations, unexpected bills, or a single failed launch wiping out runway. Often near-fatal but survivable with creative last-minute moves.
+Some founders described long hours, poor health, or working without support. A video mention does not quantify the effect on business outcomes.
 
-**Root cause when it kills.** Almost never "we spent too much." Almost always: no validation → no PMF → no revenue → no runway. Cash death is downstream.
+- **Check:** Are sleep, health, relationships, or decision quality deteriorating?
+- **Possible action:** Reduce unsustainable commitments and find a peer or professional support channel appropriate to the situation.
 
-**Early signal.** Less than 6 months runway and revenue isn't growing month-over-month. Or: any month where personal expenses come out of company cash.
+### 4. Building without customer validation — ~11 videos
 
-**Point of no return.** Taking on debt to extend runway for a product that hasn't shown demand. Debt only buys time, not PMF.
+Some stories describe long builds followed by weak demand. This can reflect a mismatch in problem, buyer, price, or distribution.
 
-**Cheapest intervention.** Build a 13-week cash forecast today. If it shows zero in <12 weeks and revenue trajectory doesn't fix it, pivot or cut, don't borrow.
+- **Check:** What has a potential buyer actually done: paid, committed time, tried the product, or clearly declined?
+- **Possible action:** Speak with target customers and test the riskiest assumption with a small offer or prototype before expanding the build.
 
----
+### 5. Pivoting after an initial approach failed — ~10 videos
 
-### 3. Burnout from Overwork & Isolation — 12 videos
-**The pattern.** 16–20 hour days, no boundaries, sacrificing health, relationships, sleep. Especially common among solopreneurs scaling alone.
+Several featured founders changed product, audience, or business model. That does not mean a pivot is always right; persistence and change both have costs.
 
-**Root cause when it kills.** The founder breaks before the business does. The product is fine; the human is not. Decision quality collapses 4–6 months in.
+- **Check:** Which measurable assumption is failing, and has it had a fair test?
+- **Possible action:** Define a decision threshold and date, then compare a revised approach with continuing the current one.
 
-**Early signal.** Working harder produces less. Skipping exercise. Drinking more. Avoiding people. Inability to make a small decision.
+### 6. A day job or other financial fallback — ~8 videos
 
-**Point of no return.** A health event, a relationship rupture, or a depressive episode that takes the founder offline for weeks. Often the company never recovers.
+Some founders described keeping a job or a route back to employment while experimenting. The appropriate runway depends on personal obligations and business risk.
 
-**Cheapest intervention.** Hard-cap working hours (e.g. 50/wk). Schedule 1 non-negotiable rest day. Recruit a peer group (1–3 other founders) for weekly check-ins to break isolation. Cost: zero.
+- **Check:** What happens to personal finances if revenue takes longer than planned?
+- **Possible action:** Model a conservative runway and decide how much time and money can be committed safely.
 
----
+### 7. Frequent switching between ideas or tactics — ~7 videos
 
-### 4. Building Without Customer Validation — 11 videos
-**The pattern.** Months or years building in stealth, then launching to zero users. Or launching to discover the product solves a problem nobody actually has at a price they'd pay.
+Some stories mention changing direction repeatedly. Switching may waste learning, while staying with an invalid idea can also be costly.
 
-**Root cause when it kills.** Founder fell in love with the solution before confirming the problem. Building feels productive; it isn't, until it's validated.
+- **Check:** Is each change driven by evidence or by a new story seen online?
+- **Possible action:** Give a defined experiment enough time and record the result before choosing the next one.
 
-**Early signal.** "I'll show people once it's polished." No paying customer in week 1. No waitlist. No conversations with potential buyers.
+## Cross-cutting questions
 
-**Point of no return.** 6+ months of build with no external user feedback. By month 6 the cost of pivoting is now larger than the cost of starting over.
+- **Validation:** What evidence shows the problem matters to a specific buyer?
+- **Distribution:** How will the first customers discover the offer? Is the proposed channel affordable to test?
+- **Pricing:** Has anyone shown willingness to pay at the intended price?
+- **Runway:** What happens if sales are slower or costs higher than expected?
+- **Capacity:** Can the founder sustain the plan without relying on chronic overwork?
 
-**Cheapest intervention.** This week: get 1 person to pay (even $1) before writing more code. If you cannot, the problem isn't the product.
-
----
-
-### 5. Refusing to Pivot After Initial Failure — 10 videos
-**The pattern.** First model/product failed. Founders who survived pivoted on lessons learned. Founders who didn't held on too long.
-
-**Root cause when it kills.** Sunk-cost reasoning + identity attachment to the original idea. The longer you've worked on something, the harder it is to kill — and the more dangerous it becomes.
-
-**Early signal.** Repeating "we just need to find the right marketing" 3+ months in a row, while metrics flatline.
-
-**Point of no return.** Funding round / personal savings depleted before pivoting.
-
-**Cheapest intervention.** Set a pre-committed pivot trigger now: "If by date X we don't have metric Y, we change direction." Make the rule before you need it — you won't make it after.
-
----
-
-### 6. Corporate Job as Safety Net (or Lack Thereof) — 8 videos
-**The pattern.** Founders who kept their day job (or knew they could return) ran longer experiments and survived more failures. Those without a fallback often quit too early or made worse decisions under financial pressure.
-
-**Root cause when it kills (when missing).** Financial pressure compresses time horizons. Forced to chase short-term revenue → can't run long experiments → can't reach PMF.
-
-**Early signal.** Making product decisions based on what closes a sale this month vs. what builds the right business.
-
-**Point of no return.** Quitting day job before PMF + 6 months runway.
-
-**Cheapest intervention.** Don't quit until you have either (a) recurring revenue covering 80% of personal burn or (b) 12 months of personal runway saved. Boring but lifesaving.
-
----
-
-### 7. Shiny Object Syndrome — 7 videos
-**The pattern.** Constantly switching ideas, strategies, tactics after seeing others' success. Never staying with one thing long enough for compounding to kick in.
-
-**Root cause when it kills.** Distribution is compounding — it requires consistency over months. Switching resets the compounding clock to zero every time.
-
-**Early signal.** New "breakthrough idea" every 2–4 weeks. Changing the company name. Rebuilding the landing page for the third time this quarter.
-
-**Point of no return.** 18 months in, no single channel/product has been worked for >90 days.
-
-**Cheapest intervention.** Pre-commit to a 90-day focus block. Write the commitment down. Tell someone. Anything you don't do in that 90 days goes in a "later" file.
-
----
-
-## Cross-Cutting Anti-Patterns
-
-These don't appear in the `Challenges/Failures` category directly but are the recurring causes underneath the failures above. Watch for them.
-
-### Anti-pattern A: Planning to build for 6+ months before launching
-Maps to: Building Without Customer Validation, Financial Crisis. The dataset overwhelmingly favors "ship fast, iterate" (32 videos cite this) and "quick MVP launch" (15 videos). Long stealth builds correlate with launching to zero users.
-
-### Anti-pattern B: No distribution strategy
-Maps to: Financial Crisis, Multiple Failures. Distribution is the moat (12 videos). Organic vs paid in the data is roughly 3.5:1 — paid-only strategies rarely survive without organic underneath. If you can't articulate where your first 100 users come from in one sentence, you don't have a plan.
-
-### Anti-pattern C: Trying to be "original"
-Maps to: Building Without Validation, Multiple Failures. "Cloning and improving validated ideas" appears in 18 videos as an explicit success pattern. Originality is a marketing flourish, not a strategy. Validated demand > clever idea.
-
-### Anti-pattern D: Not charging from day 1
-Maps to: Building Without Validation, Financial Crisis. 14 videos explicitly say "validate and charge early." Free users are not validation. A $5 pre-order is.
-
-### Anti-pattern E: Over-hiring before PMF
-Maps to: Financial Crisis, Burnout (from over-management). Each early hire ~doubles management overhead and burn. Hire to remove a specific founder bottleneck (11 videos), not to "scale the team."
-
-### Anti-pattern F: Paid ads as primary acquisition before organic works
-Maps to: Financial Crisis. Heavy marketing spend (30–50% of revenue) appears in only 6 videos vs zero/low-marketing strategies in 9+. If organic doesn't work at small scale, paid won't fix it — paid will just burn money faster.
-
-### Anti-pattern G: Ignoring the founder's mental health
-Maps to: Burnout. The dataset is unambiguous: founders who burn out either quit or make catastrophically bad decisions. The cheapest insurance policy is sleep and a peer group.
-
----
-
-## How to Use This Document
-
-1. **Diagnosing a current situation.** Match the user's stated symptoms against failure modes #1–7 by frequency. The top two matches are usually the active risks. Then walk back to root cause via the anti-patterns.
-
-2. **Post-mortem analysis.** Don't accept the founder's headline ("we ran out of money"). Walk back: what was the cash sink? Why was burn higher than revenue? Why was revenue not growing? Almost always lands at #4 (no validation) or #5 (no pivot).
-
-3. **Pre-mortem before starting.** Run all 7 modes as a checklist. For each: "What's my plan if this happens?" If you don't have answers for #2, #3, #4 specifically, do not start yet.
-
-4. **Honest framing.** Failure is the median outcome. Founders who internalize this build cheaper, learn faster, and survive longer.
+These are questions to investigate, not rules that every founder should launch immediately, avoid paid ads, quit a job at a fixed revenue threshold, or charge from day one. The pattern catalog in `patterns.json` and source index in `source-videos.json` provide additional context. When giving advice, prioritize the user's constraints and cite specific stories as examples, not proof.
